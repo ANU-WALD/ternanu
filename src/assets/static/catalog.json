@@ -1,0 +1,145 @@
+{
+  "options": {
+    "host": {
+      "url": "http://dapds00.nci.org.au/thredds",
+      "software": "tds"
+    },
+    "transparent":true,
+    "belowmincolor":"transparent",
+    "abovemaxcolor":"transparent"
+  },
+  "themes": [
+    {
+      "name": "Land cover change",
+      "icon": "fa-tree",
+      "publications": [
+        {
+          "timestep": "annual",
+          "options": {
+            "timeFormat": "{{year}}-12-31"
+          }
+        }
+      ],
+      "layers": [
+        {
+          "name": "Tree cover",
+          "description":"Percent of area classified as forest at 25 metre resolution mapping using Landsat imagery following the NCAS classification.",
+          "options": {
+            "filepath": "ub8/au/treecover/250m/ANUWALD.TreeCover.AllYears.250m.nc",
+            "variable":"AllYears",
+            "styles":"boxfill/anu_wald_darkgreen",
+            "colorscalerange":[0,100]
+          }
+        }
+      ]
+    },
+    {
+      "name":"Water Availability",
+      "icon":"fa-tint",
+      "publications": [
+        {
+          "timestep": "daily",
+          "options":{
+            "filepath": "ub8/au/OzWALD/daily/OzWALD.daily.{{variable}}.{{year}}.nc",
+            "timeFormat": "{{year}}-{{month}}-{{day}}"
+          }
+        },
+        {
+          "timestep": "annual",
+          "options":{
+            "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
+            "layer":"AnnualMeans",
+            "timeFormat": "{{year}}-12-31"
+          }
+        }
+      ],
+      "layers": [
+        {
+          "name": "Soil moisture",
+          "description": "",
+          "variable":"Ssoil",
+          "options": {
+            "palette":"anu_wald_blues09",
+            "units":"mm",
+            "mapOptions": {
+              "styles":"boxfill/anu_wald_blues09"
+            }
+          }
+        },
+        {
+          "name": "Runoff",
+          "description": "",
+          "variable":"Qtot",
+          "options": {
+            "palette":"anu_wald_blues09",
+            "units":"mm",
+            "mapOptions": {
+              "styles":"boxfill/anu_wald_blues09"
+            }
+          }
+        }
+      ],
+      "options": {
+        "belowmincolor":"extend"
+      }
+    },
+    {
+      "name": "Climate",
+      "icon": "fa-cloud",
+      "options": {
+        "host": {
+          "software": "tds",
+          "url": "http://rs-data1-mel.csiro.au/thredds"
+        }
+      },
+      "publications": [
+        {
+          "timestep": "daily",
+          "options": {
+            "filepath":"bawap/ncmls/{{variable}}/{{variable}}_{{decade}}.ncml",
+            "timeFormat": "{{year}}-{{month}}-{{day}}",
+            "start":"1900-01-01",
+            "end":"yesterday"
+          }
+        },
+        {
+          "timestep": "monthly",
+          "options": {
+            "filepath":"bawap/ncmls/{{variable}}.ncml",
+            "timeFormat": "{{year}}-{{month}}-01"
+          }
+        }
+      ],
+      "layers": [
+        {
+          "name": "Rainfall",
+          "description":"Gridded rainfall",
+          "options": {
+            "units": "mm",
+            "styles":"boxfill/rainbow",
+            "abovemaxcolor":"extend",
+            "numcolorbands":9
+          },
+          "publications": [
+            {
+              "timestep": "daily",
+              "options": {
+                "palette": "Blues",
+                "colorscalerange": [0,30],
+                "variable":"rain_day"
+              }
+            },
+            {
+              "timestep": "monthly",
+              "options":{
+                "palette": "Reds",
+                "colorscalerange": [0,300],
+                "variable":"rain_month"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

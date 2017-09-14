@@ -1,0 +1,6 @@
+{
+  "/ows": {
+    "target":"http://gsky.nci.org.au",
+    "secure":false
+  }
+}
