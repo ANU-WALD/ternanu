@@ -4,13 +4,13 @@
       "url": "http://dapds00.nci.org.au/thredds",
       "software": "tds"
     },
-    "transparent":true,
-    "belowmincolor":"transparent",
-    "abovemaxcolor":"transparent"
+    "transparent": true,
+    "belowmincolor": "transparent",
+    "abovemaxcolor": "transparent"
   },
   "themes": [
     {
-      "name": "Land cover change",
+      "name": "Carbon",
       "icon": "fa-tree",
       "publications": [
         {
@@ -22,33 +22,77 @@
       ],
       "layers": [
         {
+          "name": "Vegetation Carbon Uptake",
+          "description": "",
+          "publications": [
+            {
+              "timestep": "daily",
+              "options": {
+                "filepath": "/ub8/au/OzWALD/daily/OzWALD.daily.GPP.{{year}}.nc",
+                "colorscalerange": [
+                  0,
+                  10
+                ],
+                "timeFormat": "{{year}}-{{month}}-{{day}}",
+                "variable": "GPP",
+                "start": "2000-01-01",
+                "end": "2016-12-31"
+              }
+            },
+            {
+              "timestep": "annual",
+              "options": {
+                "filepath": "/ub8/au/OzWALD/annual/OzWALD.annual.GPP.AnnualSums.nc",
+                "colorscalerange": [
+                  0,
+                  4000
+                ],
+                "variable": "AnnualSums",
+                "start": "2000-01-01",
+                "end": "2016-12-31"
+              }
+            }
+          ],
+          "options": {
+            "units": "gC/m^2",
+            "palette": "BuGn",
+            "numcolorbands": 9,
+            "styles": "boxfill/anu_wald_darkgreen",
+            "belowmincolor": "extend",
+            "abovemaxcolor": "extend"
+          }
+        },
+        {
           "name": "Tree cover",
-          "description":"Percent of area classified as forest at 25 metre resolution mapping using Landsat imagery following the NCAS classification.",
+          "description": "Percent of area classified as forest at 25 metre resolution mapping using Landsat imagery following the NCAS classification.",
           "options": {
             "filepath": "ub8/au/treecover/250m/ANUWALD.TreeCover.AllYears.250m.nc",
-            "variable":"AllYears",
-            "styles":"boxfill/anu_wald_darkgreen",
-            "colorscalerange":[0,100]
+            "variable": "AllYears",
+            "styles": "boxfill/anu_wald_darkgreen",
+            "colorscalerange": [
+              0,
+              100
+            ]
           }
         }
       ]
     },
     {
-      "name":"Water Availability",
-      "icon":"fa-tint",
+      "name": "Water",
+      "icon": "fa-tint",
       "publications": [
         {
           "timestep": "daily",
-          "options":{
+          "options": {
             "filepath": "ub8/au/OzWALD/daily/OzWALD.daily.{{variable}}.{{year}}.nc",
             "timeFormat": "{{year}}-{{month}}-{{day}}"
           }
         },
         {
           "timestep": "annual",
-          "options":{
+          "options": {
             "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
-            "layer":"AnnualMeans",
+            "layer": "AnnualMeans",
             "timeFormat": "{{year}}-12-31"
           }
         }
@@ -57,34 +101,34 @@
         {
           "name": "Soil moisture",
           "description": "",
-          "variable":"Ssoil",
+          "variable": "Ssoil",
           "options": {
-            "palette":"anu_wald_blues09",
-            "units":"mm",
+            "palette": "anu_wald_blues09",
+            "units": "mm",
             "mapOptions": {
-              "styles":"boxfill/anu_wald_blues09"
+              "styles": "boxfill/anu_wald_blues09"
             }
           }
         },
         {
           "name": "Runoff",
           "description": "",
-          "variable":"Qtot",
+          "variable": "Qtot",
           "options": {
-            "palette":"anu_wald_blues09",
-            "units":"mm",
+            "palette": "anu_wald_blues09",
+            "units": "mm",
             "mapOptions": {
-              "styles":"boxfill/anu_wald_blues09"
+              "styles": "boxfill/anu_wald_blues09"
             }
           }
         }
       ],
       "options": {
-        "belowmincolor":"extend"
+        "belowmincolor": "extend"
       }
     },
     {
-      "name": "Climate",
+      "name": "Biodiversity",
       "icon": "fa-cloud",
       "options": {
         "host": {
@@ -96,16 +140,16 @@
         {
           "timestep": "daily",
           "options": {
-            "filepath":"bawap/ncmls/{{variable}}/{{variable}}_{{decade}}.ncml",
+            "filepath": "bawap/ncmls/{{variable}}/{{variable}}_{{decade}}.ncml",
             "timeFormat": "{{year}}-{{month}}-{{day}}",
-            "start":"1900-01-01",
-            "end":"yesterday"
+            "start": "1900-01-01",
+            "end": "yesterday"
           }
         },
         {
           "timestep": "monthly",
           "options": {
-            "filepath":"bawap/ncmls/{{variable}}.ncml",
+            "filepath": "bawap/ncmls/{{variable}}.ncml",
             "timeFormat": "{{year}}-{{month}}-01"
           }
         }
@@ -113,31 +157,236 @@
       "layers": [
         {
           "name": "Rainfall",
-          "description":"Gridded rainfall",
+          "description": "Gridded rainfall",
           "options": {
             "units": "mm",
-            "styles":"boxfill/rainbow",
-            "abovemaxcolor":"extend",
-            "numcolorbands":9
+            "styles": "boxfill/rainbow",
+            "abovemaxcolor": "extend",
+            "numcolorbands": 9
           },
           "publications": [
             {
               "timestep": "daily",
               "options": {
                 "palette": "Blues",
-                "colorscalerange": [0,30],
-                "variable":"rain_day"
+                "colorscalerange": [
+                  0,
+                  30
+                ],
+                "variable": "rain_day"
               }
             },
             {
               "timestep": "monthly",
-              "options":{
+              "options": {
                 "palette": "Reds",
-                "colorscalerange": [0,300],
-                "variable":"rain_month"
+                "colorscalerange": [
+                  0,
+                  300
+                ],
+                "variable": "rain_month"
               }
             }
           ]
+        }
+      ]
+    },
+    {
+      "name": "Lidar",
+      "icon": "fa-",
+      "layers": [
+        {
+          "name": "Credo_271652_6655179",
+          "description": "",
+          "options": {
+            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6655179_1m.nc"
+          }
+        },
+        {
+          "name": "Credo_271652_6656179",
+          "description": "",
+          "options": {
+            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6656179_1m.nc"
+          }
+        },
+        {
+          "name": "Credo_271652_6657179",
+          "description": "",
+          "options": {
+            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6657179_1m.nc"
+          }
+        },
+        {
+          "name": "Credo_271652_6658179",
+          "description": "",
+          "options": {
+            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6658179_1m.nc"
+          }
+        },
+        {
+          "name": "Credo_271652_6659179",
+          "description": "",
+          "options": {
+            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6659179_1m.nc"
+          }
+        }
+      ],
+      "options": {
+        "host": {
+          "url": "http://dapds00.nci.org.au/thredds"
+        },
+        "styles": "boxfill/rainbow"
+      },
+      "publications": [
+        {
+          "label": "CBH",
+          "options": {
+            "variable": "CBH",
+            "colorscalerange": [
+              0,
+              100
+            ]
+          }
+        },
+        {
+          "label": "CLI",
+          "options": {
+            "variable": "CLI",
+            "colorscalerange": [
+              0,
+              20
+            ]
+          }
+        },
+        {
+          "label": "CTH",
+          "options": {
+            "variable": "CTH",
+            "colorscalerange": [
+              0,
+              100
+            ]
+          }
+        },
+        {
+          "label": "DEM",
+          "options": {
+            "variable": "DEM",
+            "colorscalerange": [
+              0,
+              1e4
+            ]
+          }
+        },
+        {
+          "label": "FBF",
+          "options": {
+            "variable": "FBF",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "FWS",
+          "options": {
+            "variable": "FWS",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "LCF_CF",
+          "options": {
+            "variable": "LCF_CF",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "LCF_EF",
+          "options": {
+            "variable": "LCF_EF",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "LCF_H",
+          "options": {
+            "variable": "LCF_H",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "LCF_NSF",
+          "options": {
+            "variable": "LCF_NSF",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "LCF_OS",
+          "options": {
+            "variable": "LCF_OS",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "LCF_US",
+          "options": {
+            "variable": "LCF_US",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "PPM",
+          "options": {
+            "variable": "PPM",
+            "colorscalerange": [
+              0,
+              1e5
+            ]
+          }
+        },
+        {
+          "label": "VCF",
+          "options": {
+            "variable": "VCF",
+            "colorscalerange": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "label": "VH",
+          "options": {
+            "variable": "VHS",
+            "colorscalerange": [
+              0,
+              100
+            ]
+          }
         }
       ]
     }
