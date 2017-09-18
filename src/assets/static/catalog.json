@@ -1,16 +1,34 @@
 {
-  "options": {
-    "host": {
+  "namedHosts": {
+    "nci": {
       "url": "http://dapds00.nci.org.au/thredds",
       "software": "tds"
     },
+    "csiro-thredds": {
+      "software": "tds",
+      "url": "http://rs-data1-mel.csiro.au/thredds"
+    },
+    "qld-geoserver": {
+      "software": "geoserver",
+      "url": "http://qld.auscover.org.au/geoserver/aus"
+    }
+  },
+  "namedIntervals": {
+    "modis": {
+      "step": 8,
+      "startMonth": 1,
+      "startDay": 1
+    }
+  },
+  "options": {
+    "host": "nci",
     "transparent": true,
     "belowmincolor": "transparent",
     "abovemaxcolor": "transparent"
   },
   "themes": [
     {
-      "name": "Carbon",
+      "name": "Biomass and Carbon",
       "icon": "fa-tree",
       "publications": [
         {
@@ -74,6 +92,22 @@
               100
             ]
           }
+        },
+        {
+          "name": "Site List",
+          "description": "",
+          "options": {
+            "host": "qld-geoserver",
+            "layer": "aus:biolib_sitelist_auscover"
+          }
+        },
+        {
+          "name": "Tree List",
+          "description": "",
+          "options": {
+            "host": "qld-geoserver",
+            "layer": "aus:biolib_treelist_auscover"
+          }
         }
       ]
     },
@@ -94,63 +128,6 @@
             "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
             "layer": "AnnualMeans",
             "timeFormat": "{{year}}-12-31"
-          }
-        }
-      ],
-      "layers": [
-        {
-          "name": "Soil moisture",
-          "description": "",
-          "variable": "Ssoil",
-          "options": {
-            "palette": "anu_wald_blues09",
-            "units": "mm",
-            "mapOptions": {
-              "styles": "boxfill/anu_wald_blues09"
-            }
-          }
-        },
-        {
-          "name": "Runoff",
-          "description": "",
-          "variable": "Qtot",
-          "options": {
-            "palette": "anu_wald_blues09",
-            "units": "mm",
-            "mapOptions": {
-              "styles": "boxfill/anu_wald_blues09"
-            }
-          }
-        }
-      ],
-      "options": {
-        "belowmincolor": "extend"
-      }
-    },
-    {
-      "name": "Biodiversity",
-      "icon": "fa-cloud",
-      "options": {
-        "host": {
-          "software": "tds",
-          "url": "http://rs-data1-mel.csiro.au/thredds"
-        }
-      },
-      "publications": [
-        {
-          "timestep": "daily",
-          "options": {
-            "filepath": "bawap/ncmls/{{variable}}/{{variable}}_{{decade}}.ncml",
-            "timeFormat": "{{year}}-{{month}}-{{day}}",
-            "start": "1900-01-01",
-            "end": "yesterday"
-          }
-        },
-        {
-          "timestep": "monthly",
-          "options": {
-            "filepath": "bawap/ncmls/{{variable}}.ncml",
-            "timeFormat": "{{year}}-{{month}}-01"
           }
         }
       ],
@@ -186,10 +163,111 @@
                 ],
                 "variable": "rain_month"
               }
+            },
+            {
+              "timestep": "annual",
+              "skip": true
+            }
+          ]
+        },
+        {
+          "name": "Soil moisture",
+          "description": "",
+          "variable": "Ssoil",
+          "options": {
+            "palette": "anu_wald_blues09",
+            "units": "mm",
+            "mapOptions": {
+              "styles": "boxfill/anu_wald_blues09"
+            }
+          }
+        },
+        {
+          "name": "Runoff",
+          "description": "",
+          "variable": "Qtot",
+          "options": {
+            "palette": "anu_wald_blues09",
+            "units": "mm",
+            "mapOptions": {
+              "styles": "boxfill/anu_wald_blues09"
+            }
+          }
+        },
+        {
+          "name": "River Flows",
+          "description": "",
+          "variable": "Qriv",
+          "options": {
+            "palette": "anu_wald_blues09",
+            "units": "mm",
+            "mapOptions": {
+              "styles": "boxfill/anu_wald_blues09"
+            }
+          }
+        },
+        {
+          "name": "Inundation Extent",
+          "description": "",
+          "options": {
+            "styles": "boxfill/anu_wald_bluescale20",
+            "colorscalerange": [
+              0,
+              100
+            ],
+            "start": "2000-01-01",
+            "end":"2016-12-31"
+        },
+          "publications": [
+            {
+              "timestep": "daily",
+              "interval":"modis",
+              "options":{
+                "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{year}}.nc",
+                "variable":"OWL",
+                "layer":"OWL"
+              }
+            },
+            {
+              "timestep": "annual",
+              "options": {
+                "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{variable}}.nc",
+                "variable": "AnnualMaxima",
+                "layer": "AnnualMaxima"
+              }
             }
           ]
         }
-      ]
+      ],
+      "options": {
+        "belowmincolor": "extend"
+      }
+    },
+    {
+      "name": "Biodiversity and Habitat",
+      "icon": "fa-cloud",
+      "options": {
+        "host": "csiro-thredds"
+      },
+      "publications": [
+        {
+          "timestep": "daily",
+          "options": {
+            "filepath": "bawap/ncmls/{{variable}}/{{variable}}_{{decade}}.ncml",
+            "timeFormat": "{{year}}-{{month}}-{{day}}",
+            "start": "1900-01-01",
+            "end": "yesterday"
+          }
+        },
+        {
+          "timestep": "monthly",
+          "options": {
+            "filepath": "bawap/ncmls/{{variable}}.ncml",
+            "timeFormat": "{{year}}-{{month}}-01"
+          }
+        }
+      ],
+      "layers": []
     },
     {
       "name": "Lidar",
@@ -232,9 +310,7 @@
         }
       ],
       "options": {
-        "host": {
-          "url": "http://dapds00.nci.org.au/thredds"
-        },
+        "host": "nci",
         "styles": "boxfill/rainbow"
       },
       "publications": [
