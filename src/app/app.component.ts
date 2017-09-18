@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CatalogService, Catalog } from 'map-wald';
 import { environment } from 'environments/environment';
-import { LayerSelection, LayerAction, LayeredMapComponent } from 'map-wald';
+import { LayerSelection, LayerAction, LayeredMapComponent, PaletteService } from 'map-wald';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +12,11 @@ export class AppComponent {
   title = 'app works!';
   catalog:Catalog;
 
-  constructor(private catService:CatalogService){
+  constructor(
+    private catService:CatalogService,
+    paletteService:PaletteService){
     catService.loadFrom(environment.catalog).subscribe(c=>this.catalog=c);
+    paletteService.source = environment.palettes
   }
 
   @ViewChild(LayeredMapComponent) map:LayeredMapComponent;

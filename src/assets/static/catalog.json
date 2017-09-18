@@ -24,7 +24,9 @@
     "host": "nci",
     "transparent": true,
     "belowmincolor": "transparent",
-    "abovemaxcolor": "transparent"
+    "abovemaxcolor": "transparent",
+    "styles": "boxfill/{{palette}}",
+    "numcolorbands":10
   },
   "themes": [
     {
@@ -73,9 +75,8 @@
           ],
           "options": {
             "units": "gC/m^2",
-            "palette": "BuGn",
+            "palette": "anu_wald_darkgreen",
             "numcolorbands": 9,
-            "styles": "boxfill/anu_wald_darkgreen",
             "belowmincolor": "extend",
             "abovemaxcolor": "extend"
           }
@@ -86,7 +87,7 @@
           "options": {
             "filepath": "ub8/au/treecover/250m/ANUWALD.TreeCover.AllYears.250m.nc",
             "variable": "AllYears",
-            "styles": "boxfill/anu_wald_darkgreen",
+            "palette": "anu_wald_darkgreen",
             "colorscalerange": [
               0,
               100
@@ -139,12 +140,17 @@
             "units": "mm",
             "styles": "boxfill/rainbow",
             "abovemaxcolor": "extend",
-            "numcolorbands": 9
+            "numcolorbands": 9,
+            "host": "csiro-thredds"
           },
           "publications": [
             {
               "timestep": "daily",
               "options": {
+                "filepath": "bawap/ncmls/{{variable}}/{{variable}}_{{decade}}.ncml",
+                "timeFormat": "{{year}}-{{month}}-{{day}}",
+                "start": "1900-01-01",
+                "end": "yesterday",
                 "palette": "Blues",
                 "colorscalerange": [
                   0,
@@ -156,6 +162,8 @@
             {
               "timestep": "monthly",
               "options": {
+                "filepath": "bawap/ncmls/{{variable}}.ncml",
+                "timeFormat": "{{year}}-{{month}}-01",
                 "palette": "Reds",
                 "colorscalerange": [
                   0,
@@ -177,10 +185,11 @@
           "options": {
             "palette": "anu_wald_blues09",
             "units": "mm",
-            "mapOptions": {
-              "styles": "boxfill/anu_wald_blues09"
-            }
-          }
+            "colorscalerange": [
+              0,
+              1800
+            ]
+      }
         },
         {
           "name": "Runoff",
@@ -188,11 +197,28 @@
           "variable": "Qtot",
           "options": {
             "palette": "anu_wald_blues09",
-            "units": "mm",
-            "mapOptions": {
-              "styles": "boxfill/anu_wald_blues09"
+            "units": "mm"
+          },
+          "publications": [
+            {
+              "timestep": "daily",
+              "options": {
+                "colorscalerange": [
+                  0,
+                  5
+                ]
+              }
+            },
+            {
+              "timestep": "annual",
+              "options": {
+                "colorscalerange": [
+                  0,
+                  1800
+                ]
+              }
             }
-          }
+          ]
         },
         {
           "name": "River Flows",
@@ -200,32 +226,48 @@
           "variable": "Qriv",
           "options": {
             "palette": "anu_wald_blues09",
-            "units": "mm",
-            "mapOptions": {
-              "styles": "boxfill/anu_wald_blues09"
+            "units": "mm"
+          },
+          "publications": [
+            {
+              "timestep": "daily",
+              "options": {
+                "colorscalerange": [
+                  5,
+                  250000
+                ]
+              }
+            },
+            {
+              "timestep": "annual",
+              "options": {
+                "colorscalerange": [
+                  10000,100000000
+                ]
+              }
             }
-          }
+          ]
         },
         {
           "name": "Inundation Extent",
           "description": "",
           "options": {
-            "styles": "boxfill/anu_wald_bluescale20",
+            "palette": "anu_wald_bluescale20",
             "colorscalerange": [
               0,
               100
             ],
             "start": "2000-01-01",
-            "end":"2016-12-31"
-        },
+            "end": "2016-12-31"
+          },
           "publications": [
             {
               "timestep": "daily",
-              "interval":"modis",
-              "options":{
+              "interval": "modis",
+              "options": {
                 "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{year}}.nc",
-                "variable":"OWL",
-                "layer":"OWL"
+                "variable": "OWL",
+                "layer": "OWL"
               }
             },
             {
@@ -246,28 +288,43 @@
     {
       "name": "Biodiversity and Habitat",
       "icon": "fa-cloud",
-      "options": {
-        "host": "csiro-thredds"
-      },
-      "publications": [
+      "publications": [],
+      "layers": [
         {
-          "timestep": "daily",
+          "name": "Vegetation leaf area",
+          "description": "",
           "options": {
-            "filepath": "bawap/ncmls/{{variable}}/{{variable}}_{{decade}}.ncml",
-            "timeFormat": "{{year}}-{{month}}-{{day}}",
-            "start": "1900-01-01",
-            "end": "yesterday"
-          }
-        },
-        {
-          "timestep": "monthly",
-          "options": {
-            "filepath": "bawap/ncmls/{{variable}}.ncml",
-            "timeFormat": "{{year}}-{{month}}-01"
-          }
+            "palette": "anu_wald_darkgreen",
+            "numcolorbands":10,
+            "colorscalerange": [
+              0,
+              9
+            ]
+          },
+          "publications": [
+            {
+              "timestep": "daily",
+              "options": {
+                "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.{{year}}.nc",
+                "variable": "LAI"
+              },
+              "interval": "modis",
+              "start": "2000-01-01",
+              "end": "2016-12-31"
+            },
+            {
+              "timestep": "annual",
+              "options": {
+                "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.AnnualMeans.nc",
+                "variable": "AnnualMeans",
+                "timeFormat": "{{year}}-12-31"
+              },
+              "start": "2000-01-01",
+              "end": "2016-12-31"
+            }
+          ]
         }
-      ],
-      "layers": []
+      ]
     },
     {
       "name": "Lidar",
