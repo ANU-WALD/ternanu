@@ -328,8 +328,15 @@
     },
     {
       "name": "Lidar",
-      "icon": "fa-",
+      "icon": "fa-plane",
       "layers": [
+        {
+          "name":"Credo",
+          "description": ".",
+          "options":{
+            "filepath":"ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_mosaic.nc"
+          }
+        },
         {
           "name": "Credo_271652_6655179",
           "description": "",
@@ -368,7 +375,9 @@
       ],
       "options": {
         "host": "nci",
-        "styles": "boxfill/rainbow"
+        "palette": "rainbow",
+        "belowmincolor":"extend",
+        "abovemaxcolor":"extend"
       },
       "publications": [
         {
@@ -514,7 +523,7 @@
         {
           "label": "VH",
           "options": {
-            "variable": "VHS",
+            "variable": "VH",
             "colorscalerange": [
               0,
               100
