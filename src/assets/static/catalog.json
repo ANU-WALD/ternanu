@@ -332,50 +332,45 @@
       "icon": "fa-plane",
       "layers": [
         {
+          "name":"Alice",
+          "description": "."
+        },
+        {
           "name":"Credo",
-          "description": ".",
-          "options":{
-            "filepath":"ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_mosaic.nc"
-          }
+          "description": "."
         },
         {
-          "name": "Credo_271652_6655179",
-          "description": "",
-          "options": {
-            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6655179_1m.nc"
-          }
+          "name":"Litchfield",
+          "description": "."
         },
         {
-          "name": "Credo_271652_6656179",
-          "description": "",
-          "options": {
-            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6656179_1m.nc"
-          }
+          "name":"Robson",
+          "description": "."
         },
         {
-          "name": "Credo_271652_6657179",
-          "description": "",
-          "options": {
-            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6657179_1m.nc"
-          }
+          "name":"Rushworth",
+          "description": "."
         },
         {
-          "name": "Credo_271652_6658179",
-          "description": "",
-          "options": {
-            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6658179_1m.nc"
-          }
+          "name":"Warra",
+          "description": "."
         },
         {
-          "name": "Credo_271652_6659179",
-          "description": "",
-          "options": {
-            "filepath": "ub8/au/TERN/lidar/Credo/1m/{{variable}}/{{variable}}_Credo_271652_6659179_1m.nc"
-          }
+          "name":"Watts",
+          "description": "."
+        },
+        {
+          "name":"Whroo",
+          "description": "."
+        },
+        {
+          "name":"ZigZag",
+          "description": "."
         }
       ],
       "options": {
         "host": "nci",
+        "filepath":"ub8/au/TERN/lidar/{{name}}/1m/{{variable}}/{{variable}}_{{name}}_mosaic.nc",
         "palette": "rainbow",
         "belowmincolor":"extend",
         "abovemaxcolor":"extend"
