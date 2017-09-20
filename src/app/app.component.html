@@ -1,50 +1,51 @@
 <header class="navbar fixed-top navbar-expand-lg">
+  <span class="justify">
+      <a class="navbar-brand pull-left" href="#" (click)="navbarCollapsed = true">
+          <img src="assets/images/TERN_logo.png" height="48" class="align-top brand-image-nudge">
+        </a>
+      
+        <span class="navbar-brand">Landscape Observatory</span>
+      
+        <a class="navbar-brand pull-right">
+            <img src="assets/images/2x_anu_logo_small_black.png" height="40" class="align-top">
+        </a>
+  </span>
 
-  <a class="navbar-brand" href="#" (click)="navbarCollapsed = true">
-    <img src="assets/images/TERN_logo.png" height="48" class="align-top brand-image-nudge">
-    Landscape Observatory
-  </a>
-
-  <button class="navbar-toggler navbar-toggler-right"
-  type="button"
-  (click)="isNavbarCollapsed = !isNavbarCollapsed"
-  [attr.aria-expanded]="!navbarCollapsed"
-  aria-controls="navbarContent"
-  aria-expanded="false"
-  aria-label="Toggle navigation">
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" [attr.aria-expanded]="!navbarCollapsed"
+    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
 <span class="fa fa-bars"></span>
 </button>
 
+<!--
   <div class="navbar-collapse" [ngbCollapse]="isNavbarCollapsed" id="navbarItems">
-        <theme-navbar [catalog]="catalog"
-                    (layerSelected)="layerSelected($event)"></theme-navbar>
+    <theme-navbar [catalog]="catalog" (layerSelected)="layerSelected($event)"></theme-navbar>
   </div>
+-->
+
 </header>
-<div class="bigone">
-    <div class="container-fluid">
+<div class="container-fluid">
   <div class="row main-row no-gutters">
-    <div class="col-2 sidebar">
-      <ngb-accordion>
-        <ngb-panel title="Catalog">
-            <ng-template ngbPanelContent>
-              Placeholder
-            </ng-template>
-          </ngb-panel>
-        <ngb-panel title="Layers">
-            <ng-template ngbPanelContent>
-              <div>
-                <layer-control #layerControl
-                [(layers)]="layers"
-                (layersChange)="layersChanged($event)"></layer-control>  
-              </div>
-            </ng-template>
-          </ngb-panel>
-        </ngb-accordion>
+    <div class="col-3 sidebar">
+      <ngb-accordion [activeIds]="openPanels">
+
+        <ngb-panel title="Catalog" class="catalog" id="catalog">
+          <ng-template ngbPanelContent>
+            <catalog [catalog]="catalog" (layerSelected)="layerSelected($event)"></catalog>
+          </ng-template>
+        </ngb-panel>
+
+        <ngb-panel title="Layers" id="layers">
+          <ng-template ngbPanelContent>
+            <div>
+              <layer-control #layerControl [(layers)]="layers"></layer-control>
+            </div>
+          </ng-template>
+        </ngb-panel>
+
+      </ngb-accordion>
     </div>
-    <div class="col-10 main-map">
+    <div class="col-9 main-map">
       <layered-map [(layers)]="layers"></layered-map>
     </div>
   </div>
-  </div>
-
 </div>

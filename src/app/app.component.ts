@@ -13,6 +13,10 @@ export class AppComponent {
   
   title = 'app works!';
   catalog:Catalog;
+  openPanels = [
+    'catalog',
+    'layers'
+  ];
 
   constructor(
     private catService:CatalogService,

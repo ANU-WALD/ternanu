@@ -1,4 +1,5 @@
 {
+  "name":"Landscape Observatory",
   "namedHosts": {
     "nci": {
       "url": "http://dapds00.nci.org.au/thredds",
