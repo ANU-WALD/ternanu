@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CatalogService, Catalog } from 'map-wald';
 import { environment } from 'environments/environment';
-import { LayerSelection, LayerAction, LayeredMapComponent, PaletteService } from 'map-wald';
+import { LayerSelection, LayerAction, LayeredMapComponent, PaletteService, MappedLayer } from 'map-wald';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,8 @@ import { LayerSelection, LayerAction, LayeredMapComponent, PaletteService } from
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  layers:Array<MappedLayer> = [];
+  
   title = 'app works!';
   catalog:Catalog;
 

@@ -16,15 +16,35 @@
 </button>
 
   <div class="navbar-collapse" [ngbCollapse]="isNavbarCollapsed" id="navbarItems">
-      <theme-navbar [catalog]="catalog"
+        <theme-navbar [catalog]="catalog"
                     (layerSelected)="layerSelected($event)"></theme-navbar>
   </div>
 </header>
-<div class="container-fluid">
-<div class="row">
-  <div class="main-map">
-    <layered-map></layered-map>
+<div class="bigone">
+    <div class="container-fluid">
+  <div class="row main-row no-gutters">
+    <div class="col-2 sidebar">
+      <ngb-accordion>
+        <ngb-panel title="Catalog">
+            <ng-template ngbPanelContent>
+              Placeholder
+            </ng-template>
+          </ngb-panel>
+        <ngb-panel title="Layers">
+            <ng-template ngbPanelContent>
+              <div>
+                <layer-control #layerControl
+                [(layers)]="layers"
+                (layersChange)="layersChanged($event)"></layer-control>  
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+    </div>
+    <div class="col-10 main-map">
+      <layered-map [(layers)]="layers"></layered-map>
+    </div>
   </div>
-</div>
+  </div>
 
 </div>

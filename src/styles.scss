@@ -73,16 +73,33 @@ $theme-colors: (
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../node_modules/map-wald/map-wald.scss';
 
-.main-map{
-  position:fixed;
+.main-row{
+  width:100%;
+  position: fixed;
+  top:48px;
   left:0px;
-  top:50px; /* $navbar-height */
+  right:0px;
+  bottom:0px;
+}
+
+.main-map{
+  position:relative;
+  left:0px;
+  top:0px; /* $navbar-height */
   width:100%;
   height:auto;
-/*  height:400px;
-  position:relative;
-  top:0px;
-*/
+}
+
+.sidebar{
+  overflow-y: auto;
+  .card-body{
+    padding-left:0;
+    padding-right:0;
+
+    .layers-control{
+      width:100%;
+    }
+  }
 }
 
 .sebm-google-map-container{
@@ -100,11 +117,6 @@ $theme-colors: (
   }
 
   .main-map {
-    position:fixed;
-    left:0px;
-    top:50px; /* $navbar-height */
-/*    bottom:50px;*/
-
     width:100%;
     height:auto;
   }
@@ -126,7 +138,6 @@ $theme-colors: (
     padding-right:0px;
   }
 }
-
 
 .hoverlayer{
 /*    path{
