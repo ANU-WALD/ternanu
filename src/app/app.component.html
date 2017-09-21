@@ -37,7 +37,8 @@
         <ngb-panel title="Layers" id="layers">
           <ng-template ngbPanelContent>
             <div>
-              <layer-control #layerControl [(layers)]="layers"></layer-control>
+              <layer-control #layerControl [(layers)]="layers"
+                             [map]="map"></layer-control>
             </div>
           </ng-template>
         </ngb-panel>
@@ -45,7 +46,7 @@
       </ngb-accordion>
     </div>
     <div class="col-9 main-map">
-      <layered-map [(layers)]="layers"></layered-map>
+      <layered-map #map [(layers)]="layers"></layered-map>
     </div>
   </div>
 </div>

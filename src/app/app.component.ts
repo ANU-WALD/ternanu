@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import { CatalogService, Catalog } from 'map-wald';
 import { environment } from 'environments/environment';
-import { LayerSelection, LayerAction, LayeredMapComponent, PaletteService, MappedLayer } from 'map-wald';
+
+import { LayerSelection, LayerAction, LayeredMapComponent, 
+  PaletteService, MappedLayer, CatalogService, Catalog } from 'map-wald';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,7 @@ export class AppComponent {
   }
 
   @ViewChild(LayeredMapComponent) map:LayeredMapComponent;
-  
+
   layerSelected(selection:LayerSelection){
     this.map.layerAdded(selection);
   }
