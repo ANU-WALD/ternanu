@@ -1,5 +1,5 @@
 {
-  "name":"Landscape Observatory",
+  "name": "Landscape Observatory",
   "namedHosts": {
     "nci": {
       "url": "http://dapds00.nci.org.au/thredds",
@@ -27,7 +27,7 @@
     "belowmincolor": "transparent",
     "abovemaxcolor": "transparent",
     "styles": "boxfill/{{palette}}",
-    "numcolorbands":10
+    "numcolorbands": 10
   },
   "themes": [
     {
@@ -190,7 +190,7 @@
               0,
               1800
             ]
-      }
+          }
         },
         {
           "name": "Runoff",
@@ -243,7 +243,8 @@
               "timestep": "annual",
               "options": {
                 "colorscalerange": [
-                  10000,100000000
+                  10000,
+                  100000000
                 ]
               }
             }
@@ -296,7 +297,7 @@
           "description": "",
           "options": {
             "palette": "anu_wald_darkgreen",
-            "numcolorbands":10,
+            "numcolorbands": 10,
             "colorscalerange": [
               0,
               9
@@ -332,60 +333,60 @@
       "icon": "fa-plane",
       "layers": [
         {
-          "name":"Alice",
-          "lat":-22.284,
-          "lon":133.251
+          "name": "Alice",
+          "lat": -22.284,
+          "lon": 133.251
         },
         {
-          "name":"Credo",
-          "lat":-30.191,
-          "lon":120.654
+          "name": "Credo",
+          "lat": -30.191,
+          "lon": 120.654
         },
         {
-          "name":"Litchfield",
-          "lat":-13.18,
-          "lon":130.789
+          "name": "Litchfield",
+          "lat": -13.18,
+          "lon": 130.789
         },
         {
-          "name":"Robson",
-          "lat":-17.156,
-          "lon":145.635
+          "name": "Robson",
+          "lat": -17.156,
+          "lon": 145.635
         },
         {
-          "name":"Rushworth",
-          "lat":-36.753,
-          "lon":144.966
+          "name": "Rushworth",
+          "lat": -36.753,
+          "lon": 144.966
         },
         {
-          "name":"Warra",
-          "lat":-43.103,
-          "lon":146.657
+          "name": "Warra",
+          "lat": -43.103,
+          "lon": 146.657
         },
         {
-          "name":"Watts",
-          "lat":-37.689,
-          "lon":145.685
+          "name": "Watts",
+          "lat": -37.689,
+          "lon": 145.685
         },
         {
-          "name":"Whroo",
-          "lat":-36.673,
-          "lon":145.029,
-          "zoom":15
+          "name": "Whroo",
+          "lat": -36.673,
+          "lon": 145.029,
+          "zoom": 15
         },
         {
-          "name":"ZigZag",
-          "lat":-37.474,
-          "lon":148.339
+          "name": "ZigZag",
+          "lat": -37.474,
+          "lon": 148.339
         }
       ],
       "options": {
         "host": "nci",
-        "smallExtent":true,
-        "filepath":"ub8/au/TERN/lidar/{{name}}/1m/{{variable}}/{{variable}}_{{name}}_mosaic.nc",
+        "smallExtent": true,
+        "filepath": "ub8/au/TERN/lidar/{{name}}/1m/{{variable}}/{{variable}}_{{name}}_mosaic.nc",
         "palette": "rainbow",
-        "belowmincolor":"extend",
-        "abovemaxcolor":"extend",
-        "titleFormat":"{{name}}:{{variable}}"
+        "belowmincolor": "extend",
+        "abovemaxcolor": "extend",
+        "titleFormat": "{{name}}:{{variable}}"
       },
       "publications": [
         {
