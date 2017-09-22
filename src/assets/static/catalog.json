@@ -402,7 +402,7 @@
           ]
         },
         {
-          "name":"Vegetation Moisture Content",
+          "name": "Vegetation Moisture Content",
           "placeholder": true
         }
       ]
@@ -412,7 +412,10 @@
       "path": "Biodiversity and Habitat",
       "options": {
         "host": "nci",
-        "colorscalerange":[0,100]
+        "colorscalerange": [
+          0,
+          100
+        ]
       },
       "layers": [
         {
@@ -441,19 +444,19 @@
         {
           "timestep": "daily",
           "options": {
-            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc"
-          },
-          "start": "2000-01-01",
-          "end": "2016-12-31"
+            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc",
+            "start": "2000-01-01",
+            "end": "2016-12-31"
+          }
         },
         {
           "timestep": "annual",
           "options": {
             "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc.nc",
-            "layer": "AnnualMeans"
-          },
-          "start": "2000-01-01",
-          "end": "2016-12-31"
+            "layer": "AnnualMeans",
+            "start": "2000-01-01",
+            "end": "2016-12-31"
+          }
         }
       ]
     },
