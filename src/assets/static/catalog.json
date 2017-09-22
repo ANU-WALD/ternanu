@@ -103,7 +103,7 @@
           "name": "Carbon Flux (OzFlux sites)",
           "options": {
             "host": "webhost",
-            "filepath": "assets/static/ozflux_sites.json",
+            "filepath": "assets/static/ozflux.json",
             "vectors": "point"
           }
         },

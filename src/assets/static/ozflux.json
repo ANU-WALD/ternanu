@@ -1,0 +1,627 @@
+{
+  "type": "FeatureCollection", 
+  "features": [
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          131.11775, 
+          -13.07699
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Adelaide River OzFlux tower site", 
+        "briefDesc": "Ecosystem flux data from the Adelaide River site, Northern Territory.\r\n\r\nThe Adelaide River flux station was located approximately 10.5km south east of Bachelor, Northern Territory: 13\u00b004'37.2\u201dS, ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882701
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          131.3828, 
+          -14.1305
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Daly Regrowth OzFlux tower site_old_20131128", 
+        "briefDesc": "Data from the Regrowth site at Daly River, Northern Territory.  Site established in September 2007 and decommissioned in May 2010.", 
+        "funded": false, 
+        "ownerId": 50, 
+        "id": 53
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          145.1878, 
+          -37.4259
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Wallaby Creek OzFlux tower site", 
+        "briefDesc": "Data from Wallaby Creek flux tower, Victoria. \r\n\r\nThe Wallaby Creek flux station is located in Kinglake National Park, Victoria, South Eastern Australia: 37\u00ba 25\u2019 34.4\"S, 145\u00ba 11\u2019 14.1\"E. The area is ... ", 
+        "funded": true, 
+        "ownerId": 304, 
+        "id": 1882706
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          133.249341, 
+          -22.282754
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Alice Springs Mulga OzFlux site", 
+        "briefDesc": "OzFlux data from the Alice Springs Mulga site (AU-ASM).\r\n\r\nNote that the licence in the datafile (CC-BY-4.0) supersedes the data licence shown below on this collection page.", 
+        "funded": true, 
+        "ownerId": 101, 
+        "id": 152
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          152.8721, 
+          -27.3874
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Samford Ecological Research Facility OzFlux tower site", 
+        "briefDesc": "The Samford flux station is situated on an improved (Paspalum dilatum) pasture in the humid subtropical climatic region of coastal south-east Queensland: 27\u00b023\u201917\u201d S, 152\u00b052\u201940\u201d E.  Located only ... ", 
+        "funded": true, 
+        "ownerId": 155, 
+        "id": 200
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          145.575886, 
+          -36.648622
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Riggs Creek OzFlux tower site", 
+        "briefDesc": "Data from the Riggs Creek site, Victoria. Site Established November 2010.\r\n\r\nThe Riggs Creek flux station is located in Goulburn-Broken catchment in North-Eastern Victoria: 36\u00b038.594' S, 145\u00b034.208' ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882722
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          133.35055, 
+          -17.1509
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Sturt Plains OzFlux tower site", 
+        "briefDesc": "Data from the Sturt Plains site, Northern Territory. \r\n\r\nThe Sturt Plains flux station is located approximately 280km north of Tennant Creek, Northern Territory: 17\u00b009\u20192.76\u201dS, 133\u00b021\u20191.14\u201dE.\r\n\r\nThe ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882705
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          145.02621, 
+          -36.67305
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Whroo OzFlux tower site", 
+        "briefDesc": "The Whroo flux station was located approximately 45km south west of Shepparton, Victoria: 36\u00b0 40' 22.98\"S, 145\u00b0 1' 34.37\"E. \r\n\r\nThe flux tower site was classified as box woodland. Elevation of the ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882707
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          148.474216, 
+          -23.85978
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Arcturus Emerald OzFlux tower site", 
+        "briefDesc": "Data for a flux station in Arcturus, in central Queensland\r\n\r\nPlease see the attached metadata report for more information on the instruments and the site.\r\n\r\nThe Arcturus greenhouse gas (GHG) ... ", 
+        "funded": false, 
+        "ownerId": 2021502, 
+        "id": 1882850
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          132.37057, 
+          -15.25878
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Dry River OzFlux tower site", 
+        "briefDesc": "The Dry River flux station is located approximately 89km south of Katherine, Northern Territory: 15\u00b015'31.62\"S, 132\u00b022'14.04\"E.\r\n\r\nThe flux tower site is classified as open forest savanna site. The ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882702
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          148.553309, 
+          -36.216337
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Nimmo High Plains OzFlux Tower Site", 
+        "briefDesc": "Flux data from the Nimmo High Plains site in the Monaro region of NSW (36 12'57.4\"S, 148 33;10.0\"E; 1337m).  \r\n\r\nSite is a seasonally grazed (bovine), sub-alpine grassland system comprised ... ", 
+        "funded": true, 
+        "ownerId": 107, 
+        "id": 601
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          147.168217, 
+          -37.131856
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Dargo High Plains OzFlux Tower Site", 
+        "briefDesc": "Flux data from the Dargo High Plains site in sub-alpine NE Victoria (37 08'00.4\"S, 147 10;15.3\"E; 1648m).  \r\n\r\nSite is a seasonally grazed (bovine), sub-alpine grassland system comprised principally ... ", 
+        "funded": false, 
+        "ownerId": 107, 
+        "id": 602
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          142.81, 
+          -38.525
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Otway OzFlux tower site", 
+        "briefDesc": "The Otway flux station was established in February 2007 and is located on private land at Nirranda South.\r\n\r\nIt is managed by CSIRO Marine and Atmospheric Research  staff as part of the Cooperative ... ", 
+        "funded": false, 
+        "ownerId": 52, 
+        "id": 604
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          132.48, 
+          -14.56
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Red Dirt Melon Farm OzFlux tower site", 
+        "briefDesc": "Red Dirt Melon flux tower site is located on Red Dirt Melon farm in the Venn agricultural district, approximate 25km south east of Katherine, Northern Territory.  It was established in August 2011 ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882721
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          131.15005, 
+          -12.4952
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Howard Springs Understory_old_20131128", 
+        "briefDesc": "Howard Springs understory tower", 
+        "funded": false, 
+        "ownerId": 154, 
+        "id": 701
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          133.639841, 
+          -22.287091
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Ti Tree East OzFlux Site", 
+        "briefDesc": "Data from Ti Tree East OzFlux site, part of the Alice Springs Supersite (TERN ASN)", 
+        "funded": false, 
+        "ownerId": 101, 
+        "id": 704
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          131.307183, 
+          -12.545219
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Fogg Dam OzFlux tower site", 
+        "briefDesc": "The Fogg Dam flux station was located approximately 6km east of Black Jungle, Northern Territory: 12\u00b032'42.79\"S, 131\u00b018'25.86\"E.\r\n\r\nThe site was situated within a wetland that flooded seasonally. ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882709
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          131.1525, 
+          -12.4942
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Howard Springs Understory OzFlux tower site", 
+        "briefDesc": "The Howard Springs understory flux station is located in the Black Jungle Conservation Reserve in the Northern Territory: 12\u00b029.712' S, 131\u00b009.003' E (-12.4952,131.1501) \r\n\r\nThe flux tower site is ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882716
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          146.290241, 
+          -34.987886
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Yanco JAXA OzFlux tower site", 
+        "briefDesc": "The flux tower monitoring system is located within the Yanco region of New South Wales, Australia. Its purpose is to obtain data for validation of GCOM-W1 soil moisture products, which are ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882711
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          140.351526, 
+          -34.00098
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Calperum Chowilla OzFlux tower site", 
+        "briefDesc": "Level three data processed with version 2.9.6e of the python OzFlux GUI", 
+        "funded": true, 
+        "ownerId": 703, 
+        "id": 1882712
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          144.094067, 
+          -37.422402
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Wombat State Forest  OzFlux-tower site", 
+        "briefDesc": "Wombat State Forest LTRS, Victoria, South-Eastern Australia,\r\nUniversity of Melbourne - Stefan Arndt (sarndt@unimelb.edu.au)\r\nOperating since: late January 2010,\r\nLand cover: cool temperate dry ... ", 
+        "funded": true, 
+        "ownerId": 2021351, 
+        "id": 1882713
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          131.318056, 
+          -14.063333
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Daly Pasture OzFlux tower site", 
+        "briefDesc": "The Daly River Pasture flux station is located 62km south west of Pine Creek, Northern Territory: 14\u00b003\u201948\u201dS, 131\u00b019\u201905\u201dE. \r\n\r\nThe flux tower site is identified as tropical pasture, and the ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882714
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          131.3881, 
+          -14.159167
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Daly Uncleared OzFlux tower site", 
+        "briefDesc": "The Daly River Uncleared flux tower site is located in the Douglas River Daly River Esplanade Conservation area, approximately 60 km south west of Pine Creek, Northern Territory: 14\u00b009'33.12\"S, ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1882715
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          145.630138, 
+          -17.117469
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Robson Creek OzFlux tower site", 
+        "briefDesc": "Data from the Robson Creek site, Far North Queensland. \r\nThe Robson Creek flux station is located in the Danbulla National Park, part of the Wet Tropics World Heritage forest estate.  It was ... ", 
+        "funded": true, 
+        "ownerId": 100, 
+        "id": 1882719
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          145.42715, 
+          -16.238189
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Cow Bay OzFlux tower site", 
+        "briefDesc": "Data from the Cow Bay site, Far North Queensland. \r\nThe Cow Bay flux station is located in the Daintree forest at the Daintree Discovery Centre.  It was established in December 2008 and is managed ... ", 
+        "funded": false, 
+        "ownerId": 100, 
+        "id": 1882720
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          140.684052, 
+          -33.867565
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {}
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          140.351526, 
+          -34.098
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {}
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          146.617218, 
+          -43.090353
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {}
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          146.653333, 
+          -43.095833
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Warra OzFlux tower site", 
+        "briefDesc": "Ecosystem flux data from the Warra Flux Tower in the Warra Long-Term Ecological Research (LTER) site in south-western Tasmania:  43\u00b0 5.701' S 146\u00b0 39.271' E. \r\n\r\nThe Warra flux site is situated on a ... ", 
+        "funded": true, 
+        "ownerId": 2021751, 
+        "id": 1883200
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          144.316406, 
+          -27.683528
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {}
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          140.65512, 
+          -34.47035
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Loxton OzFlux tower site", 
+        "briefDesc": "Data from an almond orchard in South Australia's Riverland. Site established in August 2008 and decommissioned in June 2009. The research was supported with funds from the National Action Plan for ... ", 
+        "funded": false, 
+        "ownerId": 2021653, 
+        "id": 1883100
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          145.445251, 
+          -16.132241
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Cape Tribulation OzFlux tower site", 
+        "briefDesc": "Data from the Cape Tribulation site, Far North Queensland. \r\n\r\nThe Cape Tribulation flux station is located in the Daintree forest at the Daintree Rainforest Observatory. It was established in 2001 ... ", 
+        "funded": false, 
+        "ownerId": 100, 
+        "id": 1882718
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          150.723611, 
+          -33.615278
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Cumberland Plain OzFlux Tower Site", 
+        "briefDesc": "Eddy covariance and meteorology data from the Cumberland Plain flux tower and SuperSite, operated by the Hawkesbury Institute for the Environment, Western Sydney University, Richmond NSW. Cumberland ... ", 
+        "funded": true, 
+        "ownerId": 2021853, 
+        "id": 1883300
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          171.928, 
+          -43.593
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Beacon Farm", 
+        "briefDesc": "The Beacon Farm flux site (a paired site) is located on an intensively managed dairy farm on the Mid-Canterbury plains, South Island, New Zealand. The site was established in 2012 and managed by ... ", 
+        "funded": false, 
+        "ownerId": 2022154, 
+        "id": 1883350
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          116.966827, 
+          -32.506102
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Ridgefield", 
+        "briefDesc": "The Wheatbelt supports $2.7b from cropping/grazing and contains biologically significant landscapes that face significant challenges in a changing environment. This project provides an understanding ... ", 
+        "funded": false, 
+        "ownerId": 304, 
+        "id": 1883400
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          130.794546, 
+          -13.179042
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Litchfield OzFlux tower site", 
+        "briefDesc": "A Savanna Super Site (SSS) has been established within Litchfield National Park as part of the Australian Supersite Network (www.tern-supersites.net.au) that is supported by the Terrestrial ... ", 
+        "funded": false, 
+        "ownerId": 2021901, 
+        "id": 1883302
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          120.827637, 
+          -30.315988
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Great Western Woodlands", 
+        "briefDesc": "Flux tower data from the GWW/Credo flux station.", 
+        "funded": true, 
+        "ownerId": 503, 
+        "id": 750
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          145.0294, 
+          -36.6732
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "name": "Whroo OzFlux site", 
+        "briefDesc": "The Whroo flux station was located approximately 45km south west of Shepparton, Victoria: 36\u00b0 40' 22.98\"S, 145\u00b0 1' 34.37\"E. \r\n\r\nThe flux tower site was classified as box woodland. Elevation of the ... ", 
+        "funded": true, 
+        "ownerId": 2021901, 
+        "id": 1883451
+      }
+    }
+  ]
+}
