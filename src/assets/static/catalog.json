@@ -12,6 +12,10 @@
     "qld-geoserver": {
       "software": "geoserver",
       "url": "http://qld.auscover.org.au/geoserver/aus"
+    },
+    "webhost":{
+      "software":"static",
+      "url":""
     }
   },
   "namedIntervals": {
@@ -96,8 +100,12 @@
           }
         },
         {
-          "name": "Carbon Flux (OzFlux)",
-          "placeholder": true
+          "name": "Carbon Flux (OzFlux sites)",
+          "options": {
+            "host": "webhost",
+            "filepath": "assets/static/ozflux_sites.json",
+            "vectors": "point"
+          }
         },
         {
           "name": "Fire Carbon Emissions",

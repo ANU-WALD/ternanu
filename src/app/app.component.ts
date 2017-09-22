@@ -20,9 +20,9 @@ export class AppComponent {
   ];
 
   constructor(
-    private catService:CatalogService,
+    private catalogService:CatalogService,
     paletteService:PaletteService){
-    catService.loadFrom(environment.catalog).subscribe(c=>this.catalog=c);
+    catalogService.loadFrom(environment.catalog).subscribe(c=>this.catalog=c);
     paletteService.source = environment.palettes
   }
 
