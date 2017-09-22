@@ -96,10 +96,63 @@
           }
         },
         {
+          "name": "Carbon Flux (OzFlux)",
+          "placeholder": true
+        },
+        {
+          "name": "Fire Carbon Emissions",
+          "options": {
+            "palette": "anu_wald_gisheat_inv.v2"
+          },
+          "publications": [
+            {
+              "timestep": "daily",
+              "options": {
+                "filepath": "/ub8/au/FireEmissions/GFASv12.BurntCarbon.{{year}}.nc",
+                "colorscalerange": [
+                  0,
+                  100
+                ],
+                "timeFormat": "{{year}}-{{month}}-{{day}}",
+                "variable": "BurntCarbon",
+                "start": "2003-01-01",
+                "end": "2015-12-31"
+              }
+            },
+            {
+              "timestep": "annual",
+              "options": {
+                "filepath": "ub8/au/FireEmissions/GFASv12.BurntCarbon.AnnualSums.nc",
+                "colorscalerange": [
+                  0,
+                  1500
+                ],
+                "variable": "AnnualSums",
+                "start": "2000-01-01",
+                "end": "2015-12-31"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Biomass",
+      "icon": "",
+      "path": "Biomass and Carbon",
+      "publications": [
+        {
+          "label": "static"
+        }
+      ],
+      "options": {
+        "host": "qld-geoserver"
+      },
+      "layers": [
+        {
           "name": "Site List",
           "description": "",
           "options": {
-            "host": "qld-geoserver",
             "layer": "aus:biolib_sitelist_auscover"
           }
         },
@@ -107,8 +160,23 @@
           "name": "Tree List",
           "description": "",
           "options": {
-            "host": "qld-geoserver",
             "layer": "aus:biolib_treelist_auscover"
+          }
+        },
+        {
+          "name": "Biomass",
+          "placeholder": true,
+          "description": "",
+          "options": {
+            "layer": "aus:biolib_biomass_auscover"
+          }
+        },
+        {
+          "name": "Tree height",
+          "placeholder": true,
+          "description": "",
+          "options": {
+            "layer": "aus:biolib_treeheight_auscover"
           }
         }
       ]
@@ -180,7 +248,7 @@
           ]
         },
         {
-          "name": "Soil moisture",
+          "name": "Soil moisture (OzWALD)",
           "description": "",
           "variable": "Ssoil",
           "options": {
@@ -191,6 +259,10 @@
               1800
             ]
           }
+        },
+        {
+          "name": "Soil moisture (CosmOz)",
+          "placeholder": true
         },
         {
           "name": "Runoff",
@@ -293,8 +365,11 @@
       "publications": [],
       "layers": [
         {
+          "name": "Vegetation Composition (AusPlots)",
+          "placeholder": true
+        },
+        {
           "name": "Vegetation leaf area",
-          "description": "",
           "options": {
             "palette": "anu_wald_darkgreen",
             "numcolorbands": 10,
@@ -325,12 +400,67 @@
               "end": "2016-12-31"
             }
           ]
+        },
+        {
+          "name":"Vegetation Moisture Content",
+          "placeholder": true
         }
       ]
     },
     {
-      "name": "Lidar",
+      "name": "Fraction Cover",
+      "path": "Biodiversity and Habitat",
+      "options": {
+        "host": "nci",
+        "colorscalerange":[0,100]
+      },
+      "layers": [
+        {
+          "name": "Bare Soil",
+          "options": {
+            "variable": "BS",
+            "palette": "anu_wald_gisheat_inv.v2"
+          }
+        },
+        {
+          "name": "Non-photosynthetic vegetation",
+          "options": {
+            "variable": "NPV",
+            "palette": "anu_wald_darkgreen"
+          }
+        },
+        {
+          "name": "Photosynthetic vegetation",
+          "options": {
+            "variable": "PV",
+            "palette": "anu_wald_darkgreen"
+          }
+        }
+      ],
+      "publications": [
+        {
+          "timestep": "daily",
+          "options": {
+            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc"
+          },
+          "start": "2000-01-01",
+          "end": "2016-12-31"
+        },
+        {
+          "timestep": "annual",
+          "options": {
+            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc.nc",
+            "layer": "AnnualMeans"
+          },
+          "start": "2000-01-01",
+          "end": "2016-12-31"
+        }
+      ]
+    },
+    {
+      "name": "Lidar products",
       "icon": "fa-plane",
+      "path": "Biodiversity and Habitat",
       "layers": [
         {
           "name": "Alice",
