@@ -474,9 +474,19 @@
       "path": "Biodiversity and Habitat",
       "layers": [
         {
+          "name": "ACT",
+          "lat": -35.324,
+          "lon": 149.09
+        },
+        {
           "name": "Alice",
           "lat": -22.284,
           "lon": 133.251
+        },
+        {
+          "name": "Chowilla",
+          "lat": -34.007,
+          "lon": 140.669
         },
         {
           "name": "Credo",
@@ -497,6 +507,11 @@
           "name": "Rushworth",
           "lat": -36.753,
           "lon": 144.966
+        },
+        {
+          "name": "Tumbarumba",
+          "lat": -35.657,
+          "lon": 148.154
         },
         {
           "name": "Warra",
