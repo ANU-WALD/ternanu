@@ -5,8 +5,8 @@
         </a>
       
         <span class="navbar-brand">Landscape Observatory</span>
-      
-        <a class="navbar-brand pull-right">
+
+  <a class="navbar-brand pull-right">
             <img src="assets/images/2x_anu_logo_small_black.png" height="40" class="align-top">
         </a>
   </span>
@@ -16,7 +16,7 @@
 <span class="fa fa-bars"></span>
 </button>
 
-<!--
+  <!--
   <div class="navbar-collapse" [ngbCollapse]="isNavbarCollapsed" id="navbarItems">
     <theme-navbar [catalog]="catalog" (layerSelected)="layerSelected($event)"></theme-navbar>
   </div>
@@ -37,8 +37,7 @@
         <ngb-panel title="Layers shown" id="layers">
           <ng-template ngbPanelContent>
             <div>
-              <layer-control #layerControl [(layers)]="layers"
-                             [map]="map"></layer-control>
+              <layer-control #layerControl [(layers)]="layers" [map]="map"></layer-control>
             </div>
           </ng-template>
         </ngb-panel>
@@ -46,7 +45,21 @@
       </ngb-accordion>
     </div>
     <div class="col-9 main-map">
-      <layered-map #map [(layers)]="layers"></layered-map>
+      <layered-map #map
+                   [(layers)]="layers"
+                   (featureSelected)="featureSelected($event)">
+        <div *ngIf="showSelection" class="map-control right-bottom">
+          <collapsible-map-control [heading]="'Info'">
+            <ng-container [ngSwitch]="detailsMode">
+              <feature-table *ngSwitchCase="'feature'"
+                             [feature]="selectedFeature">
+
+              </feature-table>
+            </ng-container>
+          </collapsible-map-control>
+        </div>
+
+      </layered-map>
     </div>
   </div>
 </div>

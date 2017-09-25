@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { environment } from 'environments/environment';
+import { Feature, Point, GeometryObject } from 'geojson';
 
 import { LayerSelection, LayerAction, LayeredMapComponent, 
   PaletteService, MappedLayer, CatalogService, Catalog } from 'map-wald';
@@ -19,6 +20,10 @@ export class AppComponent {
     'layers'
   ];
 
+  showSelection: boolean = false;
+  detailsMode: ('feature'|'chart');
+  selectedFeature: Feature<GeometryObject>;
+
   constructor(
     private catalogService:CatalogService,
     paletteService:PaletteService){
@@ -30,5 +35,11 @@ export class AppComponent {
 
   layerSelected(selection:LayerSelection){
     this.map.layerAdded(selection);
+  }
+
+  featureSelected(f:Feature<GeometryObject>){
+    this.detailsMode = 'feature';
+    this.showSelection = true;
+    this.selectedFeature = f;
   }
 }
