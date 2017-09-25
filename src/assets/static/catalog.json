@@ -476,7 +476,11 @@
         {
           "name": "ACT",
           "lat": -35.324,
-          "lon": 149.09
+          "lon": 149.09,
+          "zoom": 9,
+          "options": {
+            "resolution":"5m"
+          }
         },
         {
           "name": "Alice",
@@ -486,7 +490,11 @@
         {
           "name": "Chowilla",
           "lat": -34.007,
-          "lon": 140.669
+          "lon": 140.669,
+          "zoom": 11,
+          "options": {
+            "resolution":"5m"
+          }
         },
         {
           "name": "Credo",
@@ -511,7 +519,10 @@
         {
           "name": "Tumbarumba",
           "lat": -35.657,
-          "lon": 148.154
+          "lon": 148.154,
+          "options": {
+            "resolution":"5m"
+          }
         },
         {
           "name": "Warra",
@@ -538,10 +549,11 @@
       "options": {
         "host": "nci",
         "smallExtent": true,
-        "filepath": "ub8/au/TERN/lidar/{{name}}/1m/{{variable}}/{{variable}}_{{name}}_mosaic.nc",
+        "filepath": "ub8/au/TERN/lidar/{{name}}/{{resolution}}/{{variable}}/{{variable}}_{{name}}_mosaic.nc",
         "palette": "rainbow",
         "belowmincolor": "extend",
         "abovemaxcolor": "extend",
+        "resolution":"1m",
         "titleFormat": "{{name}}:{{variable}}"
       },
       "publications": [
