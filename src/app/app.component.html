@@ -47,6 +47,7 @@
     <div class="col-9 main-map">
       <layered-map #map
                    [(layers)]="layers"
+                   (layersChange)="layersChanged()"
                    (featureSelected)="featureSelected($event)"
                    (pointSelected)="pointSelected($event)">
         <div *ngIf="showSelection" class="map-control right-bottom">

@@ -23,6 +23,7 @@ export class AppComponent {
     'layers'
   ];
 
+  currentPoint:LatLng;
   showSelection: boolean = false;
   detailsMode: ('feature'|'chart');
   selectedFeature: Feature<GeometryObject>;
@@ -38,6 +39,12 @@ export class AppComponent {
 
   @ViewChild(LayeredMapComponent) map:LayeredMapComponent;
 
+  layersChanged(){
+    if(this.currentPoint){
+      this.buildChart();
+    }
+  }
+
   layerSelected(selection:LayerSelection){
     this.map.layerAdded(selection);
   }
@@ -46,12 +53,19 @@ export class AppComponent {
     this.detailsMode = 'feature';
     this.showSelection = true;
     this.selectedFeature = f;
+    this.currentPoint=null;
+    this.map.markers = [];
   }
 
   pointSelected(p:LatLng){
+    this.currentPoint=p;
+    this.buildChart();
+  }
+
+  buildChart(){
     var markers:Array<SimpleMarker> = [
       {
-        loc:p,
+        loc:this.currentPoint,
         value:'here',
         open:false
       }
@@ -63,7 +77,7 @@ export class AppComponent {
       return;
     }
 
-    this.timeSeriesService.getTimeseries(tsLayer,p).subscribe(res=>{
+    this.timeSeriesService.getTimeseries(tsLayer,this.currentPoint).subscribe(res=>{
       this.timeSeries = [res];
       this.detailsMode = 'chart';
       this.showSelection=true;
