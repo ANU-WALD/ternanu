@@ -480,7 +480,20 @@
           "zoom": 9,
           "options": {
             "resolution":"5m"
-          }
+          },
+          "publications": [
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "palette": "anu_wald_gisheat_inv.v2",
+                "colorscalerange": [
+                  430,
+                  1900
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Alice",
@@ -550,7 +563,7 @@
         "host": "nci",
         "smallExtent": true,
         "filepath": "ub8/au/TERN/lidar/{{name}}/{{resolution}}/{{variable}}/{{variable}}_{{name}}_mosaic.nc",
-        "palette": "rainbow",
+        "palette": "anu_wald_darkgreen",
         "belowmincolor": "extend",
         "abovemaxcolor": "extend",
         "resolution":"1m",
@@ -563,7 +576,7 @@
             "variable": "CBH",
             "colorscalerange": [
               0,
-              100
+              30
             ]
           }
         },
@@ -573,7 +586,7 @@
             "variable": "CLI",
             "colorscalerange": [
               0,
-              20
+              3
             ]
           }
         },
@@ -583,7 +596,7 @@
             "variable": "CTH",
             "colorscalerange": [
               0,
-              100
+              30
             ]
           }
         },
@@ -591,9 +604,10 @@
           "label": "DEM",
           "options": {
             "variable": "DEM",
+            "palette": "anu_wald_gisheat_inv.v2",
             "colorscalerange": [
-              0,
-              1e4
+              430,
+              470
             ]
           }
         },
@@ -683,7 +697,7 @@
             "variable": "PPM",
             "colorscalerange": [
               0,
-              1e5
+              100
             ]
           }
         },
@@ -703,7 +717,7 @@
             "variable": "VH",
             "colorscalerange": [
               0,
-              100
+              30
             ]
           }
         }
