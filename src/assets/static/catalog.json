@@ -47,6 +47,27 @@
       ],
       "layers": [
         {
+          "name": "Tree cover",
+          "description": "Percent of area classified as forest at 25 metre resolution mapping using Landsat imagery following the NCAS classification.",
+          "options": {
+            "filepath": "ub8/au/treecover/250m/ANUWALD.TreeCover.AllYears.250m.nc",
+            "variable": "AllYears",
+            "palette": "anu_wald_darkgreen",
+            "colorscalerange": [
+              0,
+              100
+            ]
+          }
+        },
+        {
+          "name": "Carbon Flux (OzFlux sites)",
+          "options": {
+            "host": "webhost",
+            "filepath": "assets/static/ozflux.json",
+            "vectors": "point"
+          }
+        },
+        {
           "name": "Vegetation Carbon Uptake",
           "description": "",
           "publications": [
@@ -84,27 +105,6 @@
             "numcolorbands": 9,
             "belowmincolor": "extend",
             "abovemaxcolor": "extend"
-          }
-        },
-        {
-          "name": "Tree cover",
-          "description": "Percent of area classified as forest at 25 metre resolution mapping using Landsat imagery following the NCAS classification.",
-          "options": {
-            "filepath": "ub8/au/treecover/250m/ANUWALD.TreeCover.AllYears.250m.nc",
-            "variable": "AllYears",
-            "palette": "anu_wald_darkgreen",
-            "colorscalerange": [
-              0,
-              100
-            ]
-          }
-        },
-        {
-          "name": "Carbon Flux (OzFlux sites)",
-          "options": {
-            "host": "webhost",
-            "filepath": "assets/static/ozflux.json",
-            "vectors": "point"
           }
         },
         {
@@ -158,20 +158,6 @@
       },
       "layers": [
         {
-          "name": "Site List",
-          "description": "",
-          "options": {
-            "layer": "aus:biolib_sitelist_auscover"
-          }
-        },
-        {
-          "name": "Tree List",
-          "description": "",
-          "options": {
-            "layer": "aus:biolib_treelist_auscover"
-          }
-        },
-        {
           "name": "Biomass",
           "placeholder": true,
           "description": "",
@@ -185,6 +171,20 @@
           "description": "",
           "options": {
             "layer": "aus:biolib_treeheight_auscover"
+          }
+        },
+        {
+          "name": "Inventory Sites",
+          "description": "",
+          "options": {
+            "layer": "aus:biolib_sitelist_auscover"
+          }
+        },
+        {
+          "name": "Inventory Trees",
+          "description": "",
+          "options": {
+            "layer": "aus:biolib_treelist_auscover"
           }
         }
       ]
@@ -373,11 +373,7 @@
       "publications": [],
       "layers": [
         {
-          "name": "Vegetation Composition (AusPlots)",
-          "placeholder": true
-        },
-        {
-          "name": "Vegetation leaf area",
+          "name": "Leaf Area",
           "options": {
             "palette": "anu_wald_darkgreen",
             "numcolorbands": 10,
@@ -410,14 +406,18 @@
           ]
         },
         {
-          "name": "Vegetation Moisture Content",
+          "name": "Leaf Moisture Content",
+          "placeholder": true
+        },
+        {
+          "name": "Vegetation Composition (AusPlots)",
           "placeholder": true
         }
       ]
     },
     {
       "name": "Fraction Cover",
-      "path": "Biodiversity and Habitat",
+      "path": "Biodiversity and Habitat@0",
       "options": {
         "host": "nci",
         "colorscalerange": [

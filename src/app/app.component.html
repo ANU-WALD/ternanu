@@ -50,8 +50,16 @@
                    (layersChange)="layersChanged()"
                    (featureSelected)="featureSelected($event)"
                    (pointSelected)="pointSelected($event)">
+        <button-bar class="map-control left-top">
+          <zoom-in></zoom-in>
+          <zoom-out></zoom-out>
+          <zoom-full></zoom-full>
+          <zoom-layer></zoom-layer>
+          <location-search></location-search>
+          <share-view></share-view>
+        </button-bar>
         <div *ngIf="showSelection" class="map-control right-bottom">
-          <collapsible-map-control [heading]="'Info'">
+          <collapsible-map-control [heading]="'Site data'">
             <ng-container [ngSwitch]="detailsMode">
               <feature-table *ngSwitchCase="'feature'"
                              [feature]="selectedFeature">
