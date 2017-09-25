@@ -3,7 +3,10 @@ import { environment } from 'environments/environment';
 import { Feature, Point, GeometryObject } from 'geojson';
 
 import { LayerSelection, LayerAction, LayeredMapComponent, 
-  PaletteService, MappedLayer, CatalogService, Catalog } from 'map-wald';
+  PaletteService, MappedLayer, CatalogService, Catalog,
+  SimpleMarker, TimeseriesService, TimeSeries
+} from 'map-wald';
+import { LatLng } from '@agm/core';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +26,12 @@ export class AppComponent {
   showSelection: boolean = false;
   detailsMode: ('feature'|'chart');
   selectedFeature: Feature<GeometryObject>;
-
+  timeSeries: [TimeSeries];
+  
   constructor(
     private catalogService:CatalogService,
-    paletteService:PaletteService){
+    paletteService:PaletteService,
+    private timeSeriesService:TimeseriesService){
     catalogService.loadFrom(environment.catalog).subscribe(c=>this.catalog=c);
     paletteService.source = environment.palettes
   }
@@ -42,4 +47,35 @@ export class AppComponent {
     this.showSelection = true;
     this.selectedFeature = f;
   }
+
+  pointSelected(p:LatLng){
+    var markers:Array<SimpleMarker> = [
+      {
+        loc:p,
+        value:'here',
+        open:false
+      }
+    ];
+    this.map.markers = markers;
+    console.log(this.map.layers);
+    var tsLayer = this.findTimeSeriesLayer();
+    if(!tsLayer){
+      return;
+    }
+
+    this.timeSeriesService.getTimeseries(tsLayer,p).subscribe(res=>{
+      this.timeSeries = [res];
+      this.detailsMode = 'chart';
+      this.showSelection=true;
+    });
+  }
+
+    private findTimeSeriesLayer() {
+        return this.map.layers.find(ml => {
+        if(ml.flattenedSettings.host.software !== 'tds') {
+        return false;
+    }
+        return true;
+    });
+    }
 }
