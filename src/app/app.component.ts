@@ -67,7 +67,8 @@ export class AppComponent {
       {
         loc:this.currentPoint,
         value:'here',
-        open:false
+        open:false,
+        iconUrl:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|616a34'
       }
     ];
     this.map.markers = markers;
