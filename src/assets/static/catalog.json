@@ -13,9 +13,9 @@
       "software": "geoserver",
       "url": "http://qld.auscover.org.au/geoserver/aus"
     },
-    "webhost":{
-      "software":"static",
-      "url":""
+    "webhost": {
+      "software": "static",
+      "url": ""
     }
   },
   "namedIntervals": {
@@ -469,6 +469,430 @@
       ]
     },
     {
+      "name": "Hyperspectral products",
+      "icon": "fa-plane",
+      "layers": [
+        {
+          "lat": -35.2736,
+          "options": {
+            "resolution": "3.1m"
+          },
+          "lon": 149.0975,
+          "name": "BlackMountain",
+          "zoom": 11
+        },
+        {
+          "lat": -35.2951,
+          "options": {
+            "resolution": "3.2m"
+          },
+          "lon": 149.1142,
+          "name": "BurleyGriffin",
+          "zoom": 11
+        },
+        {
+          "lat": -27.6333,
+          "options": {
+            "resolution": "1.5m"
+          },
+          "lon": 153.0833,
+          "name": "Karawatha",
+          "zoom": 11
+        },
+        {
+          "lat": -13.2935,
+          "options": {
+            "resolution": "1.5m"
+          },
+          "lon": 130.8464,
+          "name": "Litchfield",
+          "zoom": 11
+        },
+        {
+          "lat": -35.1663,
+          "options": {
+            "resolution": "3.2m"
+          },
+          "lon": 149.1645,
+          "name": "MulligansFlat",
+          "zoom": 11
+        },
+        {
+          "lat": -17.1,
+          "options": {
+            "resolution": "1.5m"
+          },
+          "lon": 145.62,
+          "name": "Robson",
+          "zoom": 11
+        },
+        {
+          "lat": -27.38,
+          "options": {
+            "resolution": "1.5m"
+          },
+          "lon": 152.87,
+          "name": "Samford",
+          "zoom": 11
+        },
+        {
+          "lat": -27.415,
+          "options": {
+            "resolution": "1.5m"
+          },
+          "lon": 153.17,
+          "name": "Wynnum",
+          "zoom": 11
+        }
+      ],
+      "options": {
+        "host": "nci",
+        "smallExtent": true,
+        "filepath": "ub8/au/TERN/hyperspectral/{{name}}/{{resolution}}/{{variable}}_{{name}}_{{resolution}}.nc",
+        "palette": "anu_wald_darkgreen",
+        "belowmincolor": "extend",
+        "abovemaxcolor": "extend",
+        "resolution": "1m",
+        "colorscalerange": [
+          0,
+          100
+        ],
+        "titleFormat": "{{name}}:{{variable}}"
+      },
+      "publications": [
+        {
+          "options": {
+            "variable": "CAI",
+            "colorscalerange": [
+              -0.19785499572753906,
+              0.10401000082492828
+            ]
+          },
+          "label": "CAI"
+        },
+        {
+          "options": {
+            "variable": "EVI",
+            "colorscalerange": [
+              -0.06270775198936462,
+              0.20068983733654022
+            ]
+          },
+          "label": "EVI"
+        },
+        {
+          "options": {
+            "variable": "FPAR",
+            "colorscalerange": [
+              0.0,
+              0.949999988079071
+            ]
+          },
+          "label": "FPAR"
+        },
+        {
+          "options": {
+            "variable": "GVMI",
+            "colorscalerange": [
+              -0.20689935982227325,
+              0.28421878814697266
+            ]
+          },
+          "label": "GVMI"
+        },
+        {
+          "options": {
+            "variable": "LandsatOLI-Blue",
+            "colorscalerange": [
+              -0.0011767612304538488,
+              0.10573004931211472
+            ]
+          },
+          "label": "LandsatOLI-Blue"
+        },
+        {
+          "options": {
+            "variable": "LandsatOLI-Cirrus",
+            "colorscalerange": [
+              -0.13332413136959076,
+              0.1349119246006012
+            ]
+          },
+          "label": "LandsatOLI-Cirrus"
+        },
+        {
+          "options": {
+            "variable": "LandsatOLI-NIR",
+            "colorscalerange": [
+              0.0004674078954849392,
+              0.13506464660167694
+            ]
+          },
+          "label": "LandsatOLI-NIR"
+        },
+        {
+          "options": {
+            "variable": "LandsatOLI-Pan",
+            "colorscalerange": [
+              -0.0006214611348696053,
+              0.10906431823968887
+            ]
+          },
+          "label": "LandsatOLI-Pan"
+        },
+        {
+          "options": {
+            "variable": "LandsatOLI-Red",
+            "colorscalerange": [
+              -0.00010066769027616829,
+              0.11821094900369644
+            ]
+          },
+          "label": "LandsatOLI-Red"
+        },
+        {
+          "options": {
+            "variable": "LandsatOLI-SWIR1",
+            "colorscalerange": [
+              0.0002785207761917263,
+              0.11545536667108536
+            ]
+          },
+          "label": "LandsatOLI-SWIR1"
+        },
+        {
+          "options": {
+            "variable": "LandsatOLI-SWIR2",
+            "colorscalerange": [
+              0.00014820045907981694,
+              0.19595512747764587
+            ]
+          },
+          "label": "LandsatOLI-SWIR2"
+        },
+        {
+          "options": {
+            "variable": "MODIS-B01Red",
+            "colorscalerange": [
+              -0.00015303496911656111,
+              0.11628517508506775
+            ]
+          },
+          "label": "MODIS-B01Red"
+        },
+        {
+          "options": {
+            "variable": "MODIS-B02NIR",
+            "colorscalerange": [
+              0.0,
+              0.13473454117774963
+            ]
+          },
+          "label": "MODIS-B02NIR"
+        },
+        {
+          "options": {
+            "variable": "MODIS-B03Blue",
+            "colorscalerange": [
+              -0.0016199999954551458,
+              0.10170000046491623
+            ]
+          },
+          "label": "MODIS-B03Blue"
+        },
+        {
+          "options": {
+            "variable": "MODIS-B04Green",
+            "colorscalerange": [
+              -0.001060575945302844,
+              0.09980497509241104
+            ]
+          },
+          "label": "MODIS-B04Green"
+        },
+        {
+          "options": {
+            "variable": "MODIS-B05SWIR1",
+            "colorscalerange": [
+              0.0,
+              0.1798548847436905
+            ]
+          },
+          "label": "MODIS-B05SWIR1"
+        },
+        {
+          "options": {
+            "variable": "MODIS-B06SWIR2",
+            "colorscalerange": [
+              0.0,
+              0.11913397908210754
+            ]
+          },
+          "label": "MODIS-B06SWIR2"
+        },
+        {
+          "options": {
+            "variable": "MODIS-B07SWIR3",
+            "colorscalerange": [
+              0.0,
+              0.16019530594348907
+            ]
+          },
+          "label": "MODIS-B07SWIR3"
+        },
+        {
+          "options": {
+            "variable": "MTCI",
+            "colorscalerange": [
+              -0.3195876181125641,
+              18.14285659790039
+            ]
+          },
+          "label": "MTCI"
+        },
+        {
+          "options": {
+            "variable": "NDLI",
+            "colorscalerange": [
+              -0.1179928258061409,
+              0.09058995544910431
+            ]
+          },
+          "label": "NDLI"
+        },
+        {
+          "options": {
+            "variable": "NDNI",
+            "colorscalerange": [
+              -0.17207051813602448,
+              0.10461974143981934
+            ]
+          },
+          "label": "NDNI"
+        },
+        {
+          "options": {
+            "variable": "NDVI-MODIS",
+            "colorscalerange": [
+              -0.5925799012184143,
+              1.1209007501602173
+            ]
+          },
+          "label": "NDVI-MODIS"
+        },
+        {
+          "options": {
+            "variable": "NDVI-OLI",
+            "colorscalerange": [
+              -0.6044632196426392,
+              1.072544813156128
+            ]
+          },
+          "label": "NDVI-OLI"
+        },
+        {
+          "options": {
+            "variable": "NDVI",
+            "colorscalerange": [
+              -0.6359649300575256,
+              1.1137440204620361
+            ]
+          },
+          "label": "NDVI"
+        },
+        {
+          "options": {
+            "variable": "NDWI",
+            "colorscalerange": [
+              -0.6773861646652222,
+              0.6452264189720154
+            ]
+          },
+          "label": "NDWI"
+        },
+        {
+          "options": {
+            "variable": "OWL",
+            "colorscalerange": [
+              4.132078235130621e-09,
+              0.9943080544471741
+            ]
+          },
+          "label": "OWL"
+        },
+        {
+          "options": {
+            "variable": "PI2",
+            "colorscalerange": [
+              0.023225806653499603,
+              2.602409601211548
+            ]
+          },
+          "label": "PI2"
+        },
+        {
+          "options": {
+            "variable": "PRI",
+            "colorscalerange": [
+              -100, 
+              100
+            ]
+          },
+          "label": "PRI"
+        },
+        {
+          "options": {
+            "variable": "RG",
+            "colorscalerange": [
+              -832.0,
+              1105.0
+            ]
+          },
+          "label": "RG"
+        },
+        {
+          "options": {
+            "variable": "SGR",
+            "colorscalerange": [
+              -0.0009324999991804361,
+              0.10472749918699265
+            ]
+          },
+          "label": "SGR"
+        },
+        {
+          "options": {
+            "variable": "SR",
+            "colorscalerange": [
+              -526.5,
+              238.5
+            ]
+          },
+          "label": "SR"
+        },
+        {
+          "options": {
+            "variable": "WBI",
+            "colorscalerange": [
+              0.016393441706895828,
+              2.7480313777923584
+            ]
+          },
+          "label": "WBI"
+        },
+        {
+          "options": {
+            "variable": "mNDVI",
+            "colorscalerange": [
+              -0.4509090781211853,
+              1.0405405759811401
+            ]
+          },
+          "label": "mNDVI"
+        }
+      ]
+    },
+    {
       "name": "Lidar products",
       "icon": "fa-plane",
       "path": "Biodiversity and Habitat",
@@ -479,7 +903,7 @@
           "lon": 149.09,
           "zoom": 9,
           "options": {
-            "resolution":"5m"
+            "resolution": "5m"
           },
           "publications": [
             {
@@ -506,7 +930,7 @@
           "lon": 140.669,
           "zoom": 11,
           "options": {
-            "resolution":"5m"
+            "resolution": "5m"
           }
         },
         {
@@ -534,7 +958,7 @@
           "lat": -35.657,
           "lon": 148.154,
           "options": {
-            "resolution":"5m"
+            "resolution": "5m"
           }
         },
         {
@@ -566,7 +990,7 @@
         "palette": "anu_wald_darkgreen",
         "belowmincolor": "extend",
         "abovemaxcolor": "extend",
-        "resolution":"1m",
+        "resolution": "1m",
         "titleFormat": "{{name}}:{{variable}}"
       },
       "publications": [
