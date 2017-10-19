@@ -500,11 +500,11 @@
           "zoom": 11
         },
         {
-          "lat": -13.2935,
+          "lat": -82.2,
           "options": {
             "resolution": "1.5m"
           },
-          "lon": 130.8464,
+          "lon": 141.9,
           "name": "Litchfield",
           "zoom": 11
         },
