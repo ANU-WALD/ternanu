@@ -4,7 +4,7 @@ import { Feature, Point, GeometryObject } from 'geojson';
 
 import { LayerSelection, LayerAction, LayeredMapComponent, 
   PaletteService, MappedLayer, CatalogService, Catalog,
-  SimpleMarker, TimeseriesService, TimeSeries
+  SimpleMarker, TimeseriesService, TimeSeries, Bounds
 } from 'map-wald';
 import { LatLng } from '@agm/core';
 
@@ -28,7 +28,13 @@ export class AppComponent {
   detailsMode: ('feature'|'chart');
   selectedFeature: Feature<GeometryObject>;
   timeSeries: [TimeSeries];
-  
+  fullExtent:Bounds = {
+    east:160,
+    north:-10,
+    south:-45,
+    west:110
+  };
+
   constructor(
     private catalogService:CatalogService,
     paletteService:PaletteService,

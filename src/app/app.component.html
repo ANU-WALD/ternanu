@@ -51,10 +51,10 @@
                    (featureSelected)="featureSelected($event)"
                    (pointSelected)="pointSelected($event)">
         <button-bar class="map-control left-top">
-          <zoom-in></zoom-in>
-          <zoom-out></zoom-out>
-          <zoom-full></zoom-full>
-          <zoom-layer></zoom-layer>
+          <zoom-in [map]="map" [maxZoom]="10"></zoom-in>
+          <zoom-out [map]="map" [minZoom]="3"></zoom-out>
+          <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
+          <zoom-layer [map]="map"></zoom-layer>
           <location-search></location-search>
           <share-view></share-view>
         </button-bar>
