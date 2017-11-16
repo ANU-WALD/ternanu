@@ -471,6 +471,7 @@
     {
       "name": "Hyperspectral products",
       "icon": "fa-plane",
+      "path": "Biodiversity and Habitat",
       "layers": [
         {
           "lat": -35.2736,
