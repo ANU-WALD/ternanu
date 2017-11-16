@@ -368,6 +368,26 @@
       }
     },
     {
+      "name": "Soils and Landscape",
+      "icon": "fa-globe",
+      "publications" : [],
+      "layers": [
+        {
+          "name": "Placeholder",
+          "description": "Just a placeholder layer",
+          "options": {
+            "filepath": "",
+            "variable": "",
+            "palette": "anu_wald_darkgreen",
+            "colorscalerange": [
+              0,
+              100
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "Biodiversity and Habitat",
       "icon": "fa-cloud",
       "publications": [],
