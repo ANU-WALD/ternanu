@@ -54,7 +54,7 @@
           <zoom-in [map]="map" [maxZoom]="10"></zoom-in>
           <zoom-out [map]="map" [minZoom]="3"></zoom-out>
           <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
-          <zoom-layer [map]="map"></zoom-layer>
+          <zoom-layer [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
           <location-search></location-search>
           <share-view></share-view>
         </button-bar>

@@ -15,6 +15,7 @@ import { LatLng } from '@agm/core';
 })
 export class AppComponent {
   layers:Array<MappedLayer> = [];
+  topLayer:MappedLayer;
   
   title = 'app works!';
   catalog:Catalog;
@@ -49,6 +50,7 @@ export class AppComponent {
     if(this.currentPoint){
       this.buildChart();
     }
+    this.topLayer = this.layers[0];
   }
 
   layerSelected(selection:LayerSelection){
