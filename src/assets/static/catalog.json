@@ -1,5 +1,11 @@
 {
   "name": "Landscape Observatory",
+  "extent":{
+    "east":160,
+    "north":-10,
+    "south":-45,
+    "west":110
+  },
   "namedHosts": {
     "nci": {
       "url": "http://dapds00.nci.org.au/thredds",
