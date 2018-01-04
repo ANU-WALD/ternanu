@@ -86,7 +86,7 @@ export class AppComponent {
       return;
     }
 
-    this.timeSeriesService.getTimeseries(tsLayer,this.currentPoint).subscribe(res=>{
+    this.timeSeriesService.getTimeseriesForLayer(tsLayer,this.currentPoint).subscribe(res=>{
       this.timeSeries = [res];
       this.detailsMode = 'chart';
       this.showSelection=true;
