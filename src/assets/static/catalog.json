@@ -151,6 +151,42 @@
               }
             }
           ]
+        },
+        {
+          "name": "Vegetation Moisture Content",
+          "options": {
+            "palette": {
+              "name": "RdYlBu",
+              "count": 9,
+              "reverse": false
+            }
+          },
+          "publications": [
+            {
+              "timestep":"annual",
+              "skip": true
+            },
+            {
+              "timestep":"daily",
+              "timestepMultiplier":4,
+              "timestepReference":"{{year}}-01-01",
+              "options":{
+                "filepath": "ub8/au/FMC/australia_LVMC_{{year}}.nc",
+                "colorscalerange": [
+                  0,
+                  140
+                ],
+                "timeFormat": "{{year}}-{{month}}-{{day}}",
+                "numcolorbands": 9,
+                "belowmincolor": "extend",
+                "abovemaxcolor": "extend",
+                "variable":"lvmc_mean",
+                "start": "2001-01-01",
+                "end": "2017-11-21",
+                "styles":"boxfill/anu_fmc_rdylbu_9"
+              }
+            }
+          ]
         }
       ]
     },
