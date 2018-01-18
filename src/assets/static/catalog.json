@@ -1,10 +1,10 @@
 {
   "name": "Landscape Observatory",
-  "extent":{
-    "east":160,
-    "north":-10,
-    "south":-45,
-    "west":110
+  "extent": {
+    "east": 160,
+    "north": -10,
+    "south": -45,
+    "west": 110
   },
   "namedHosts": {
     "nci": {
@@ -24,8 +24,8 @@
       "url": ""
     },
     "asris-mapserver": {
-      "software":"esri",
-      "url":"http://www.asris.csiro.au/ArcGIS/services/TERN"
+      "software": "esri",
+      "url": "http://www.asris.csiro.au/ArcGIS/services/TERN"
     }
   },
   "namedIntervals": {
@@ -163,14 +163,14 @@
           },
           "publications": [
             {
-              "timestep":"annual",
+              "timestep": "annual",
               "skip": true
             },
             {
-              "timestep":"daily",
-              "timestepMultiplier":4,
-              "timestepReference":"{{year}}-01-01",
-              "options":{
+              "timestep": "daily",
+              "timestepMultiplier": 4,
+              "timestepReference": "{{year}}-01-01",
+              "options": {
                 "filepath": "ub8/au/FMC/australia_LVMC_{{year}}.nc",
                 "colorscalerange": [
                   0,
@@ -180,10 +180,10 @@
                 "numcolorbands": 9,
                 "belowmincolor": "extend",
                 "abovemaxcolor": "extend",
-                "variable":"lvmc_mean",
+                "variable": "lvmc_mean",
                 "start": "2001-01-01",
                 "end": "2017-11-21",
-                "styles":"boxfill/anu_fmc_rdylbu_9"
+                "styles": "boxfill/anu_fmc_rdylbu_9"
               }
             }
           ]
@@ -416,223 +416,216 @@
     {
       "name": "Soils and Landscape",
       "icon": "fa-globe",
-      "publications" : [
-          {
-            "label":"100_200_EV_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_100_200_EV_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"100_200_05_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_100_200_05_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"100_200_95_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_100_200_95_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"060_100_05_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_060_100_05_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"060_100_95_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_060_100_95_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"060_100_EV_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_060_100_EV_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"030_060_05_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_030_060_05_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"030_060_95_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_030_060_95_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"030_060_EV_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_030_060_EV_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"015_030_05_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_015_030_05_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"015_030_95_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_015_030_95_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"005_015_05_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_005_015_05_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"005_015_95_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_005_015_95_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"005_015_EV_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_005_015_EV_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"000_005_05_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_000_005_05_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"000_005_95_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_000_005_95_N_P_AU_NAT_C"
-            }
-          },
-          {
-            "label":"000_005_EV_N_P_AU_NAT_C",
-            "options":{
-              "layers":"{{var}}_000_005_EV_N_P_AU_NAT_C"
-            }
+      "publications": [
+        {
+          "label": "100_200_EV_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_100_200_EV_N_P_AU_NAT_C"
           }
-        ],
+        },
+        {
+          "label": "100_200_05_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_100_200_05_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "100_200_95_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_100_200_95_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "060_100_05_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_060_100_05_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "060_100_95_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_060_100_95_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "060_100_EV_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_060_100_EV_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "030_060_05_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_030_060_05_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "030_060_95_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_030_060_95_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "030_060_EV_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_030_060_EV_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "015_030_05_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_015_030_05_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "015_030_95_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_015_030_95_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "005_015_05_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_005_015_05_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "005_015_95_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_005_015_95_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "005_015_EV_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_005_015_EV_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "000_005_05_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_000_005_05_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "000_005_95_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_000_005_95_N_P_AU_NAT_C"
+          }
+        },
+        {
+          "label": "000_005_EV_N_P_AU_NAT_C",
+          "options": {
+            "layers": "{{var}}_000_005_EV_N_P_AU_NAT_C"
+          }
+        }
+      ],
       "options": {
-        "host":"asris-mapserver",
+        "host": "asris-mapserver",
         "transparent": true,
-        "styles":"default",
-        "legend":"wms",
+        "styles": "default",
+        "legend": "wms",
         "filepath": "{{var}}_ACLEP_AU_NAT_C/MapServer/WMSServer"
       },
-      "layers":[
+      "layers": [
         {
           "name": "Bulk Density",
-          "options":{
-            "var":"BDW"
+          "options": {
+            "var": "BDW"
           }
         },
         {
           "name": "Organic Carbon",
-          "options":{
-            "var":"SOC"
+          "options": {
+            "var": "SOC"
           }
         },
         {
           "name": "Clay",
-          "options":{
-            "var":"CLY"
+          "options": {
+            "var": "CLY"
           }
         },
         {
           "name": "Silt",
-          "options":{
-            "var":"SLT"
+          "options": {
+            "var": "SLT"
           }
-        }
-        ,
+        },
         {
           "name": "Sand",
-          "options":{
-            "var":"SND"
+          "options": {
+            "var": "SND"
           }
-        }
-        ,
+        },
         {
           "name": "pH CaCl2",
-          "options":{
-            "var":"PHC"
+          "options": {
+            "var": "PHC"
           }
-        }
-        ,
+        },
         {
           "name": "Available Water Capacity",
-          "options":{
-            "var":"AWC"
+          "options": {
+            "var": "AWC"
           }
-        }
-        ,
+        },
         {
           "name": "Total Nitrogen",
-          "options":{
-            "var":"NTO"
+          "options": {
+            "var": "NTO"
           }
-        }
-        ,
+        },
         {
           "name": "Total Phosphorous",
-          "options":{
-            "var":"PTO"
+          "options": {
+            "var": "PTO"
           }
-        }
-        ,
+        },
         {
           "name": "Effective Cation Exchange Capacity",
-          "options":{
-            "var":"ECE"
+          "options": {
+            "var": "ECE"
           }
-        }
-        ,
+        },
         {
           "name": "Depth of Regolith",
-          "options":{
-            "var":"DER"
+          "options": {
+            "var": "DER"
           },
           "publications": [
             {
-              "label":"DER_000_999_95_N_P_AU_NAT_C",
-              "options":{
-                "layers":"DER_000_999_95_N_P_AU_NAT_C"
+              "label": "DER_000_999_95_N_P_AU_NAT_C",
+              "options": {
+                "layers": "DER_000_999_95_N_P_AU_NAT_C"
               }
             },
             {
-              "label":"DER_000_999_EV_N_P_AU_NAT_C",
-              "options":{
-                "layers":"DER_000_999_EV_N_P_AU_NAT_C"
+              "label": "DER_000_999_EV_N_P_AU_NAT_C",
+              "options": {
+                "layers": "DER_000_999_EV_N_P_AU_NAT_C"
               }
-            } 
+            }
           ]
         },
         {
           "name": "Depth of Soil",
-          "options":{
-            "var":"DES"
+          "options": {
+            "var": "DES"
           },
           "publications": [
             {
-              "label":"DES_000_200_95_N_P_AU_NAT_C",
-              "options":{
-                "layers":"DES_000_200_95_N_P_AU_NAT_C"
+              "label": "DES_000_200_95_N_P_AU_NAT_C",
+              "options": {
+                "layers": "DES_000_200_95_N_P_AU_NAT_C"
               }
             },
             {
-              "label":"DES_000_200_05_N_P_AU_NAT_C",
-              "options":{
-                "layers":"DES_000_200_05_N_P_AU_NAT_C"
+              "label": "DES_000_200_05_N_P_AU_NAT_C",
+              "options": {
+                "layers": "DES_000_200_05_N_P_AU_NAT_C"
               }
-            } 
+            }
           ]
         }
       ]
@@ -1105,7 +1098,7 @@
           "options": {
             "variable": "PRI",
             "colorscalerange": [
-              -100, 
+              -100,
               100
             ]
           },
