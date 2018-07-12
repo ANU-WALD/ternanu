@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainMapComponent } from "./main-map/main-map.component";
 
-export let routeParameters = ['layer'];
+export const routeParameters = ['layer'];
 MapViewParameterService.parameterNames=routeParameters;
 
 const routes: Routes = [
