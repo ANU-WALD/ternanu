@@ -5,7 +5,7 @@ install:
   - npm install '@angular/cli' -g
   - npm install
   - gem install compass
-  - cd node_modules/map-wald && npm run install && cd -
+  - cd node_modules/map-wald && npm install && cd -
 script:
   - npm config ls -l
   - echo $TRAVIS_BRANCH
