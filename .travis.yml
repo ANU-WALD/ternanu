@@ -10,6 +10,7 @@ script:
   - echo $TRAVIS_BRANCH
   - node --version
   - ng version
+  - cd node_modules/map-wald && npm run build && cd -
   - SCRIPTS_FN=src/environments/environment.prod.ts
   - sed "s/WENFO_GOOGLE_MAPS_API_KEY/$GOOGLE_MAPS_API_KEY/g" < $SCRIPTS_FN > tmp
   - mv tmp $SCRIPTS_FN
