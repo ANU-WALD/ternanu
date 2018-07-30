@@ -7,6 +7,7 @@ import { LayerSelection, LayerAction, LayeredMapComponent,
   SimpleMarker, TimeseriesService, TimeSeries, Bounds
 } from 'map-wald';
 import { LatLng } from '@agm/core';
+declare var ga: Function;
 
 @Component({
   selector: 'app-root',
@@ -42,6 +43,7 @@ export class AppComponent {
     private timeSeriesService:TimeseriesService){
     catalogService.loadFrom(environment.catalog).subscribe(c=>this.catalog=c);
     paletteService.source = environment.palettes
+    ga('send', 'pageview');
   }
 
   @ViewChild(LayeredMapComponent) map:LayeredMapComponent;
@@ -53,8 +55,13 @@ export class AppComponent {
     this.topLayer = this.layers[0];
   }
 
+  gaEvent(category:string,action:string,context:string){
+    ga('send','event',category,action,context);
+  }
+
   layerSelected(selection:LayerSelection){
     this.map.layerAdded(selection);
+    this.gaEvent('layers',selection.action,selection.layer.name);
   }
 
   featureSelected(f:Feature<GeometryObject>){
@@ -67,6 +74,7 @@ export class AppComponent {
 
   pointSelected(p:LatLng){
     this.currentPoint=p;
+    this.gaEvent('selection','point',`${p.lat},${p.lng}`);
     this.buildChart();
   }
 

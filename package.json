@@ -49,6 +49,7 @@
     "@angular/cli": "^6.0.0",
     "@angular/compiler-cli": "^6.0.0",
     "@types/geojson": "^1.0.3",
+    "@types/google.analytics": "0.0.39",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
     "@types/proj4": "^2.3.4",
