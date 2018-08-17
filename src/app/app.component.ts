@@ -138,7 +138,6 @@ export class AppComponent {
       }
     ];
     this.map.markers = markers;
-    console.log(this.map.layers);
     var tsLayer = this.findTimeSeriesLayer();
     if(!tsLayer){
       return;
