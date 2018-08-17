@@ -234,8 +234,7 @@
           "timestep": "daily",
           "options": {
             "filepath": "ub8/au/OzWALD/daily/OzWALD.daily.{{variable}}.{{year}}.nc",
-            "timeFormat": "{{year}}-{{month}}-{{day}}",
-            "abovemaxcolor":"extend"
+            "timeFormat": "{{year}}-{{month}}-{{day}}"
           }
         },
         {
@@ -243,8 +242,7 @@
           "options": {
             "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
             "layer": "AnnualMeans",
-            "timeFormat": "{{year}}-12-31",
-            "abovemaxcolor":"extend"
+            "timeFormat": "{{year}}-12-31"
           }
         }
       ],
@@ -468,10 +466,50 @@
               }
             }
           ]
+        },
+        {
+          "name": "Carbon Flux (OzFlux sites)",
+          "options": {
+            "host": "webhost",
+            "filepath": "assets/static/ozflux_towers.json",
+            "vectors": "point"
+          },
+          "publications": [
+            {
+              "timestep": "annual",
+              "skip": true
+            },
+            {
+              "timestep": "daily",
+              "skip": true
+            },
+            {
+              "label": "timeseries",
+              "pointdata": {
+                "protocol": "dap",
+                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "coordinates": {
+                  "latitude": 0,
+                  "longitude": 0
+                },
+                "tags": {
+                  "level": [
+                    "L6",
+                    "L5",
+                    "L4",
+                    "L3"
+                  ]
+                },
+                "defaultVariable":"NEE_LL"
+              }
+            }
+          ]
         }
       ],
       "options": {
-        "belowmincolor": "extend"
+        "belowmincolor": "extend",
+        "abovemaxcolor":"extend"
       }
     },
     {
