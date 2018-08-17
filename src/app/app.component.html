@@ -37,15 +37,30 @@
 <div class="container-fluid">
   <div class="row main-row no-gutters">
     <div class="col-3 sidebar">
-      <ngb-accordion [activeIds]="openPanels">
+      <ngb-accordion [activeIds]="openPanels"
+                     (panelChange)="panelToggle($event)">
 
-        <ngb-panel title="Catalog" class="catalog" id="catalog">
+        <ngb-panel class="catalog" id="catalog">
+          <ng-template ngbPanelTitle>
+            <span>
+              <i class="fa" 
+                 [ngClass]="panels.catalog?'fa-chevron-down':'fa-chevron-up'"></i>
+            </span>&nbsp;
+            <span>Catalog</span>
+          </ng-template>
           <ng-template ngbPanelContent>
             <catalog [catalog]="catalog" (layerSelected)="layerSelected($event)"></catalog>
           </ng-template>
         </ngb-panel>
 
-        <ngb-panel title="Layers shown" id="layers">
+        <ngb-panel id="layers">
+          <ng-template ngbPanelTitle>
+            <span>
+              <i class="fa" 
+                [ngClass]="panels.layers?'fa-chevron-down':'fa-chevron-up'"></i>
+            </span>&nbsp;
+            <span>Layers shown</span>
+          </ng-template>
           <ng-template ngbPanelContent>
             <div>
               <layer-control #layerControl [(layers)]="layers" [map]="map"></layer-control>

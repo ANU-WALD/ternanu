@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { environment } from 'environments/environment';
-import { Feature, Point, GeometryObject } from 'geojson';
+import { Feature, GeometryObject } from 'geojson';
 
 import { LayerSelection, LayerAction, LayeredMapComponent, 
   PaletteService, MappedLayer, CatalogService, Catalog,
@@ -24,10 +24,11 @@ export class AppComponent {
   
   title = 'app works!';
   catalog:Catalog;
-  openPanels = [
-    'catalog',
-    'layers'
-  ];
+  panels = {
+    catalog:true,
+    layers:true
+  }
+  openPanels = Object.keys(this.panels);
 
   currentPoint:LatLng;
   showSelection: boolean = false;
@@ -150,12 +151,16 @@ export class AppComponent {
     });
   }
 
-    private findTimeSeriesLayer() {
-        return this.map.layers.find(ml => {
-        if(ml.flattenedSettings.host.software !== 'tds') {
+  private findTimeSeriesLayer() {
+    return this.map.layers.find(ml => {
+      if(ml.flattenedSettings.host.software !== 'tds') {
         return false;
-    }
-        return true;
+      }
+      return true;
     });
-    }
+  }
+
+  panelToggle(event:any){
+    this.panels[event.panelId] = !this.panels[event.panelId];
+  }
 }
