@@ -49,7 +49,9 @@
             <span>Catalog</span>
           </ng-template>
           <ng-template ngbPanelContent>
-            <catalog [catalog]="catalog" (layerSelected)="layerSelected($event)"></catalog>
+            <catalog [catalog]="catalog" 
+                     (layerSelected)="layerSelected($event)"
+                     [showPlaceholders]="false"></catalog>
           </ng-template>
         </ngb-panel>
 
