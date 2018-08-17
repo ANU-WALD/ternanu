@@ -4,9 +4,13 @@ import { Feature, Point, GeometryObject } from 'geojson';
 
 import { LayerSelection, LayerAction, LayeredMapComponent, 
   PaletteService, MappedLayer, CatalogService, Catalog,
-  SimpleMarker, TimeseriesService, TimeSeries, Bounds
+  SimpleMarker, TimeseriesService, TimeSeries, Bounds, PointSelectionService, PointSelection, MetadataService, OpendapService
 } from 'map-wald';
 import { LatLng } from '@agm/core';
+import { map, switchAll } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
+import { DapDAS, DapDDX } from 'dap-query-js/dist/dap-query';
+
 declare var ga: Function;
 
 @Component({
@@ -29,7 +33,7 @@ export class AppComponent {
   showSelection: boolean = false;
   detailsMode: ('feature'|'chart');
   selectedFeature: Feature<GeometryObject>;
-  timeSeries: [TimeSeries];
+  timeSeries: TimeSeries[];
   fullExtent:Bounds = {
     east:160,
     north:-10,
@@ -40,10 +44,17 @@ export class AppComponent {
   constructor(
     private catalogService:CatalogService,
     paletteService:PaletteService,
-    private timeSeriesService:TimeseriesService){
+    private timeSeriesService:TimeseriesService,
+    private pointSelections:PointSelectionService,
+    private meta:MetadataService,
+    private dap:OpendapService){
     catalogService.loadFrom(environment.catalog).subscribe(c=>this.catalog=c);
     paletteService.source = environment.palettes
     ga('send', 'pageview');
+
+    this.pointSelections.latestPointSelection.subscribe(sel=>{
+      this.plotPointTimeseries(sel);
+    })
   }
 
   @ViewChild(LayeredMapComponent) map:LayeredMapComponent;
@@ -76,6 +87,45 @@ export class AppComponent {
     this.currentPoint=p;
     this.gaEvent('selection','point',`${p.lat},${p.lng}`);
     this.buildChart();
+  }
+
+  plotPointTimeseries(sel:PointSelection){
+    if(!sel){
+      this.timeSeries = [];
+      return;
+    }
+
+    let url = this.pointSelections.fullUrl(sel);
+    forkJoin(this.meta.ddxForUrl(url),this.meta.dasForUrl(url)).pipe(
+      map(dasDDX=>{
+        let ddx:DapDDX = dasDDX[0];
+        let das:DapDAS = dasDDX[1];
+        return {
+          das:das,
+          query:this.timeSeriesService.makeTimeQuery(ddx,sel.variable,
+                                                    sel.catalog.coordinates.latitude,
+                                                    sel.catalog.coordinates.longitude,
+                                                    null)
+        };
+      }),
+      map(dasAndQuery=>this.dap.getData(`${url}.ascii?${sel.variable}${dasAndQuery.query}`,dasAndQuery.das)),
+      switchAll()
+    ).subscribe(data=>{
+      let ts = {
+        dates:<Date[]>data.time,
+        values:<number[]>data[sel.variable]
+      };
+      this.timeSeries = [ts];
+      this.detailsMode = 'chart';
+    })
+    // get... (along with das?, ddx?)
+    // this.timeSeriesService.
+    
+    // getTimeseriesForLayer(tsLayer,this.currentPoint).subscribe(res=>{
+    //   this.timeSeries = [res];
+    //   this.detailsMode = 'chart';
+    //   this.showSelection=true;
+    // });
   }
 
   buildChart(){
