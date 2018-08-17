@@ -1450,8 +1450,8 @@
         "vectors": "polygon",
         "host": "webhost",
         "styles": {
-          "fillOpacity":0,
-          "strokeWeight":1
+          "fillOpacity": 0,
+          "strokeWeight": 1
         }
       },
       "publications": [
