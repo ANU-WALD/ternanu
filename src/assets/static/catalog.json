@@ -700,7 +700,14 @@
         },
         {
           "name": "Vegetation Composition (AusPlots)",
-          "placeholder": true
+          "options": {
+            "host": "webhost",
+            "filepath": "assets/static/ausplots_summary.json",
+            "vectors": "point"
+          },
+          "publications": [
+            {}
+          ]
         }
       ]
     },
