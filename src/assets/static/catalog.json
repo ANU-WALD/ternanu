@@ -109,6 +109,19 @@
           "description": "",
           "publications": [
             {
+              "timestep": "annual",
+              "options": {
+                "filepath": "/ub8/au/OzWALD/annual/OzWALD.annual.GPP.AnnualSums.nc",
+                "colorscalerange": [
+                  0,
+                  4000
+                ],
+                "variable": "AnnualSums",
+                "start": "2000-01-01",
+                "end": "2016-12-31"
+              }
+            },
+            {
               "timestep": "daily",
               "options": {
                 "filepath": "/ub8/au/OzWALD/daily/OzWALD.daily.GPP.{{year}}.nc",
@@ -118,19 +131,6 @@
                 ],
                 "timeFormat": "{{year}}-{{month}}-{{day}}",
                 "variable": "GPP",
-                "start": "2000-01-01",
-                "end": "2016-12-31"
-              }
-            },
-            {
-              "timestep": "annual",
-              "options": {
-                "filepath": "/ub8/au/OzWALD/annual/OzWALD.annual.GPP.AnnualSums.nc",
-                "colorscalerange": [
-                  0,
-                  4000
-                ],
-                "variable": "AnnualSums",
                 "start": "2000-01-01",
                 "end": "2016-12-31"
               }
@@ -151,6 +151,19 @@
           },
           "publications": [
             {
+              "timestep": "annual",
+              "options": {
+                "filepath": "ub8/au/FireEmissions/GFASv12.BurntCarbon.AnnualSums.nc",
+                "colorscalerange": [
+                  0,
+                  1500
+                ],
+                "variable": "AnnualSums",
+                "start": "2000-01-01",
+                "end": "2015-12-31"
+              }
+            },
+            {
               "timestep": "daily",
               "options": {
                 "filepath": "/ub8/au/FireEmissions/GFASv12.BurntCarbon.{{year}}.nc",
@@ -161,19 +174,6 @@
                 "timeFormat": "{{year}}-{{month}}-{{day}}",
                 "variable": "BurntCarbon",
                 "start": "2003-01-01",
-                "end": "2015-12-31"
-              }
-            },
-            {
-              "timestep": "annual",
-              "options": {
-                "filepath": "ub8/au/FireEmissions/GFASv12.BurntCarbon.AnnualSums.nc",
-                "colorscalerange": [
-                  0,
-                  1500
-                ],
-                "variable": "AnnualSums",
-                "start": "2000-01-01",
                 "end": "2015-12-31"
               }
             }
@@ -231,18 +231,18 @@
       "icon": "fa-tint",
       "publications": [
         {
-          "timestep": "daily",
-          "options": {
-            "filepath": "ub8/au/OzWALD/daily/OzWALD.daily.{{variable}}.{{year}}.nc",
-            "timeFormat": "{{year}}-{{month}}-{{day}}"
-          }
-        },
-        {
           "timestep": "annual",
           "options": {
             "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
             "layer": "AnnualMeans",
             "timeFormat": "{{year}}-12-31"
+          }
+        },
+        {
+          "timestep": "daily",
+          "options": {
+            "filepath": "ub8/au/OzWALD/daily/OzWALD.daily.{{variable}}.{{year}}.nc",
+            "timeFormat": "{{year}}-{{month}}-{{day}}"
           }
         }
       ],
@@ -257,21 +257,21 @@
           },
           "publications": [
             {
-              "timestep": "daily",
-              "options": {
-                "colorscalerange": [
-                  0,
-                  50
-                ]
-              }
-            },
-            {
               "timestep": "annual",
               "options": {
                 "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualSums.nc",
                 "colorscalerange": [
                   100,
                   4600
+                ]
+              }
+            },
+            {
+              "timestep": "daily",
+              "options": {
+                "colorscalerange": [
+                  0,
+                  50
                 ]
               }
             }
@@ -746,22 +746,22 @@
           },
           "publications": [
             {
-              "timestep": "daily",
-              "options": {
-                "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.{{year}}.nc",
-                "variable": "LAI"
-              },
-              "interval": "modis",
-              "start": "2000-01-01",
-              "end": "2016-12-31"
-            },
-            {
               "timestep": "annual",
               "options": {
                 "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.AnnualMeans.nc",
                 "variable": "AnnualMeans",
                 "timeFormat": "{{year}}-12-31"
               },
+              "start": "2000-01-01",
+              "end": "2016-12-31"
+            },
+            {
+              "timestep": "daily",
+              "options": {
+                "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.{{year}}.nc",
+                "variable": "LAI"
+              },
+              "interval": "modis",
               "start": "2000-01-01",
               "end": "2016-12-31"
             }
@@ -851,18 +851,18 @@
       ],
       "publications": [
         {
-          "timestep": "daily",
+          "timestep": "annual",
           "options": {
-            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc",
+            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc.nc",
+            "layer": "AnnualMeans",
             "start": "2000-01-01",
             "end": "2016-12-31"
           }
         },
         {
-          "timestep": "annual",
+          "timestep": "daily",
           "options": {
-            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc.nc",
-            "layer": "AnnualMeans",
+            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc",
             "start": "2000-01-01",
             "end": "2016-12-31"
           }
