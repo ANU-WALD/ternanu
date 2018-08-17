@@ -93,12 +93,13 @@
                 },
                 "tags": {
                   "level": [
-                    "L3",
-                    "L4",
+                    "L6",
                     "L5",
-                    "L6"
+                    "L4",
+                    "L3"
                   ]
-                }
+                },
+                "defaultVariable":"NEE_LL"
               }
             }
           ]
