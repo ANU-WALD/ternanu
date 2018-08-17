@@ -13,7 +13,7 @@
     },
     "csiro-thredds": {
       "software": "tds",
-      "url": "http://rs-data1-mel.csiro.au/thredds"
+      "url": "http://www.flowmatters.com.au/proxies/csiro-thredds/thredds"
     },
     "qld-geoserver": {
       "software": "geoserver",
