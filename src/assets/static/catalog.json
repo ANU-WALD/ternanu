@@ -73,9 +73,35 @@
           "name": "Carbon Flux (OzFlux sites)",
           "options": {
             "host": "webhost",
-            "filepath": "assets/static/ozflux.json",
+            "filepath": "assets/static/ozflux_towers.json",
             "vectors": "point"
-          }
+          },
+          "publications": [
+            {
+              "timestep": "annual",
+              "skip": true
+            },
+            {
+              "label": "timeseries",
+              "pointdata": {
+                "protocol": "dap",
+                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "coordinates": {
+                  "latitude": 0,
+                  "longitude": 0
+                },
+                "tags": {
+                  "level": [
+                    "L3",
+                    "L4",
+                    "L5",
+                    "L6"
+                  ]
+                }
+              }
+            }
+          ]
         },
         {
           "name": "Vegetation Carbon Uptake",
