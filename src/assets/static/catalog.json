@@ -234,7 +234,8 @@
           "timestep": "daily",
           "options": {
             "filepath": "ub8/au/OzWALD/daily/OzWALD.daily.{{variable}}.{{year}}.nc",
-            "timeFormat": "{{year}}-{{month}}-{{day}}"
+            "timeFormat": "{{year}}-{{month}}-{{day}}",
+            "abovemaxcolor":"extend"
           }
         },
         {
@@ -242,13 +243,46 @@
           "options": {
             "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
             "layer": "AnnualMeans",
-            "timeFormat": "{{year}}-12-31"
+            "timeFormat": "{{year}}-12-31",
+            "abovemaxcolor":"extend"
           }
         }
       ],
       "layers": [
         {
+          "name":"Rainfall (OzWALD)",
+          "description": "",
+          "variable": "Pg",
+          "options": {
+            "palette": "anu_wald_blues09",
+            "units": "mm"
+          },
+          "publications": [
+            {
+              "timestep": "daily",
+              "options": {
+                "colorscalerange": [
+                  0,
+                  50
+                ]
+              }
+            },
+            {
+              "timestep": "annual",
+              "options": {
+                "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualSums.nc",
+                "colorscalerange": [
+                  100,
+                  4600
+                ]
+              }
+            }
+          ]
+
+        },
+        {
           "name": "Rainfall",
+          "placeholder":true,
           "description": "Gridded rainfall",
           "options": {
             "units": "mm",
@@ -310,7 +344,7 @@
           "placeholder": true
         },
         {
-          "name": "Runoff",
+          "name": "Runoff (OzWALD)",
           "description": "",
           "variable": "Qtot",
           "options": {
@@ -339,7 +373,7 @@
           ]
         },
         {
-          "name": "River Flows",
+          "name": "River Flows (OzWALD)",
           "description": "",
           "variable": "Qriv",
           "options": {
