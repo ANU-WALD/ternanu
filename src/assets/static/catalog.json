@@ -74,7 +74,8 @@
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
-            "vectors": "point"
+            "vectors": "point",
+            "publicationLabel":"Data Source"
           },
           "publications": [
             {
@@ -82,7 +83,22 @@
               "skip": true
             },
             {
-              "label": "timeseries",
+              "label": "summary",
+              "pointdata": {
+                "protocol": "dap",
+                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Summary.nc",
+                "coordinates": {
+                  "latitude": 0,
+                  "longitude": 0
+                },
+                "tags": {
+                },
+                "defaultVariable":"/Monthly/Fc"
+              }
+            },
+            {
+              "label": "details",
               "pointdata": {
                 "protocol": "dap",
                 "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
@@ -472,7 +488,8 @@
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
-            "vectors": "point"
+            "vectors": "point",
+            "publicationLabel":"Data Source"
           },
           "publications": [
             {
@@ -484,7 +501,22 @@
               "skip": true
             },
             {
-              "label": "timeseries",
+              "label": "summary",
+              "pointdata": {
+                "protocol": "dap",
+                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Summary.nc",
+                "coordinates": {
+                  "latitude": 0,
+                  "longitude": 0
+                },
+                "tags": {
+                },
+                "defaultVariable":"/Monthly/Fe"
+              }
+            },
+            {
+              "label": "details",
               "pointdata": {
                 "protocol": "dap",
                 "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
