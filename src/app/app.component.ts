@@ -4,7 +4,7 @@ import { Feature, GeometryObject } from 'geojson';
 
 import { LayerSelection, LayerAction, LayeredMapComponent, 
   PaletteService, MappedLayer, CatalogService, Catalog,
-  SimpleMarker, TimeseriesService, TimeSeries, Bounds, PointSelectionService, PointSelection, MetadataService, OpendapService
+  SimpleMarker, TimeseriesService, TimeSeries, Bounds, PointSelectionService, PointSelection, MetadataService, OpendapService, Layer
 } from 'map-wald';
 import { LatLng } from '@agm/core';
 import { map, switchAll } from 'rxjs/operators';
@@ -71,7 +71,21 @@ export class AppComponent {
     ga('send','event',category,action,context);
   }
 
+  gridLayer(l:Layer):boolean{
+    let vectors = (l.options && l.options.vectors) || (
+                l.publications[0] && l.publications[0].options && 
+                l.publications[0].options.vectors);
+
+    return !vectors;
+  }
+
   layerSelected(selection:LayerSelection){
+    if(this.gridLayer(selection.layer)){
+      selection.action='replace';
+      selection.filter = (ml:MappedLayer)=>{
+        return this.gridLayer(ml.layer);
+      };
+    }
     this.map.layerAdded(selection);
     this.gaEvent('layers',selection.action,selection.layer.name);
   }
