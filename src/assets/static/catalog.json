@@ -484,7 +484,7 @@
           ]
         },
         {
-          "name": "Carbon Flux (OzFlux sites)",
+          "name": "Evapotranspiration Flux (OzFlux sites)",
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
