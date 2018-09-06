@@ -65,7 +65,11 @@
           </ng-template>
           <ng-template ngbPanelContent>
             <div>
-              <layer-control #layerControl [(layers)]="layers" [map]="map"></layer-control>
+              <layer-control #layerControl 
+                             [(layers)]="layers"
+                             [map]="map"
+                             [showLegends]="false"
+                             [allowReorder]="false"></layer-control>
             </div>
           </ng-template>
         </ngb-panel>
@@ -88,7 +92,8 @@
           <share-view></share-view>
         </button-bar>
         <div class="map-control left-bottom">
-          <collapsible-map-control [heading]="'Legend'">
+          <collapsible-map-control *ngIf="layers.length"
+                                   [heading]="'Legend'">
             <div *ngFor="let l of layers">
               <map-legend *ngIf="l.flattenedSettings?.palette || l.legendURL"
                           [title]="l.title"
