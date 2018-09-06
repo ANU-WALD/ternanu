@@ -201,6 +201,7 @@
       "name": "Biomass",
       "icon": "",
       "path": "Biomass and Carbon",
+      "skip":true,
       "publications": [
         {
           "label": "static"
