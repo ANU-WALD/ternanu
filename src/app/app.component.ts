@@ -1,10 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Feature, GeometryObject } from 'geojson';
+import { ControlPosition } from '@agm/core/services/google-maps-types';
 
-import { LayerSelection, LayerAction, LayeredMapComponent, 
+import { LayerSelection, LayeredMapComponent,
   PaletteService, MappedLayer, CatalogService, Catalog,
-  SimpleMarker, TimeseriesService, TimeSeries, Bounds, PointSelectionService, PointSelection, MetadataService, OpendapService, Layer
+  SimpleMarker, TimeseriesService, TimeSeries, Bounds,
+  PointSelectionService, PointSelection, MetadataService, OpendapService, Layer
 } from 'map-wald';
 import { LatLng } from '@agm/core';
 import { map, switchAll } from 'rxjs/operators';
@@ -41,6 +43,7 @@ export class AppComponent {
     south:-45,
     west:110
   };
+  mapTypePosition:number = ControlPosition.BOTTOM_LEFT;
 
   constructor(
     private catalogService:CatalogService,

@@ -77,7 +77,8 @@
                    [(layers)]="layers"
                    (layersChange)="layersChanged()"
                    (featureSelected)="featureSelected($event)"
-                   (pointSelected)="pointSelected($event)">
+                   (pointSelected)="pointSelected($event)"
+                   [mapTypePosition]="mapTypePosition">
         <button-bar class="map-control left-top">
           <zoom-in [map]="map" [maxZoom]="10"></zoom-in>
           <zoom-out [map]="map" [minZoom]="3"></zoom-out>
@@ -86,6 +87,24 @@
           <location-search></location-search>
           <share-view></share-view>
         </button-bar>
+        <div class="map-control left-bottom">
+          <collapsible-map-control [heading]="'Legend'">
+            <div *ngFor="let l of layers">
+              <map-legend *ngIf="l.flattenedSettings?.palette || l.legendURL"
+                          [title]="l.title"
+                          [imageURL]="l.legendURL"
+                          [helpText]="l.description()"
+                          [mapUnits]="l.flattenedSettings?.units"
+                          [cbPalette]="l.flattenedSettings?.palette?.name||l.flattenedSettings?.palette"
+                          [cbCount]="l.flattenedSettings?.numcolorbands||l.flattenedSettings?.palette?.count"
+                          [cbReverse]="l.flattenedSettings?.palette?.reverse"
+                          [cbRange]="l.flattenedSettings?.colorscalerange">
+              </map-legend>
+            </div>
+          </collapsible-map-control>
+        </div>
+
+
         <div *ngIf="showSelection" class="map-control right-bottom">
           <collapsible-map-control [heading]="'Site data'">
             <ng-container [ngSwitch]="detailsMode">
