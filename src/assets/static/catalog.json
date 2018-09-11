@@ -280,7 +280,8 @@
                 "colorscalerange": [
                   100,
                   4600
-                ]
+                ],
+                "layer":"AnnualSums"
               }
             },
             {
