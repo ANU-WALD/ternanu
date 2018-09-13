@@ -161,6 +161,7 @@ export class AppComponent {
     this.map.markers = markers;
     var tsLayer = this.findTimeSeriesLayer();
     if(!tsLayer){
+      this.detailsMode='feature';
       return;
     }
 
