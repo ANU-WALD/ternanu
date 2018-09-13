@@ -63,11 +63,14 @@ export class AppComponent {
 
   @ViewChild(LayeredMapComponent) map:LayeredMapComponent;
 
-  layersChanged(){
-    if(this.currentPoint){
-      this.buildChart();
-    }
-    this.topLayer = this.layers[0];
+  layersChanged(layers:MappedLayer[]){
+    setTimeout(()=>{
+      this.layers=layers;
+      if(this.currentPoint){
+        this.buildChart();
+      }
+      this.topLayer = this.layers[0];
+    });
   }
 
   gaEvent(category:string,action:string,context:string){
@@ -169,7 +172,7 @@ export class AppComponent {
   }
 
   private findTimeSeriesLayer() {
-    return this.map.layers.find(ml => {
+    return this.layers.find(ml => {
       if(ml.flattenedSettings.host.software !== 'tds') {
         return false;
       }

@@ -66,7 +66,8 @@
           <ng-template ngbPanelContent>
             <div>
               <layer-control #layerControl 
-                             [(layers)]="layers"
+                             [layers]="layers"
+                             (layersChange)="layersChanged($event)"
                              [map]="map"
                              [showLegends]="false"
                              [allowReorder]="false"></layer-control>
@@ -78,8 +79,8 @@
     </div>
     <div class="col-9 main-map">
       <layered-map #map
-                   [(layers)]="layers"
-                   (layersChange)="layersChanged()"
+                   [layers]="layers"
+                   (layersChange)="layersChanged($event)"
                    (featureSelected)="featureSelected($event)"
                    (pointSelected)="pointSelected($event)"
                    [mapTypePosition]="mapTypePosition">
