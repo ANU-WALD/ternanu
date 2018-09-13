@@ -281,7 +281,8 @@
                   100,
                   4600
                 ],
-                "layer":"AnnualSums"
+                "layer":"AnnualSums",
+                "chart":"bar"
               }
             },
             {
@@ -383,7 +384,8 @@
                 "colorscalerange": [
                   0,
                   1800
-                ]
+                ],
+                "chart":"bar"
               }
             }
           ]
@@ -412,7 +414,8 @@
                 "colorscalerange": [
                   10000,
                   100000000
-                ]
+                ],
+                "chart":"bar"
               }
             }
           ]

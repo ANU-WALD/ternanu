@@ -166,6 +166,7 @@ export class AppComponent {
     }
 
     this.timeSeriesService.getTimeseriesForLayer(tsLayer,this.currentPoint).subscribe(res=>{
+      res.style = tsLayer.flattenedSettings.chart || 'line';
       this.timeSeries = [res];
       this.detailsMode = 'chart';
       this.showSelection=true;
