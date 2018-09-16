@@ -120,6 +120,62 @@
               </feature-table>
               <div *ngSwitchCase="'chart'">
                 <timeseries-chart [timeSeries]="timeSeries"></timeseries-chart>
+                <div>
+                  <div class="btn-group btn-group-sm mr-3">
+                    <button type="button" class="btn btn-secondary"
+                            (click)="timeSeries[timeSeries.length-1].pinned = !timeSeries[timeSeries.length-1].pinned">
+                      <i class="fa fa-thumb-tack"
+                         [class.greyed]="!timeSeries[timeSeries.length-1].pinned"></i>
+                      {{timeSeries[timeSeries.length-1].label}}
+                    </button>
+                    <div class="btn-group" ngbDropdown placement="top-right" role="group" aria-label="Button group with nested dropdown">
+                      <button class="btn btn-secondary dropdown-toggle-split" ngbDropdownToggle></button>
+                      <div class="dropdown-menu" ngbDropdownMenu>
+                        <button *ngFor="let ts of timeSeries; let i=index" class="dropdown-item"
+                                (click)="ts.pinned = !ts.pinned">
+                          <i class="fa fa-thumb-tack"
+                             [class.greyed]="!ts.pinned"></i>
+                          {{ts.label}}
+                          <i class="fa fa-minus float-right"
+                             (click)="removeTimeSeries(i)"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--
+                  <div class="btn-group btn-group-sm mr-3">
+                    <button type="button" class="btn btn-secondary">
+                      <i class="fa fa-flask"></i>
+                      Split me
+                    </button>
+                    <div class="btn-group" ngbDropdown placement="top-right" role="group" aria-label="Button group with nested dropdown">
+                      <button class="btn btn-secondary dropdown-toggle-split" ngbDropdownToggle></button>
+                      <div class="dropdown-menu" ngbDropdownMenu>
+                        <button class="dropdown-item">One</button>
+                        <button class="dropdown-item">Two</button>
+                        <button class="dropdown-item">Four!</button>
+                      </div>
+                    </div>
+                  </div>
+-->
+<!--
+                  <div class="btn-group btn-group-sm mr-3">
+                    <button type="button" class="btn btn-secondary">
+                      <i class="fa fa-download"></i>
+                      Download
+                    </button>
+                    <div class="btn-group" ngbDropdown placement="top-right" role="group" aria-label="Button group with nested dropdown">
+                      <button class="btn btn-secondary dropdown-toggle-split" ngbDropdownToggle></button>
+                      <div class="dropdown-menu" ngbDropdownMenu>
+                        <button class="dropdown-item">One</button>
+                        <button class="dropdown-item">Two</button>
+                        <button class="dropdown-item">Four!</button>
+                      </div>
+                    </div>
+                  </div>
+-->
+                </div>
               </div>
             </ng-container>
           </collapsible-map-control>

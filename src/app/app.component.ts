@@ -110,9 +110,32 @@ export class AppComponent {
     this.buildChart();
   }
 
+  evaluateChartLabels(){
+    for(var i = 0;i<this.timeSeries.length;i++){
+      this.timeSeries[i].label = `ts ${i+1}`;
+    }
+  }
+
+  addOrReplaceTimeSeries(ts?:TimeSeries){
+    this.timeSeries = this.timeSeries || [];
+    this.timeSeries = this.timeSeries.filter(ts=>ts.pinned);
+
+    if(ts){
+      this.timeSeries.push(ts);
+    }
+
+    if(this.timeSeries.length){
+      this.detailsMode = 'chart';
+    } else {
+      this.detailsMode = 'feature';
+    }
+
+    this.evaluateChartLabels();
+  }
+
   plotPointTimeseries(sel:PointSelection){
     if(!sel){
-      this.timeSeries = [];
+      this.addOrReplaceTimeSeries();
       return;
     }
 
@@ -136,8 +159,7 @@ export class AppComponent {
         dates:<Date[]>data.time,
         values:<number[]>data[sel.variable]
       };
-      this.timeSeries = [ts];
-      this.detailsMode = 'chart';
+      this.addOrReplaceTimeSeries(ts);
     })
     // get... (along with das?, ddx?)
     // this.timeSeriesService.
@@ -167,8 +189,8 @@ export class AppComponent {
 
     this.timeSeriesService.getTimeseriesForLayer(tsLayer,this.currentPoint).subscribe(res=>{
       res.style = tsLayer.flattenedSettings.chart || 'line';
-      this.timeSeries = [res];
-      this.detailsMode = 'chart';
+      res.label = 'ts 0';
+      this.addOrReplaceTimeSeries(res);
       this.showSelection=true;
     });
   }
@@ -180,6 +202,15 @@ export class AppComponent {
       }
       return true;
     });
+  }
+
+  removeTimeSeries(i:number){
+    this.timeSeries.splice(i,1);
+    this.timeSeries = this.timeSeries.slice();
+    if(!this.timeSeries.length){
+      this.detailsMode='feature';
+      this.showSelection=false;
+    }
   }
 
   panelToggle(event:any){
