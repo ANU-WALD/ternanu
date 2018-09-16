@@ -119,7 +119,8 @@
 
               </feature-table>
               <div *ngSwitchCase="'chart'">
-                <timeseries-chart [timeSeries]="timeSeries"></timeseries-chart>
+                <timeseries-chart [title]="chartTitle"
+                                  [timeSeries]="timeSeries"></timeseries-chart>
                 <div>
                   <div class="btn-group btn-group-sm mr-3">
                     <button type="button" class="btn btn-secondary"

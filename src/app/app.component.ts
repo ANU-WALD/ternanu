@@ -36,6 +36,7 @@ export class AppComponent {
   showSelection: boolean = false;
   detailsMode: ('feature'|'chart');
   selectedFeature: Feature<GeometryObject>;
+  chartTitle = '';
   timeSeries: TimeSeries[];
   fullExtent:Bounds = {
     east:160,
@@ -111,9 +112,40 @@ export class AppComponent {
   }
 
   evaluateChartLabels(){
+    let tags:string[] = [].concat(...this.timeSeries.map(ts=>Object.keys(ts.tags||{})));
+    const uniq = (vals:string[])=>vals.filter((v,i)=>vals.indexOf(v)===i);
+    const stringifyTag = (t:any)=>{
+      if((t===undefined)||(t===null)){
+        return t;
+      }
+      if(t.lat&&t.lng){
+        return `[${t.lat.toFixed(3)},${t.lng.toFixed(3)}]`;
+      }
+      return t.toString();
+    };
+
+    tags = uniq(tags);
+    let title = '';
+    let labelTags:string[] = [];
+    let titleTags:string[] = [];
+    let labels:string[] = this.timeSeries.map(()=>'');
+    tags.forEach(t=>{
+      const values = this.timeSeries.map(ts=>stringifyTag((ts.tags||{})[t]))
+      if(uniq(values).length===1){
+        titleTags.push(values[0]);
+        title += values[0] + ' ';
+      } else {
+        values.forEach((v,i)=>{
+          labels[i]+= v + ' ';
+        });
+        labelTags.push(t);
+      }
+    });
+
     for(var i = 0;i<this.timeSeries.length;i++){
-      this.timeSeries[i].label = `ts ${i+1}`;
+      this.timeSeries[i].label = labels[i].trim() || `ts ${i+1}`;
     }
+    this.chartTitle = title.trim() || 'Various timeseries';
   }
 
   addOrReplaceTimeSeries(ts?:TimeSeries){
@@ -157,7 +189,10 @@ export class AppComponent {
     ).subscribe(data=>{
       let ts = {
         dates:<Date[]>data.time,
-        values:<number[]>data[sel.variable]
+        values:<number[]>data[sel.variable],
+        tags:{
+          variable:sel.variable
+        }
       };
       this.addOrReplaceTimeSeries(ts);
     })
@@ -190,6 +225,10 @@ export class AppComponent {
     this.timeSeriesService.getTimeseriesForLayer(tsLayer,this.currentPoint).subscribe(res=>{
       res.style = tsLayer.flattenedSettings.chart || 'line';
       res.label = 'ts 0';
+      res.tags = {
+        layer:tsLayer.title,
+        loc:this.currentPoint
+      }
       this.addOrReplaceTimeSeries(res);
       this.showSelection=true;
     });
