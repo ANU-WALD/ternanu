@@ -75,7 +75,7 @@
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
             "vectors": "point",
-            "publicationLabel":"Data Source"
+            "publicationLabel": "Data Source"
           },
           "publications": [
             {
@@ -92,9 +92,8 @@
                   "latitude": 0,
                   "longitude": 0
                 },
-                "tags": {
-                },
-                "defaultVariable":"/Monthly/Fc"
+                "tags": {},
+                "defaultVariable": "/Monthly/Fc"
               }
             },
             {
@@ -115,7 +114,7 @@
                     "L3"
                   ]
                 },
-                "defaultVariable":"NEE_LL"
+                "defaultVariable": "NEE_LL"
               }
             }
           ]
@@ -201,7 +200,7 @@
       "name": "Biomass",
       "icon": "",
       "path": "Biomass and Carbon",
-      "skip":true,
+      "skip": true,
       "publications": [
         {
           "label": "static"
@@ -265,7 +264,7 @@
       ],
       "layers": [
         {
-          "name":"Rainfall (OzWALD)",
+          "name": "Rainfall (OzWALD)",
           "description": "",
           "variable": "Pg",
           "options": {
@@ -281,8 +280,8 @@
                   100,
                   4600
                 ],
-                "layer":"AnnualSums",
-                "chart":"bar"
+                "layer": "AnnualSums",
+                "chart": "bar"
               }
             },
             {
@@ -295,11 +294,10 @@
               }
             }
           ]
-
         },
         {
           "name": "Rainfall",
-          "placeholder":true,
+          "placeholder": true,
           "description": "Gridded rainfall",
           "options": {
             "units": "mm",
@@ -385,7 +383,7 @@
                   0,
                   1800
                 ],
-                "chart":"bar"
+                "chart": "bar"
               }
             }
           ]
@@ -415,7 +413,7 @@
                   10000,
                   100000000
                 ],
-                "chart":"bar"
+                "chart": "bar"
               }
             }
           ]
@@ -494,7 +492,7 @@
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
             "vectors": "point",
-            "publicationLabel":"Data Source"
+            "publicationLabel": "Data Source"
           },
           "publications": [
             {
@@ -515,9 +513,8 @@
                   "latitude": 0,
                   "longitude": 0
                 },
-                "tags": {
-                },
-                "defaultVariable":"/Monthly/Fe"
+                "tags": {},
+                "defaultVariable": "/Monthly/Fe"
               }
             },
             {
@@ -538,7 +535,7 @@
                     "L3"
                   ]
                 },
-                "defaultVariable":"NEE_LL"
+                "defaultVariable": "NEE_LL"
               }
             }
           ]
@@ -546,7 +543,7 @@
       ],
       "options": {
         "belowmincolor": "extend",
-        "abovemaxcolor":"extend"
+        "abovemaxcolor": "extend"
       }
     },
     {
@@ -861,7 +858,8 @@
         "colorscalerange": [
           0,
           100
-        ]
+        ],
+        "fillValue":255
       },
       "layers": [
         {
@@ -869,7 +867,19 @@
           "options": {
             "variable": "BS",
             "palette": "anu_wald_gisheat_inv.v2"
-          }
+          },
+          "publications": [
+            {
+              "timestep": "annual",
+              "options": {
+                "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc",
+                "layer": "AnnualMeans",
+                "start": "2000-01-01",
+                "end": "2016-12-31",
+                "timeFormat": "{{year}}-12-31"
+              }
+            }
+          ]
         },
         {
           "name": "Non-photosynthetic vegetation",
@@ -887,16 +897,6 @@
         }
       ],
       "publications": [
-        {
-          "timestep": "annual",
-          "options": {
-            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc",
-            "layer": "AnnualMeans",
-            "start": "2000-01-01",
-            "end": "2016-12-31",
-            "timeFormat": "{{year}}-12-31"
-          }
-        },
         {
           "timestep": "daily",
           "options": {
@@ -1025,7 +1025,7 @@
           "options": {
             "variable": "FPAR",
             "colorscalerange": [
-              0.0,
+              0,
               0.949999988079071
             ]
           },
@@ -1125,7 +1125,7 @@
           "options": {
             "variable": "MODIS-B02NIR",
             "colorscalerange": [
-              0.0,
+              0,
               0.13473454117774963
             ]
           },
@@ -1155,7 +1155,7 @@
           "options": {
             "variable": "MODIS-B05SWIR1",
             "colorscalerange": [
-              0.0,
+              0,
               0.1798548847436905
             ]
           },
@@ -1165,7 +1165,7 @@
           "options": {
             "variable": "MODIS-B06SWIR2",
             "colorscalerange": [
-              0.0,
+              0,
               0.11913397908210754
             ]
           },
@@ -1175,7 +1175,7 @@
           "options": {
             "variable": "MODIS-B07SWIR3",
             "colorscalerange": [
-              0.0,
+              0,
               0.16019530594348907
             ]
           },
@@ -1255,7 +1255,7 @@
           "options": {
             "variable": "OWL",
             "colorscalerange": [
-              4.132078235130621e-09,
+              4.132078235130621e-9,
               0.9943080544471741
             ]
           },
@@ -1285,8 +1285,8 @@
           "options": {
             "variable": "RG",
             "colorscalerange": [
-              -832.0,
-              1105.0
+              -832,
+              1105
             ]
           },
           "label": "RG"
