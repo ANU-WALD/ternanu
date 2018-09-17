@@ -172,10 +172,15 @@ export class AppComponent {
     }
 
     let url = this.pointSelections.fullUrl(sel);
+    let fillValue = NaN;
     forkJoin(this.meta.ddxForUrl(url),this.meta.dasForUrl(url)).pipe(
+
       map(dasDDX=>{
         let ddx:DapDDX = dasDDX[0];
         let das:DapDAS = dasDDX[1];
+        fillValue = +ddx.variables[sel.variable]._FillValue ||
+                    +ddx.variables[sel.variable].missing_value ||
+                    fillValue;
         return {
           das:das,
           query:this.timeSeriesService.makeTimeQuery(ddx,sel.variable,
@@ -189,7 +194,7 @@ export class AppComponent {
     ).subscribe(data=>{
       let ts = {
         dates:<Date[]>data.time,
-        values:<number[]>data[sel.variable],
+        values:(<number[]>data[sel.variable]).map(v=>(v===fillValue)?NaN:v),
         tags:{
           variable:sel.variable
         }
