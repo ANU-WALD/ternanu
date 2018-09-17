@@ -890,10 +890,11 @@
         {
           "timestep": "annual",
           "options": {
-            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc.nc",
+            "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc",
             "layer": "AnnualMeans",
             "start": "2000-01-01",
-            "end": "2016-12-31"
+            "end": "2016-12-31",
+            "timeFormat": "{{year}}-12-31"
           }
         },
         {
@@ -901,7 +902,8 @@
           "options": {
             "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc",
             "start": "2000-01-01",
-            "end": "2016-12-31"
+            "end": "2016-12-31",
+            "timeFormat": "{{year}}-{{month}}-{{day}}"
           }
         }
       ]
