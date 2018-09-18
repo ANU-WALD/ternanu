@@ -437,10 +437,12 @@
             {
               "timestep": "annual",
               "options": {
+                "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualSums.nc",
                 "colorscalerange": [
                   0,
                   1800
                 ],
+                "layer": "AnnualSums",
                 "chart": "bar"
               }
             }
