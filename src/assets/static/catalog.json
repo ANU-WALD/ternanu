@@ -25,7 +25,8 @@
     },
     "asris-mapserver": {
       "software": "esri",
-      "url": "http://www.asris.csiro.au/ArcGIS/services/TERN"
+      "url": "http://www.asris.csiro.au/ArcGIS/services/TERN",
+      "downloadLink":"http://www.clw.csiro.au/aclep/soilandlandscapegrid/"
     }
   },
   "namedIntervals": {
@@ -852,6 +853,7 @@
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ausplots_summary.json",
+            "downloadPath":"http://www.ausplots.org/",
             "vectors": "point"
           },
           "publications": [
