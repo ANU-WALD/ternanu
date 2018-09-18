@@ -94,6 +94,13 @@ export class AppComponent {
       };
     }
     this.map.layerAdded(selection);
+
+    if(selection.layer.options.smallExtent){
+      this.map.lat = selection.layer.lat;
+      this.map.lng = selection.layer.lon;
+      this.map.zoom = selection.layer.zoom || 13;
+      }
+
     this.gaEvent('layers',selection.action,selection.layer.name);
   }
 
