@@ -51,6 +51,7 @@
         {
           "timestep": "annual",
           "options": {
+            "chart": "bar",
             "timeFormat": "{{year}}-12-31"
           }
         }
@@ -132,6 +133,7 @@
                   4000
                 ],
                 "variable": "AnnualSums",
+                "chart": "bar",
                 "start": "2000-01-01",
                 "end": "2016-12-31"
               }
@@ -173,6 +175,7 @@
                   0,
                   1500
                 ],
+                "chart": "bar",
                 "variable": "AnnualSums",
                 "start": "2000-01-01",
                 "end": "2015-12-31"
@@ -251,6 +254,7 @@
           "options": {
             "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
             "layer": "AnnualMeans",
+            "chart": "bar",
             "timeFormat": "{{year}}-12-31"
           }
         },
@@ -535,6 +539,7 @@
               "options": {
                 "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{variable}}.nc",
                 "variable": "AnnualMaxima",
+                "chart": "bar",
                 "layer": "AnnualMaxima"
               }
             }
@@ -784,6 +789,7 @@
               "options": {
                 "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.AnnualMeans.nc",
                 "variable": "AnnualMeans",
+                "chart": "bar",
                 "timeFormat": "{{year}}-12-31"
               },
               "start": "2000-01-01",
@@ -859,7 +865,7 @@
           0,
           100
         ],
-        "fillValue":255
+        "fillValue": 255
       },
       "layers": [
         {
@@ -874,6 +880,7 @@
               "options": {
                 "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.AnnualMeans.aust.005.{{variable}}.nc",
                 "layer": "AnnualMeans",
+                "chart": "bar",
                 "start": "2000-01-01",
                 "end": "2016-12-31",
                 "timeFormat": "{{year}}-12-31"
