@@ -102,7 +102,7 @@
                 "labels":[
                   "site"
                 ],
-                "defaultVariable": "/Monthly/Fc"
+                "defaultVariable": "/Annual/Fc"
               }
             },
             {
@@ -313,7 +313,7 @@
                 "labels":[
                   "site"
                 ],
-                "defaultVariable": "/Monthly/Fe"
+                "defaultVariable": "/Annual/Fe"
               }
             },
             {
