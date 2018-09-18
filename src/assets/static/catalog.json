@@ -75,6 +75,7 @@
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
+            "downloadPath":"http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "publicationLabel": "Data Source"
           },
@@ -272,6 +273,7 @@
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
+            "downloadPath":"http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "publicationLabel": "Data Source"
           },
