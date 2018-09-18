@@ -264,6 +264,60 @@
       ],
       "layers": [
         {
+          "name": "Evapotranspiration Flux (OzFlux sites)",
+          "options": {
+            "host": "webhost",
+            "filepath": "assets/static/ozflux_towers.json",
+            "vectors": "point",
+            "publicationLabel": "Data Source"
+          },
+          "publications": [
+            {
+              "timestep": "annual",
+              "skip": true
+            },
+            {
+              "timestep": "daily",
+              "skip": true
+            },
+            {
+              "label": "summary",
+              "pointdata": {
+                "protocol": "dap",
+                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Summary.nc",
+                "coordinates": {
+                  "latitude": 0,
+                  "longitude": 0
+                },
+                "tags": {},
+                "defaultVariable": "/Monthly/Fe"
+              }
+            },
+            {
+              "label": "details",
+              "pointdata": {
+                "protocol": "dap",
+                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
+                "coordinates": {
+                  "latitude": 0,
+                  "longitude": 0
+                },
+                "tags": {
+                  "level": [
+                    "L6",
+                    "L5",
+                    "L4",
+                    "L3"
+                  ]
+                },
+                "defaultVariable": "NEE_LL"
+              }
+            }
+          ]
+        },
+        {
           "name": "Rainfall (OzWALD)",
           "description": "",
           "variable": "Pg",
@@ -482,60 +536,6 @@
                 "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{variable}}.nc",
                 "variable": "AnnualMaxima",
                 "layer": "AnnualMaxima"
-              }
-            }
-          ]
-        },
-        {
-          "name": "Evapotranspiration Flux (OzFlux sites)",
-          "options": {
-            "host": "webhost",
-            "filepath": "assets/static/ozflux_towers.json",
-            "vectors": "point",
-            "publicationLabel": "Data Source"
-          },
-          "publications": [
-            {
-              "timestep": "annual",
-              "skip": true
-            },
-            {
-              "timestep": "daily",
-              "skip": true
-            },
-            {
-              "label": "summary",
-              "pointdata": {
-                "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
-                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Summary.nc",
-                "coordinates": {
-                  "latitude": 0,
-                  "longitude": 0
-                },
-                "tags": {},
-                "defaultVariable": "/Monthly/Fe"
-              }
-            },
-            {
-              "label": "details",
-              "pointdata": {
-                "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
-                "url": "http://www.flowmatters.com.au/proxies/ozflux/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
-                "coordinates": {
-                  "latitude": 0,
-                  "longitude": 0
-                },
-                "tags": {
-                  "level": [
-                    "L6",
-                    "L5",
-                    "L4",
-                    "L3"
-                  ]
-                },
-                "defaultVariable": "NEE_LL"
               }
             }
           ]
