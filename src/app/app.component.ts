@@ -206,6 +206,9 @@ export class AppComponent {
           variable:sel.variable
         }
       };
+      (sel.catalog.labels||[]).forEach(lbl=>{
+        ts.tags[lbl]=sel.feature.properties[lbl];
+      });
       this.addOrReplaceTimeSeries(ts);
     })
     // get... (along with das?, ddx?)

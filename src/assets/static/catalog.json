@@ -99,6 +99,9 @@
                   "longitude": 0
                 },
                 "tags": {},
+                "labels":[
+                  "site"
+                ],
                 "defaultVariable": "/Monthly/Fc"
               }
             },
@@ -120,6 +123,9 @@
                     "L3"
                   ]
                 },
+                "labels":[
+                  "site"
+                ],
                 "defaultVariable": "NEE_LL"
               }
             }
@@ -304,6 +310,9 @@
                   "longitude": 0
                 },
                 "tags": {},
+                "labels":[
+                  "site"
+                ],
                 "defaultVariable": "/Monthly/Fe"
               }
             },
@@ -325,6 +334,9 @@
                     "L3"
                   ]
                 },
+                "labels":[
+                  "site"
+                ],
                 "defaultVariable": "NEE_LL"
               }
             }
