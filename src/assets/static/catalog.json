@@ -78,6 +78,9 @@
             "filepath": "assets/static/ozflux_towers.json",
             "downloadPath":"http://dap.ozflux.org.au/thredds",
             "vectors": "point",
+            "styles":{
+              "fillColor":"red"
+            },
             "publicationLabel": "Data Source"
           },
           "publications": [
@@ -276,6 +279,9 @@
             "filepath": "assets/static/ozflux_towers.json",
             "downloadPath":"http://dap.ozflux.org.au/thredds",
             "vectors": "point",
+            "styles":{
+              "fillColor":"blue"
+            },
             "publicationLabel": "Data Source"
           },
           "publications": [
@@ -854,7 +860,10 @@
             "host": "webhost",
             "filepath": "assets/static/ausplots_summary.json",
             "downloadPath":"http://www.ausplots.org/",
-            "vectors": "point"
+            "vectors": "point",
+            "styles":{
+              "fillColor":"green"
+            }
           },
           "publications": [
             {}
