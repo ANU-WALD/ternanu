@@ -248,12 +248,18 @@ export class AppComponent {
         this.addOrReplaceTimeSeries(res);
         this.showSelection=true;
       }
+      let val:number;
       if(res.values.length===1){
-        let val = res.values[0];
-        markers[0].value = isNaN(val)?'-':val.toString();
-        markers[0].open = true;
+        val = res.values[0];
+      } else if(res.dates&&tsLayer.options.date){
+        // Find closest timestep...
+        let offsets = res.dates.map(d=>Math.abs(d.getTime()-tsLayer.options.date.getTime()));
+        let idx = offsets.indexOf(Math.min.apply(Math, offsets));
+        val = res.values[idx];
       }
-    });
+      markers[0].value = (isNaN(val)||(val===null)||(val===undefined))?'-':val.toString();
+      markers[0].open = true;
+  });
   }
 
   private findTimeSeriesLayer() {
