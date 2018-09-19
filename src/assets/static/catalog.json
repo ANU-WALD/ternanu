@@ -1044,7 +1044,12 @@
         "host": "nci",
         "smallExtent": true,
         "filepath": "ub8/au/TERN/hyperspectral/{{name}}/{{resolution}}/{{variable}}_{{name}}_{{resolution}}.nc",
-        "palette": "anu_wald_darkgreen",
+        "palette": {
+          "name": "RdYlBu",
+          "count": 9,
+          "reverse": false
+        },
+        "styles": "boxfill/anu_fmc_rdylbu_9",
         "belowmincolor": "extend",
         "abovemaxcolor": "extend",
         "resolution": "1m",
@@ -1406,7 +1411,7 @@
               "label": "DEM",
               "options": {
                 "variable": "DEM",
-                "palette": "anu_wald_gisheat_inv.v2",
+                "palette": "ferret",
                 "colorscalerange": [
                   430,
                   1900
@@ -1483,7 +1488,12 @@
         "host": "nci",
         "smallExtent": true,
         "filepath": "ub8/au/TERN/lidar/{{name}}/{{resolution}}/{{variable}}/{{variable}}_{{name}}_mosaic.nc",
-        "palette": "anu_wald_darkgreen",
+        "palette": {
+          "name": "RdYlBu",
+          "count": 9,
+          "reverse": false
+        },
+        "styles": "boxfill/anu_fmc_rdylbu_9",
         "belowmincolor": "extend",
         "abovemaxcolor": "extend",
         "resolution": "1m",
@@ -1534,7 +1544,8 @@
           "label": "DEM",
           "options": {
             "variable": "DEM",
-            "palette": "anu_wald_gisheat_inv.v2",
+            "palette": "ferret",
+            "styles":"boxfill/ferret",
             "colorscalerange": [
               430,
               470

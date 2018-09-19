@@ -1,0 +1,7 @@
+# See http://ferret.pmel.noaa.gov/HOMEPAGE/FAQ/graphics/palette_bounds.html
+204   0  255  # violet
+76.5   51  255  # blue
+0   153  76.5  # green
+255   255  0  # yellow
+255   0  0  # red
+153   0  0  # dark red
