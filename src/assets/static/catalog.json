@@ -61,6 +61,7 @@
         {
           "name": "Tree cover",
           "description": "Percent of area classified as forest at 25 metre resolution mapping using Landsat imagery following the NCAS classification.",
+          "dataCreator": "Department of the Environment and Energy, Australian National University",
           "options": {
             "filepath": "ub8/au/treecover/250m/ANUWALD.TreeCover.AllYears.250m.nc",
             "variable": "AllYears",
@@ -73,6 +74,7 @@
         },
         {
           "name": "Carbon Flux (OzFlux sites)",
+          "dataCreator":"TERN OzFlux",
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
@@ -134,6 +136,7 @@
         {
           "name": "Vegetation Carbon Uptake",
           "description": "",
+          "dataCreator": "Australian National University",
           "publications": [
             {
               "timestep": "annual",
@@ -174,6 +177,7 @@
         },
         {
           "name": "Fire Carbon Emissions",
+          "dataCreator": "European Centre for Medium-Range Weather Forecasts (ECMWF)",
           "options": {
             "palette": "anu_wald_gisheat_inv.v2"
           },
@@ -280,6 +284,7 @@
       "layers": [
         {
           "name": "Evapotranspiration Flux (OzFlux sites)",
+          "dataCreator":"TERN OzFlux",
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
@@ -345,6 +350,7 @@
         {
           "name": "Rainfall (OzWALD)",
           "description": "",
+          "dataCreator": "Bureau of Meteorology, Australian National University, CSIRO Land and Water",
           "variable": "Pg",
           "options": {
             "palette": "anu_wald_blues09",
@@ -423,6 +429,7 @@
         {
           "name": "Soil moisture (OzWALD)",
           "description": "",
+          "dataCreator": "Australian National University",
           "variable": "Ssoil",
           "options": {
             "palette": "anu_wald_blues09",
@@ -440,6 +447,7 @@
         {
           "name": "Runoff (OzWALD)",
           "description": "",
+          "dataCreator": "Australian National University",
           "variable": "Qtot",
           "options": {
             "palette": "anu_wald_blues09",
@@ -472,6 +480,7 @@
         {
           "name": "River Flows (OzWALD)",
           "description": "",
+          "dataCreator": "Australian National University",
           "variable": "Qriv",
           "options": {
             "palette": "anu_wald_blues09",
@@ -501,6 +510,7 @@
         },
         {
           "name": "Vegetation Moisture Content",
+          "dataCreator":"Australian National University",
           "options": {
             "palette": {
               "name": "RdYlBu",
@@ -538,6 +548,7 @@
         {
           "name": "Inundation Extent",
           "description": "",
+          "dataCreator": "CSIRO Land and Water, Australian National University",
           "options": {
             "palette": "anu_wald_bluescale20",
             "colorscalerange": [
@@ -576,6 +587,7 @@
     },
     {
       "name": "Soils and Landscape",
+      "dataCreator": "CSIRO Land and Water",
       "icon": "fa-globe",
       "publications": [
         {
@@ -798,6 +810,7 @@
       "layers": [
         {
           "name": "Leaf Area",
+          "dataCreator": "NASA, TERN AusCover",
           "options": {
             "palette": "anu_wald_darkgreen",
             "numcolorbands": 10,
@@ -832,6 +845,7 @@
         },
         {
           "name": "Vegetation Moisture Content",
+          "dataCreator":"Australian National University",
           "options": {
             "palette": {
               "name": "RdYlBu",
@@ -868,6 +882,7 @@
         },
         {
           "name": "Vegetation Composition (AusPlots)",
+          "dataCreator":"TERN AusPlots",
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ausplots_summary.json",
@@ -885,6 +900,7 @@
     },
     {
       "name": "Fraction Cover",
+      "dataCreator": "CSIRO Land and Water",
       "path": "Biodiversity and Habitat@0",
       "options": {
         "host": "nci",
@@ -944,6 +960,7 @@
     },
     {
       "name": "Hyperspectral products",
+      "dataCreator":"TERN",
       "icon": "fa-plane",
       "path": "Biodiversity and Habitat",
       "layers": [
@@ -1369,6 +1386,7 @@
     },
     {
       "name": "Lidar products",
+      "dataCreator":"TERN",
       "icon": "fa-plane",
       "path": "Biodiversity and Habitat",
       "layers": [

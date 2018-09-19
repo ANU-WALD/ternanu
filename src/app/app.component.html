@@ -104,7 +104,9 @@
                           [cbPalette]="l.flattenedSettings?.palette?.name||l.flattenedSettings?.palette"
                           [cbCount]="l.flattenedSettings?.numcolorbands||l.flattenedSettings?.palette?.count"
                           [cbReverse]="l.flattenedSettings?.palette?.reverse"
-                          [cbRange]="l.flattenedSettings?.colorscalerange">
+                          [cbRange]="l.flattenedSettings?.colorscalerange"
+                          [attribution]="l.layer.dataCreator"
+                          [attributionLink]="''">
               </map-legend>
             </div>
           </collapsible-map-control>
