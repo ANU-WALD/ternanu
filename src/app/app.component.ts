@@ -225,7 +225,7 @@ export class AppComponent {
     var markers:Array<SimpleMarker> = [
       {
         loc:this.currentPoint,
-        value:'here',
+        value:'',
         open:false,
         iconUrl:'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|616a34'
       }
@@ -244,8 +244,15 @@ export class AppComponent {
         layer:tsLayer.title,
         loc:this.currentPoint
       }
-      this.addOrReplaceTimeSeries(res);
-      this.showSelection=true;
+      if(res.dates){
+        this.addOrReplaceTimeSeries(res);
+        this.showSelection=true;
+      }
+      if(res.values.length===1){
+        let val = res.values[0];
+        markers[0].value = isNaN(val)?'-':val.toString();
+        markers[0].open = true;
+      }
     });
   }
 
