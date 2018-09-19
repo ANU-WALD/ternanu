@@ -81,7 +81,8 @@
             "downloadPath":"http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "styles":{
-              "fillColor":"red"
+              "fillColor":"red",
+              "fillOpacity":0.7
             },
             "publicationLabel": "Data Source"
           },
@@ -291,7 +292,8 @@
             "downloadPath":"http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "styles":{
-              "fillColor":"blue"
+              "fillColor":"blue",
+              "fillOpacity":0.7
             },
             "publicationLabel": "Data Source"
           },
@@ -889,7 +891,8 @@
             "downloadPath":"http://www.ausplots.org/",
             "vectors": "point",
             "styles":{
-              "fillColor":"green"
+              "fillColor":"green",
+              "fillOpacity":0.7
             }
           },
           "publications": [
