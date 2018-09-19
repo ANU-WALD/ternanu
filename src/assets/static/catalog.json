@@ -1422,7 +1422,19 @@
         {
           "name": "Alice",
           "lat": -22.284,
-          "lon": 133.251
+          "lon": 133.251,
+          "publications": [
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  590,
+                  610
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Chowilla",
