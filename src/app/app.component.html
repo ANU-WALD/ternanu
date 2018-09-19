@@ -89,8 +89,10 @@
           <zoom-out [map]="map" [minZoom]="3"></zoom-out>
           <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
           <zoom-layer [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
+<!--
           <location-search></location-search>
           <share-view></share-view>
+-->
         </button-bar>
         <div class="map-control left-bottom">
           <collapsible-map-control *ngIf="layers.length"
