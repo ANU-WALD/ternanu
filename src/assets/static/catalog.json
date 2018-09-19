@@ -563,6 +563,8 @@
           "publications": [
             {
               "timestep": "daily",
+              "timestepMultiplier": 8,
+              "timestepReference": "{{year}}-01-01",
               "interval": "modis",
               "options": {
                 "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{year}}.nc",
@@ -952,6 +954,8 @@
       "publications": [
         {
           "timestep": "daily",
+          "timestepMultiplier": 8,
+          "timestepReference": "{{year}}-01-01",
           "options": {
             "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc",
             "start": "2000-01-01",
