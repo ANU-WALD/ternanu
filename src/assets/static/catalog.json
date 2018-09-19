@@ -1411,7 +1411,6 @@
               "label": "DEM",
               "options": {
                 "variable": "DEM",
-                "palette": "ferret",
                 "colorscalerange": [
                   430,
                   1900

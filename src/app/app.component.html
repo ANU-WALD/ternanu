@@ -104,7 +104,7 @@
                           [helpText]="l.description()"
                           [mapUnits]="l.flattenedSettings?.units"
                           [cbPalette]="l.flattenedSettings?.palette?.name||l.flattenedSettings?.palette"
-                          [cbCount]="l.flattenedSettings?.numcolorbands||l.flattenedSettings?.palette?.count"
+                          [cbCount]="l.flattenedSettings?.palette?.count||l.flattenedSettings?.numcolorbands"
                           [cbReverse]="l.flattenedSettings?.palette?.reverse"
                           [cbRange]="l.flattenedSettings?.colorscalerange"
                           [attribution]="l.layer.dataCreator"
