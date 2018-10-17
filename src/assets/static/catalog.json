@@ -73,7 +73,7 @@
           }
         },
         {
-          "name": "Carbon Flux (OzFlux sites)",
+          "name": "Carbon Flux (TERN OzFlux Sites)",
           "dataCreator":"TERN OzFlux",
           "options": {
             "host": "webhost",
@@ -284,7 +284,7 @@
       ],
       "layers": [
         {
-          "name": "Evapotranspiration Flux (OzFlux sites)",
+          "name": "Evapotranspiration Flux (TERN OzFlux Sites)",
           "dataCreator":"TERN OzFlux",
           "options": {
             "host": "webhost",
@@ -885,7 +885,7 @@
           ]
         },
         {
-          "name": "Vegetation Composition (AusPlots)",
+          "name": "Vegetation Composition (TERN Ecosystem Surveillance Plots)",
           "dataCreator":"TERN AusPlots",
           "options": {
             "host": "webhost",
