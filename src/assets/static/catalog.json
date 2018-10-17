@@ -202,7 +202,7 @@
               "options": {
                 "filepath": "/ub8/au/FireEmissions/GFASv12.BurntCarbon.{{year}}.nc",
                 "colorscalerange": [
-                  0,
+                  0.00001,
                   100
                 ],
                 "timeFormat": "{{year}}-{{month}}-{{day}}",
