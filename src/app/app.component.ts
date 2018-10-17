@@ -257,7 +257,11 @@ export class AppComponent {
         let idx = offsets.indexOf(Math.min.apply(Math, offsets));
         val = res.values[idx];
       }
-      markers[0].value = (isNaN(val)||(val===null)||(val===undefined))?'-':val.toString();
+      const coordPrecision = +Math.sqrt(this.map.zoom).toFixed();
+      const loc:any = markers[0].loc;
+      const coordText = `${loc.lat.toFixed(coordPrecision)}, ${loc.lng.toFixed(coordPrecision)}`;
+      const valueText = (isNaN(val)||(val===null)||(val===undefined))?'-':val.toString();
+      markers[0].value = `${coordText}: ${valueText}`;
       markers[0].open = true;
   });
   }
