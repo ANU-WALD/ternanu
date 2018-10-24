@@ -89,6 +89,12 @@
           <zoom-out [map]="map" [minZoom]="3"></zoom-out>
           <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
           <zoom-layer [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
+          <button class="btn btn-secondary btn-sm" 
+                  ngbTooltip="About"
+                  placement="right"
+                  (click)="splash.show()">
+            <i class="fa fa-question"></i>
+          </button>
 <!--
           <location-search></location-search>
           <share-view></share-view>
@@ -198,3 +204,6 @@
     </div>
   </div>
 </div>
+<one-time-splash #splash [application]='ternanu'>
+  Here is my splash!
+</one-time-splash>

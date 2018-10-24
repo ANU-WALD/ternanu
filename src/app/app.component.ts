@@ -6,7 +6,7 @@ import { ControlPosition } from '@agm/core/services/google-maps-types';
 import { LayerSelection, LayeredMapComponent,
   PaletteService, MappedLayer, CatalogService, Catalog,
   SimpleMarker, TimeseriesService, TimeSeries, Bounds,
-  PointSelectionService, PointSelection, MetadataService, OpendapService, Layer
+  PointSelectionService, PointSelection, MetadataService, OpendapService, Layer, OneTimeSplashComponent
 } from 'map-wald';
 import { LatLng } from '@agm/core';
 import { map, switchAll } from 'rxjs/operators';
@@ -45,6 +45,8 @@ export class AppComponent {
     west:110
   };
   mapTypePosition:number = ControlPosition.BOTTOM_LEFT;
+
+  @ViewChild('splash') splash: OneTimeSplashComponent;
 
   constructor(
     private catalogService:CatalogService,
