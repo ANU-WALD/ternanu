@@ -6,7 +6,7 @@ import { ControlPosition } from '@agm/core/services/google-maps-types';
 import { LayerSelection, LayeredMapComponent,
   PaletteService, MappedLayer, CatalogService, Catalog,
   SimpleMarker, TimeseriesService, TimeSeries, Bounds,
-  PointSelectionService, PointSelection, MetadataService, OpendapService, Layer, OneTimeSplashComponent
+  PointSelectionService, PointSelection, MetadataService, OpendapService, Layer, OneTimeSplashComponent, CatalogComponent
 } from 'map-wald';
 import { LatLng } from '@agm/core';
 import { map, switchAll } from 'rxjs/operators';
@@ -47,6 +47,7 @@ export class AppComponent {
   mapTypePosition:number = ControlPosition.BOTTOM_LEFT;
 
   @ViewChild('splash') splash: OneTimeSplashComponent;
+  @ViewChild('catalogView') catalogView: CatalogComponent;
 
   constructor(
     private catalogService:CatalogService,
@@ -73,6 +74,7 @@ export class AppComponent {
         this.buildChart();
       }
       this.topLayer = this.layers[0];
+      this.catalogView.activeLayers(layers.map(l=>l.layer));
     });
   }
 
@@ -89,6 +91,14 @@ export class AppComponent {
   }
 
   layerSelected(selection:LayerSelection){
+    let existing = this.map.layers.findIndex(ml=>ml.layer===selection.layer);
+    if(existing>=0){
+      let layers = this.layers.slice();
+      layers.splice(existing,1);
+      this.layersChanged(layers);
+      return;
+    }
+
     if(this.gridLayer(selection.layer)){
       selection.action='replace';
       selection.filter = (ml:MappedLayer)=>{
