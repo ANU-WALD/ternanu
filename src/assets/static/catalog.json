@@ -890,7 +890,7 @@
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ausplots_summary.json",
-            "downloadPath":"http://www.ausplots.org/",
+            "downloadPath":"http://www.aekos.org.au",
             "vectors": "point",
             "styles":{
               "fillColor":"green",
