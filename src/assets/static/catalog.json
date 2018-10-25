@@ -772,6 +772,74 @@
           },
           "publications": [
             {
+              "label": "100_200_EV_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "100_200_05_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "100_200_95_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "060_100_05_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "060_100_95_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "060_100_EV_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "030_060_05_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "030_060_95_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "030_060_EV_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "015_030_05_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "015_030_95_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "005_015_05_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "005_015_95_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "005_015_EV_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "000_005_05_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "000_005_95_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
+              "label": "000_005_EV_N_P_AU_NAT_C",
+              "skip": true
+            },
+            {
               "label": "DER_000_999_95_N_P_AU_NAT_C",
               "options": {
                 "layers": "DER_000_999_95_N_P_AU_NAT_C"
@@ -781,6 +849,12 @@
               "label": "DER_000_999_EV_N_P_AU_NAT_C",
               "options": {
                 "layers": "DER_000_999_EV_N_P_AU_NAT_C"
+              }
+            },
+            {
+              "label": "DER_000_999_05_N_P_AU_NAT_C",
+              "options": {
+                "layers": "DER_000_999_05_N_P_AU_NAT_C"
               }
             }
           ]
