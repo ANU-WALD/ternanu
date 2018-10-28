@@ -15,6 +15,10 @@
       "software": "tds",
       "url": "http://www.flowmatters.com.au/proxies/csiro-thredds/thredds"
     },
+    "tern-dap":{
+      "software":"tds",
+      "url":"https://dap-test.tern.org.au/thredds"
+    },
     "qld-geoserver": {
       "software": "geoserver",
       "url": "http://qld.auscover.org.au/geoserver/aus"
@@ -209,6 +213,23 @@
                 "variable": "BurntCarbon",
                 "start": "2003-01-01",
                 "end": "2015-12-31"
+              }
+            }
+          ]
+        },
+        {
+          "name":"Composite Burn Data",
+          "dataCreator":"Maitec",
+          "options":{
+            "host": "tern-dap"
+          },
+          "publications":[
+            {
+              "timestep":"monthly",
+              "options":{
+                "filepath":"/landscape/remote_sensing/modis-burnt-area/composite/composite_burn_data_20020801_20170228.nc",
+                "variable":"julian_date_of_burn",
+                "timeFormat":"{{year}}-{{month}}-01"
               }
             }
           ]
