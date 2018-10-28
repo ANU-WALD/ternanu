@@ -15,9 +15,9 @@
       "software": "tds",
       "url": "http://www.flowmatters.com.au/proxies/csiro-thredds/thredds"
     },
-    "tern-dap":{
-      "software":"tds",
-      "url":"https://dap-test.tern.org.au/thredds"
+    "tern-dap": {
+      "software": "tds",
+      "url": "https://dap-test.tern.org.au/thredds"
     },
     "qld-geoserver": {
       "software": "geoserver",
@@ -30,7 +30,7 @@
     "asris-mapserver": {
       "software": "esri",
       "url": "http://www.asris.csiro.au/ArcGIS/services/TERN",
-      "downloadLink":"http://www.clw.csiro.au/aclep/soilandlandscapegrid/"
+      "downloadLink": "http://www.clw.csiro.au/aclep/soilandlandscapegrid/"
     }
   },
   "namedIntervals": {
@@ -78,15 +78,15 @@
         },
         {
           "name": "Carbon Flux (TERN OzFlux Sites)",
-          "dataCreator":"TERN OzFlux",
+          "dataCreator": "TERN OzFlux",
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
-            "downloadPath":"http://dap.ozflux.org.au/thredds",
+            "downloadPath": "http://dap.ozflux.org.au/thredds",
             "vectors": "point",
-            "styles":{
-              "fillColor":"red",
-              "fillOpacity":0.7
+            "styles": {
+              "fillColor": "red",
+              "fillOpacity": 0.7
             },
             "publicationLabel": "Data Source"
           },
@@ -106,7 +106,7 @@
                   "longitude": 0
                 },
                 "tags": {},
-                "labels":[
+                "labels": [
                   "site"
                 ],
                 "defaultVariable": "/Annual/Fc"
@@ -130,7 +130,7 @@
                     "L3"
                   ]
                 },
-                "labels":[
+                "labels": [
                   "site"
                 ],
                 "defaultVariable": "NEE_LL"
@@ -206,7 +206,7 @@
               "options": {
                 "filepath": "/ub8/au/FireEmissions/GFASv12.BurntCarbon.{{year}}.nc",
                 "colorscalerange": [
-                  0.00001,
+                  1e-05,
                   100
                 ],
                 "timeFormat": "{{year}}-{{month}}-{{day}}",
@@ -218,18 +218,18 @@
           ]
         },
         {
-          "name":"Composite Burn Data",
-          "dataCreator":"Maitec",
-          "options":{
+          "name": "Composite Burn Data",
+          "dataCreator": "Maitec",
+          "options": {
             "host": "tern-dap"
           },
-          "publications":[
+          "publications": [
             {
-              "timestep":"monthly",
-              "options":{
-                "filepath":"/landscape/remote_sensing/modis-burnt-area/composite/composite_burn_data_20020801_20170228.nc",
-                "variable":"julian_date_of_burn",
-                "timeFormat":"{{year}}-{{month}}-01"
+              "timestep": "monthly",
+              "options": {
+                "filepath": "/landscape/remote_sensing/modis-burnt-area/composite/composite_burn_data_20020801_20170228.nc",
+                "variable": "julian_date_of_burn",
+                "timeFormat": "{{year}}-{{month}}-01"
               }
             }
           ]
@@ -306,15 +306,15 @@
       "layers": [
         {
           "name": "Evapotranspiration Flux (TERN OzFlux Sites)",
-          "dataCreator":"TERN OzFlux",
+          "dataCreator": "TERN OzFlux",
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ozflux_towers.json",
-            "downloadPath":"http://dap.ozflux.org.au/thredds",
+            "downloadPath": "http://dap.ozflux.org.au/thredds",
             "vectors": "point",
-            "styles":{
-              "fillColor":"blue",
-              "fillOpacity":0.7
+            "styles": {
+              "fillColor": "blue",
+              "fillOpacity": 0.7
             },
             "publicationLabel": "Data Source"
           },
@@ -338,7 +338,7 @@
                   "longitude": 0
                 },
                 "tags": {},
-                "labels":[
+                "labels": [
                   "site"
                 ],
                 "defaultVariable": "/Annual/Fe"
@@ -362,7 +362,7 @@
                     "L3"
                   ]
                 },
-                "labels":[
+                "labels": [
                   "site"
                 ],
                 "defaultVariable": "NEE_LL"
@@ -533,7 +533,7 @@
         },
         {
           "name": "Vegetation Moisture Content",
-          "dataCreator":"Australian National University",
+          "dataCreator": "Australian National University",
           "options": {
             "palette": {
               "name": "RdYlBu",
@@ -944,7 +944,7 @@
         },
         {
           "name": "Vegetation Moisture Content",
-          "dataCreator":"Australian National University",
+          "dataCreator": "Australian National University",
           "options": {
             "palette": {
               "name": "RdYlBu",
@@ -981,15 +981,15 @@
         },
         {
           "name": "Vegetation Composition (TERN Ecosystem Surveillance Plots)",
-          "dataCreator":"TERN AusPlots",
+          "dataCreator": "TERN AusPlots",
           "options": {
             "host": "webhost",
             "filepath": "assets/static/ausplots_summary.json",
-            "downloadPath":"http://www.aekos.org.au",
+            "downloadPath": "http://www.aekos.org.au",
             "vectors": "point",
-            "styles":{
-              "fillColor":"green",
-              "fillOpacity":0.7
+            "styles": {
+              "fillColor": "green",
+              "fillOpacity": 0.7
             }
           },
           "publications": [
@@ -1062,7 +1062,7 @@
     },
     {
       "name": "Hyperspectral products",
-      "dataCreator":"TERN",
+      "dataCreator": "TERN",
       "icon": "fa-plane",
       "path": "Biodiversity and Habitat",
       "layers": [
@@ -1073,7 +1073,359 @@
           },
           "lon": 149.0975,
           "name": "BlackMountain",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "NDWI",
+              "options": {
+                "variable": "NDWI",
+                "colorscalerange": [
+                  -0.2,
+                  0.11
+                ]
+              }
+            },
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.18,
+                  0.03
+                ]
+              }
+            },
+            {
+              "label": "NDNI",
+              "options": {
+                "variable": "NDNI",
+                "colorscalerange": [
+                  -0.01,
+                  0.06
+                ]
+              }
+            },
+            {
+              "label": "CAI",
+              "options": {
+                "variable": "CAI",
+                "colorscalerange": [
+                  -0.0022,
+                  0.0016
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  1.6
+                ]
+              }
+            },
+            {
+              "label": "NDLI",
+              "options": {
+                "variable": "NDLI",
+                "colorscalerange": [
+                  0.0,
+                  0.03
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.0,
+                  0.02
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.15,
+                  1.04
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  0.9,
+                  1.09
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  0.97,
+                  1.96
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  0.99,
+                  11.84
+                ]
+              }
+            }
+          ]
         },
         {
           "lat": -35.2951,
@@ -1082,7 +1434,359 @@
           },
           "lon": 149.1142,
           "name": "BurleyGriffin",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.08,
+                  0.05
+                ]
+              }
+            },
+            {
+              "label": "CAI",
+              "options": {
+                "variable": "CAI",
+                "colorscalerange": [
+                  -0.012,
+                  0.0
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  1.4
+                ]
+              }
+            },
+            {
+              "label": "NDNI",
+              "options": {
+                "variable": "NDNI",
+                "colorscalerange": [
+                  0.0,
+                  0.09
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.01,
+                  0.08
+                ]
+              }
+            },
+            {
+              "label": "NDLI",
+              "options": {
+                "variable": "NDLI",
+                "colorscalerange": [
+                  0.03,
+                  0.08
+                ]
+              }
+            },
+            {
+              "label": "NDWI",
+              "options": {
+                "variable": "NDWI",
+                "colorscalerange": [
+                  0.16,
+                  0.63
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.21,
+                  2.52
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  0.25,
+                  6.6
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  0.75,
+                  1.21
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  1.21,
+                  1.91
+                ]
+              }
+            }
+          ]
         },
         {
           "lat": -27.6333,
@@ -1091,7 +1795,389 @@
           },
           "lon": 153.0833,
           "name": "Karawatha",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "SIPI",
+              "options": {
+                "variable": "SIPI",
+                "colorscalerange": [
+                  -0.4,
+                  4.87
+                ]
+              }
+            },
+            {
+              "label": "NPCI",
+              "options": {
+                "variable": "NPCI",
+                "colorscalerange": [
+                  -0.23,
+                  0.33
+                ]
+              }
+            },
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.1,
+                  0.03
+                ]
+              }
+            },
+            {
+              "label": "NPQI",
+              "options": {
+                "variable": "NPQI",
+                "colorscalerange": [
+                  -0.09,
+                  0.05
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  1.2
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.04,
+                  0.32
+                ]
+              }
+            },
+            {
+              "label": "PI4",
+              "options": {
+                "variable": "PI4",
+                "colorscalerange": [
+                  0.17,
+                  0.96
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.19,
+                  1.04
+                ]
+              }
+            },
+            {
+              "label": "PI3",
+              "options": {
+                "variable": "PI3",
+                "colorscalerange": [
+                  0.47,
+                  1.27
+                ]
+              }
+            },
+            {
+              "label": "SRPI",
+              "options": {
+                "variable": "SRPI",
+                "colorscalerange": [
+                  0.51,
+                  1.6
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  0.77,
+                  1.06
+                ]
+              }
+            },
+            {
+              "label": "PI1",
+              "options": {
+                "variable": "PI1",
+                "colorscalerange": [
+                  0.78,
+                  2.19
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  0.81,
+                  1.5
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  0.97,
+                  8.73
+                ]
+              }
+            }
+          ]
         },
         {
           "lat": -82.2,
@@ -1100,7 +2186,389 @@
           },
           "lon": 141.9,
           "name": "Litchfield",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.12,
+                  -0.05
+                ]
+              }
+            },
+            {
+              "label": "NPQI",
+              "options": {
+                "variable": "NPQI",
+                "colorscalerange": [
+                  -0.09,
+                  0.07
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  0.8
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.02,
+                  0.07
+                ]
+              }
+            },
+            {
+              "label": "PI4",
+              "options": {
+                "variable": "PI4",
+                "colorscalerange": [
+                  0.11,
+                  0.34
+                ]
+              }
+            },
+            {
+              "label": "NPCI",
+              "options": {
+                "variable": "NPCI",
+                "colorscalerange": [
+                  0.15,
+                  0.47
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.25,
+                  0.76
+                ]
+              }
+            },
+            {
+              "label": "PI3",
+              "options": {
+                "variable": "PI3",
+                "colorscalerange": [
+                  0.33,
+                  0.56
+                ]
+              }
+            },
+            {
+              "label": "SRPI",
+              "options": {
+                "variable": "SRPI",
+                "colorscalerange": [
+                  0.36,
+                  0.74
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  0.75,
+                  1.03
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  1.0,
+                  1.57
+                ]
+              }
+            },
+            {
+              "label": "SIPI",
+              "options": {
+                "variable": "SIPI",
+                "colorscalerange": [
+                  1.07,
+                  2.1
+                ]
+              }
+            },
+            {
+              "label": "PI1",
+              "options": {
+                "variable": "PI1",
+                "colorscalerange": [
+                  1.79,
+                  3.34
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  1.8,
+                  6.9
+                ]
+              }
+            }
+          ]
         },
         {
           "lat": -35.1663,
@@ -1109,7 +2577,359 @@
           },
           "lon": 149.1645,
           "name": "MulligansFlat",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "NDWI",
+              "options": {
+                "variable": "NDWI",
+                "colorscalerange": [
+                  -0.24,
+                  0.06
+                ]
+              }
+            },
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.09,
+                  0.0
+                ]
+              }
+            },
+            {
+              "label": "CAI",
+              "options": {
+                "variable": "CAI",
+                "colorscalerange": [
+                  -0.0025,
+                  0.0035
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "NDLI",
+              "options": {
+                "variable": "NDLI",
+                "colorscalerange": [
+                  0.0,
+                  0.02
+                ]
+              }
+            },
+            {
+              "label": "NDNI",
+              "options": {
+                "variable": "NDNI",
+                "colorscalerange": [
+                  0.0,
+                  0.04
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.0,
+                  0.02
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.37,
+                  0.94
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  0.88,
+                  1.05
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  1.1,
+                  1.52
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  1.14,
+                  3.84
+                ]
+              }
+            }
+          ]
         },
         {
           "lat": -17.1,
@@ -1118,7 +2938,389 @@
           },
           "lon": 145.62,
           "name": "Robson",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "NPCI",
+              "options": {
+                "variable": "NPCI",
+                "colorscalerange": [
+                  -0.36,
+                  0.29
+                ]
+              }
+            },
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.14,
+                  0.02
+                ]
+              }
+            },
+            {
+              "label": "NPQI",
+              "options": {
+                "variable": "NPQI",
+                "colorscalerange": [
+                  -0.12,
+                  0.19
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  2.8
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.0,
+                  0.06
+                ]
+              }
+            },
+            {
+              "label": "PI4",
+              "options": {
+                "variable": "PI4",
+                "colorscalerange": [
+                  0.04,
+                  0.33
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.08,
+                  0.56
+                ]
+              }
+            },
+            {
+              "label": "PI3",
+              "options": {
+                "variable": "PI3",
+                "colorscalerange": [
+                  0.39,
+                  1.4
+                ]
+              }
+            },
+            {
+              "label": "SRPI",
+              "options": {
+                "variable": "SRPI",
+                "colorscalerange": [
+                  0.55,
+                  2.12
+                ]
+              }
+            },
+            {
+              "label": "PI1",
+              "options": {
+                "variable": "PI1",
+                "colorscalerange": [
+                  0.65,
+                  3.57
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  0.73,
+                  1.15
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  0.78,
+                  1.13
+                ]
+              }
+            },
+            {
+              "label": "SIPI",
+              "options": {
+                "variable": "SIPI",
+                "colorscalerange": [
+                  0.96,
+                  1.16
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  2.61,
+                  27.85
+                ]
+              }
+            }
+          ]
         },
         {
           "lat": -27.38,
@@ -1127,7 +3329,389 @@
           },
           "lon": 152.87,
           "name": "Samford",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "NPQI",
+              "options": {
+                "variable": "NPQI",
+                "colorscalerange": [
+                  -0.11,
+                  0.1
+                ]
+              }
+            },
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.09,
+                  -0.01
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  1.8
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NPCI",
+              "options": {
+                "variable": "NPCI",
+                "colorscalerange": [
+                  0.0,
+                  0.42
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.02,
+                  0.19
+                ]
+              }
+            },
+            {
+              "label": "PI4",
+              "options": {
+                "variable": "PI4",
+                "colorscalerange": [
+                  0.06,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.12,
+                  0.87
+                ]
+              }
+            },
+            {
+              "label": "PI3",
+              "options": {
+                "variable": "PI3",
+                "colorscalerange": [
+                  0.37,
+                  0.84
+                ]
+              }
+            },
+            {
+              "label": "SRPI",
+              "options": {
+                "variable": "SRPI",
+                "colorscalerange": [
+                  0.41,
+                  0.99
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  0.78,
+                  1.04
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  0.8,
+                  1.36
+                ]
+              }
+            },
+            {
+              "label": "SIPI",
+              "options": {
+                "variable": "SIPI",
+                "colorscalerange": [
+                  1.02,
+                  2.18
+                ]
+              }
+            },
+            {
+              "label": "PI1",
+              "options": {
+                "variable": "PI1",
+                "colorscalerange": [
+                  1.21,
+                  3.29
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  1.23,
+                  16.71
+                ]
+              }
+            }
+          ]
         },
         {
           "lat": -27.415,
@@ -1136,7 +3720,389 @@
           },
           "lon": 153.17,
           "name": "Wynnum",
-          "zoom": 11
+          "zoom": 11,
+          "publications": [
+            {
+              "label": "SIPI",
+              "options": {
+                "variable": "SIPI",
+                "colorscalerange": [
+                  -1.56,
+                  6.81
+                ]
+              }
+            },
+            {
+              "label": "PRI",
+              "options": {
+                "variable": "PRI",
+                "colorscalerange": [
+                  -0.14,
+                  -0.01
+                ]
+              }
+            },
+            {
+              "label": "NPQI",
+              "options": {
+                "variable": "NPQI",
+                "colorscalerange": [
+                  -0.11,
+                  0.02
+                ]
+              }
+            },
+            {
+              "label": "EVI",
+              "options": {
+                "variable": "EVI",
+                "colorscalerange": [
+                  0.0,
+                  0.7
+                ]
+              }
+            },
+            {
+              "label": "FPAR",
+              "options": {
+                "variable": "FPAR",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "GVMI",
+              "options": {
+                "variable": "GVMI",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Blue",
+              "options": {
+                "variable": "LandsatOLI-Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-CA",
+              "options": {
+                "variable": "LandsatOLI-CA",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Cirrus",
+              "options": {
+                "variable": "LandsatOLI-Cirrus",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Green",
+              "options": {
+                "variable": "LandsatOLI-Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-NIR",
+              "options": {
+                "variable": "LandsatOLI-NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Pan",
+              "options": {
+                "variable": "LandsatOLI-Pan",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-Red",
+              "options": {
+                "variable": "LandsatOLI-Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR1",
+              "options": {
+                "variable": "LandsatOLI-SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "LandsatOLI-SWIR2",
+              "options": {
+                "variable": "LandsatOLI-SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "mNDVI",
+              "options": {
+                "variable": "mNDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B01Red",
+              "options": {
+                "variable": "MODIS-B01Red",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B02NIR",
+              "options": {
+                "variable": "MODIS-B02NIR",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B03Blue",
+              "options": {
+                "variable": "MODIS-B03Blue",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B04Green",
+              "options": {
+                "variable": "MODIS-B04Green",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B05SWIR1",
+              "options": {
+                "variable": "MODIS-B05SWIR1",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B06SWIR2",
+              "options": {
+                "variable": "MODIS-B06SWIR2",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MODIS-B07SWIR3",
+              "options": {
+                "variable": "MODIS-B07SWIR3",
+                "colorscalerange": [
+                  0.0,
+                  0.3
+                ]
+              }
+            },
+            {
+              "label": "MTCI",
+              "options": {
+                "variable": "MTCI",
+                "colorscalerange": [
+                  0.0,
+                  1.2
+                ]
+              }
+            },
+            {
+              "label": "NDVI",
+              "options": {
+                "variable": "NDVI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-MODIS",
+              "options": {
+                "variable": "NDVI-MODIS",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "NDVI-OLI",
+              "options": {
+                "variable": "NDVI-OLI",
+                "colorscalerange": [
+                  0.0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "OWL",
+              "options": {
+                "variable": "OWL",
+                "colorscalerange": [
+                  0.0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "NPCI",
+              "options": {
+                "variable": "NPCI",
+                "colorscalerange": [
+                  0.03,
+                  0.37
+                ]
+              }
+            },
+            {
+              "label": "SGR",
+              "options": {
+                "variable": "SGR",
+                "colorscalerange": [
+                  0.04,
+                  0.42
+                ]
+              }
+            },
+            {
+              "label": "PI4",
+              "options": {
+                "variable": "PI4",
+                "colorscalerange": [
+                  0.09,
+                  1.2
+                ]
+              }
+            },
+            {
+              "label": "PI2",
+              "options": {
+                "variable": "PI2",
+                "colorscalerange": [
+                  0.19,
+                  1.63
+                ]
+              }
+            },
+            {
+              "label": "PI3",
+              "options": {
+                "variable": "PI3",
+                "colorscalerange": [
+                  0.41,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "SRPI",
+              "options": {
+                "variable": "SRPI",
+                "colorscalerange": [
+                  0.46,
+                  0.95
+                ]
+              }
+            },
+            {
+              "label": "SR",
+              "options": {
+                "variable": "SR",
+                "colorscalerange": [
+                  0.55,
+                  9.16
+                ]
+              }
+            },
+            {
+              "label": "WBI",
+              "options": {
+                "variable": "WBI",
+                "colorscalerange": [
+                  0.67,
+                  1.12
+                ]
+              }
+            },
+            {
+              "label": "RG",
+              "options": {
+                "variable": "RG",
+                "colorscalerange": [
+                  0.89,
+                  1.37
+                ]
+              }
+            },
+            {
+              "label": "PI1",
+              "options": {
+                "variable": "PI1",
+                "colorscalerange": [
+                  1.17,
+                  2.85
+                ]
+              }
+            }
+          ]
         }
       ],
       "options": {
@@ -1413,7 +4379,7 @@
           "options": {
             "variable": "OWL",
             "colorscalerange": [
-              4.132078235130621e-9,
+              4.132078235130621e-09,
               0.9943080544471741
             ]
           },
@@ -1493,7 +4459,7 @@
     },
     {
       "name": "Lidar products",
-      "dataCreator":"TERN",
+      "dataCreator": "TERN",
       "icon": "fa-plane",
       "path": "Biodiversity and Habitat",
       "layers": [
@@ -1511,8 +4477,148 @@
               "options": {
                 "variable": "DEM",
                 "colorscalerange": [
-                  430,
-                  1900
+                  545,
+                  1571.0
+                ]
+              }
+            },
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  11.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.6
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  23.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  3,
+                  15.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  17.0
                 ]
               }
             }
@@ -1528,8 +4634,148 @@
               "options": {
                 "variable": "DEM",
                 "colorscalerange": [
-                  590,
-                  610
+                  594,
+                  608.0
+                ]
+              }
+            },
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  3.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.4
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  6.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  11,
+                  37.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  5.0
                 ]
               }
             }
@@ -1542,27 +4788,787 @@
           "zoom": 11,
           "options": {
             "resolution": "5m"
-          }
+          },
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  9.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  16.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  17,
+                  60.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  6,
+                  55.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  12.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Credo",
           "lat": -30.191,
-          "lon": 120.654
+          "lon": 120.654,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  11.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.2
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  17.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  430,
+                  464.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  11,
+                  29.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  16.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Litchfield",
           "lat": -13.18,
-          "lon": 130.789
+          "lon": 130.789,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  13.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  0.9
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  18.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  205,
+                  228.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  10,
+                  33.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  16.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Robson",
           "lat": -17.156,
-          "lon": 145.635
+          "lon": 145.635,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  25.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.1
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  39.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  7,
+                  772.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  11,
+                  59.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  37.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Rushworth",
           "lat": -36.753,
-          "lon": 144.966
+          "lon": 144.966,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  11.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.3
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  18.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  176,
+                  233.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  10,
+                  29.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  17.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Tumbarumba",
@@ -1570,28 +5576,788 @@
           "lon": 148.154,
           "options": {
             "resolution": "5m"
-          }
+          },
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  28.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.2
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  42.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  1133,
+                  1304.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  3,
+                  26.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  38.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Warra",
           "lat": -43.103,
-          "lon": 146.657
+          "lon": 146.657,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  21.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  52.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  2,
+                  340.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  6,
+                  38.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  45.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Watts",
           "lat": -37.689,
-          "lon": 145.685
+          "lon": 145.685,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  34.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.5
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  69.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  38,
+                  1149.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  6,
+                  36.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  62.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "Whroo",
           "lat": -36.673,
           "lon": 145.029,
-          "zoom": 15
+          "zoom": 15,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  15.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.3
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  21.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  135,
+                  145.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  10,
+                  56.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  20.0
+                ]
+              }
+            }
+          ]
         },
         {
           "name": "ZigZag",
           "lat": -37.474,
-          "lon": 148.339
+          "lon": 148.339,
+          "publications": [
+            {
+              "label": "CBH",
+              "options": {
+                "variable": "CBH",
+                "colorscalerange": [
+                  0,
+                  19.0
+                ]
+              }
+            },
+            {
+              "label": "CLI",
+              "options": {
+                "variable": "CLI",
+                "colorscalerange": [
+                  0,
+                  1.5
+                ]
+              }
+            },
+            {
+              "label": "CTH",
+              "options": {
+                "variable": "CTH",
+                "colorscalerange": [
+                  0,
+                  37.0
+                ]
+              }
+            },
+            {
+              "label": "DEM",
+              "options": {
+                "variable": "DEM",
+                "colorscalerange": [
+                  120,
+                  430.0
+                ]
+              }
+            },
+            {
+              "label": "FBF",
+              "options": {
+                "variable": "FBF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "FWS",
+              "options": {
+                "variable": "FWS",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "LCF_CF",
+              "options": {
+                "variable": "LCF_CF",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_EF",
+              "options": {
+                "variable": "LCF_EF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_H",
+              "options": {
+                "variable": "LCF_H",
+                "colorscalerange": [
+                  0,
+                  0.6
+                ]
+              }
+            },
+            {
+              "label": "LCF_NSF",
+              "options": {
+                "variable": "LCF_NSF",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "LCF_OS",
+              "options": {
+                "variable": "LCF_OS",
+                "colorscalerange": [
+                  0,
+                  0.75
+                ]
+              }
+            },
+            {
+              "label": "LCF_US",
+              "options": {
+                "variable": "LCF_US",
+                "colorscalerange": [
+                  0,
+                  0.5
+                ]
+              }
+            },
+            {
+              "label": "PPM",
+              "options": {
+                "variable": "PPM",
+                "colorscalerange": [
+                  10,
+                  33.0
+                ]
+              }
+            },
+            {
+              "label": "VCF",
+              "options": {
+                "variable": "VCF",
+                "colorscalerange": [
+                  0,
+                  1.0
+                ]
+              }
+            },
+            {
+              "label": "VH",
+              "options": {
+                "variable": "VH",
+                "colorscalerange": [
+                  0,
+                  32.0
+                ]
+              }
+            }
+          ]
         }
       ],
       "options": {
@@ -1655,7 +6421,7 @@
           "options": {
             "variable": "DEM",
             "palette": "ferret",
-            "styles":"boxfill/ferret",
+            "styles": "boxfill/ferret",
             "colorscalerange": [
               430,
               470
