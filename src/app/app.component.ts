@@ -211,12 +211,13 @@ export class AppComponent {
       map(dasAndQuery=>this.dap.getData(`${url}.ascii?${sel.variable}${dasAndQuery.query}`,dasAndQuery.das)),
       switchAll()
     ).subscribe(data=>{
-      let ts = {
+      const ts:TimeSeries = {
         dates:<Date[]>data.time,
         values:(<number[]>data[sel.variable]).map(v=>(v===fillValue)?NaN:v),
         tags:{
           variable:sel.variable
-        }
+        },
+        style: sel.catalog.chart || 'line'
       };
       (sel.catalog.labels||[]).forEach(lbl=>{
         ts.tags[lbl]=sel.feature.properties[lbl];

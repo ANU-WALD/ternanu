@@ -109,6 +109,7 @@
                 "labels": [
                   "site"
                 ],
+                "chart": "bar",
                 "defaultVariable": "Fc"
               }
             },
@@ -126,6 +127,7 @@
                 "labels": [
                   "site"
                 ],
+                "chart": "bar",
                 "defaultVariable": "Fc"
               }
             },
@@ -409,6 +411,7 @@
                 "labels": [
                   "site"
                 ],
+                "chart": "bar",
                 "defaultVariable": "Fe"
               }
             },
@@ -426,6 +429,7 @@
                 "labels": [
                   "site"
                 ],
+                "chart": "bar",
                 "defaultVariable": "Fe"
               }
             },
