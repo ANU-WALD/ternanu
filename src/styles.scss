@@ -4,6 +4,7 @@ $fa-font-path: "../node_modules/font-awesome/fonts";
 $tern-eucalypt:rgb(97,106,52);
 $tern-orange:rgb(171,108,0);
 $tern-green:rgb(85,111,0);
+$tern-eucalypt-light:rgb(211,217,203);//lighten($tern-eucalypt,25%);
 $tern-orange-light:lighten($tern-orange,25%);
 
 
@@ -76,7 +77,8 @@ $theme-colors: (
 .main-row{
   width:100%;
   position: fixed;
-  top:69px;
+  top:0px;
+//  top:69px;
   left:0px;
   right:0px;
   bottom:0px;
@@ -112,9 +114,9 @@ $theme-colors: (
  */
 
 @include media-breakpoint-up(sm) {
-  h1{
-    color:#0F0;
-  }
+  // h1{
+  //   color:#0F0;
+  // }
 
   .main-map {
     width:100%;
@@ -164,3 +166,75 @@ $theme-colors: (
   font-weight: bold;
 /*  background:darkolivegreen;*/
 }
+
+.ldv-title {
+  // background:$tern-eucalypt;
+  // color:$gray-200;
+  // border: 2px solid $gray-200;
+
+  // background:$gray-200;
+  color:$tern-eucalypt;
+  //border: 1px solid $tern-eucalypt;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#616a34+1,616a34+74,e5e5e5+100 */
+  background: $tern-eucalypt-light; /* Old browsers */
+  background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+
+  //border-radius:3px;
+
+  margin-top:0px;
+  margin-bottom:0px;
+  // padding-left:15px;
+  padding-right:10px;
+  h1 {
+    display:inline;
+    padding-left:6px;
+    margin-bottom:0rem;
+  }
+
+  img{
+    vertical-align: top;
+    height:48px;
+  }
+}
+
+// .ldv-title {
+//   background: url(assets/images/strip.png) no-repeat center center;
+// 	background-size: cover;
+// 	color: #fff;
+// 	-webkit-text-fill-color: transparent;
+//   -webkit-background-clip: text;
+//   h1 {
+// //    font-size: 200px;
+// //    font-size: 
+// //`    font-family: Anton, sans-serif;
+//     text-align: center;
+//     -webkit-transition: text-shadow 1s ease;
+//     text-shadow: 0 0 1px rgba(0,0,0,.1);
+//     margin: 0;
+//     padding: 0;
+//   }
+// }
+
+
+.tern-logo{
+  img{
+    padding-top:15px;
+  }
+}
+.anu-logo{
+  img{
+    padding:10px;
+    max-height:90px;
+  }
+}
+
+.ncris-logo{
+  img{
+    padding-right:5px;
+  }
+}
+

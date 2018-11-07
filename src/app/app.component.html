@@ -1,3 +1,4 @@
+<!--
 <header class="navbar fixed-top navbar-expand-lg">
   <span class="justify">
       <a class="navbar-brand pull-left"
@@ -27,16 +28,57 @@
 <span class="fa fa-bars"></span>
 </button>
 
-  <!--
-  <div class="navbar-collapse" [ngbCollapse]="isNavbarCollapsed" id="navbarItems">
-    <theme-navbar [catalog]="catalog" (layerSelected)="layerSelected($event)"></theme-navbar>
-  </div>
+</header>
+
 -->
 
-</header>
+<!--
+      <div class="logos">
+        <div class="logo">
+          <a href="http://www.tern.org.au" target="_blank" class="tern-logo">
+            <img class="img-fluid" src="assets/images/TERN_logo.png">
+          </a>
+          <a href="http://wald.anu.edu.au/" target="_blank" class="anu-logo">
+            <img class="img-fluid float-right" src="assets/images/anu_wald_logo_round.png">
+          </a>
+        </div>
+        <div class="logo text-center">
+          <p><i>Supported by:</i></p>
+          <a href="https://www.education.gov.au/national-collaborative-research-infrastructure-strategy-ncris" class="ncris-logo">
+            <img class="img-fluid" src="assets/images/NCRIS_logo_small.png">
+          </a>
+        </div>
+      </div>
+
+
+-->
+
 <div class="container-fluid">
   <div class="row main-row no-gutters">
     <div class="col-3 sidebar">
+      <div class="row">
+        <div class="col-4 col-xs-12">
+          <div class="text-center">
+            <a href="http://www.tern.org.au" target="_blank" class="tern-logo">
+              <img class="img-fluid" src="assets/images/TERN_logo.png">
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-xs-12">
+          <div class="text-center">
+            <a href="http://wald.anu.edu.au/" target="_blank" class="anu-logo">
+              <img class="img-fluid" src="assets/images/anu_wald_logo_round.png">
+            </a>
+          </div>
+        </div>
+        <div class="col-4 col-xs-12">
+          <div class="text-center">
+            <a href="https://www.education.gov.au/national-collaborative-research-infrastructure-strategy-ncris" class="ncris-logo">
+              <img class="img-fluid" src="assets/images/NCRIS_logo_small.png">
+            </a>
+          </div>
+        </div>
+      </div>
       <ngb-accordion [activeIds]="openPanels"
                      (panelChange)="panelToggle($event)">
 
@@ -101,6 +143,11 @@
           <share-view></share-view>
 -->
         </button-bar>
+
+        <div class="map-control top-center ldv-title">
+          <img class="img-fluid" src="assets/images/stripes.png"> <h1>Landscape Data Visualiser</h1>
+        </div>
+
         <div class="map-control left-bottom">
           <collapsible-map-control *ngIf="layers.length"
                                    [heading]="'Legend'">
