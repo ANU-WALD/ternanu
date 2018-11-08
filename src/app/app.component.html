@@ -98,7 +98,7 @@
           </ng-template>
         </ngb-panel>
 
-        <ngb-panel id="layers">
+        <ngb-panel *ngIf="layers&&layers.length" id="layers">
           <ng-template ngbPanelTitle>
             <span>
               <i class="fa" 
