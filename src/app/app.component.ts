@@ -313,4 +313,8 @@ export class AppComponent {
   panelToggle(event: any) {
     this.panels[event.panelId] = event.nextState;
   }
+
+  closeAbout(){
+    this.splash.close();
+  }
 }

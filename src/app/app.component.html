@@ -165,6 +165,67 @@
     </div>
   </div>
 </div>
-<one-time-splash #splash [application]='ternanu'>
-  Here is my splash!
+<one-time-splash #splash [application]="'ternanu'" [klass]="'about'" [label]="'Welcome to the'">
+  <h2 class="about-heading">TERN-ANU Landscape Data Visualiser</h2>
+
+  <p class="about-info">Discover, map and analyse the extensive
+    range of landscape-scale ecosystem
+    datasets provided by TERN Australia and
+    the Australian National University (ANU).
+  </p>
+
+  <p class="about-feedback">
+    Support & feedback: <a href="mailto:esupport@tern.org.au">esupport@tern.org.au</a>
+  </p>
+
+  <div class="row about-links">
+    <div class="col-6">
+      <a href="http://www.tern.org.au" target="_blank" class="btn btn-lg btn-primary w-100">More Information</a>
+    </div>
+
+    <div class="col-6">
+      <button (click)="closeAbout()" class="btn btn-lg btn-primary w-100">Continue</button>
+    </div>
+  </div>
+
+  <p class="small about-disclaimer">
+    <strong>Disclaimer:</strong>&nbsp;The TERN-ANU Landscape Data Visualiser and its contents is provided on an "as is" and "as available" basis. You
+    understand and agree that you use the TERN-ANU Landscape Data Visualiser at your own discretion and risk and that you will be
+    solely responsible for any damange or loss whatsoever that results from such use including use of any data obtained through the
+    TERN-ANU Landscape Data Visualiser.
+  </p>
+
+  <div class="about-logos">
+    <div class="row">
+      <div class="col-8">
+        <p>Collaboratively produced by:</p>
+      </div>
+      <div class="col-4">
+        <p>With support from:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="text-center">
+          <a href="http://www.tern.org.au" target="_blank" class="tern-logo">
+            <img class="img-fluid" src="assets/images/logo.png">
+          </a>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="text-center">
+          <a href="http://wald.anu.edu.au/" target="_blank" class="anu-logo">
+            <img class="img-fluid" src="assets/images/anuwald_round_large_tr.png">
+          </a>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="text-center">
+          <a href="https://www.education.gov.au/national-collaborative-research-infrastructure-strategy-ncris" target="_blank" class="ncris-logo">
+            <img class="img-fluid" src="assets/images/NCRIS-PROVIDER-MONO.png">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </one-time-splash>

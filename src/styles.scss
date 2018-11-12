@@ -209,7 +209,7 @@ $font-family-base:       $font-family-sans-serif;
   .btn-link{
     color: $tern-eucalypt;
     font-weight: bold;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height:1.2rem;
 
     i.fa{
@@ -282,6 +282,84 @@ $font-family-base:       $font-family-sans-serif;
       font-size:4rem;
       display: table-cell;
       vertical-align: middle;
+    }
+  }
+}
+
+$about-margin:48px;
+$about-text-width:60%;
+
+.about{
+  .modal-content{
+    border-radius: 25px;
+    background: $tern-eucalypt-light; /* Old browsers */
+    background: -moz-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt 50%, $tern-eucalypt-light 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt 50%, $tern-eucalypt-light 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $tern-eucalypt 1%, $tern-eucalypt 50%, $tern-eucalypt-light 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+    .modal-header{
+      border-bottom:none;
+      color:$tern-orange-light;
+      padding-top:64px;
+      padding-bottom:8px;
+      padding-left:0px;
+      padding-right:0px;
+      h4 {
+        padding-left:$about-margin;
+        padding-right:$about-margin;
+      }
+    }
+    .modal-body{
+      padding-left:0px;
+      padding-right:0px;
+      padding-top:8px;
+      border:none;
+      color:$gray-100;
+
+      h2{
+        padding-left:$about-margin;
+        padding-right:$about-margin;
+      }
+
+      p.about-info, p.about-feedback, p.about-disclaimer{
+        padding-left:$about-margin;
+        padding-right:$about-margin;
+        margin-top:32px;
+        a{
+          color:$tern-orange-light;
+        }
+      }
+
+      p.about-info,p.about-feedback{
+        width:$about-text-width;
+      }
+
+      .row.about-links{
+        padding:$about-margin;
+        // padding-left:$about-margin;
+        // padding-right:$about-margin;
+      }
+
+      .about-logos{
+        margin-top:32px;
+        border-top:2px solid $tern-orange;
+        .row:first{
+          margin-top:12px;
+        }
+        .row{
+          margin-top:12px;
+          margin-left:$about-margin;
+          margin-right:$about-margin;
+        }
+      }
+    }
+
+    .modal-footer{
+      border-top:none;
+
+      .btn {
+        display:none;
+      }
     }
   }
 }
