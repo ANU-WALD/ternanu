@@ -87,12 +87,17 @@ $font-family-base:       $font-family-sans-serif;
 }
 
 .header-row {
+  background: url(assets/images/bannerbg.jpg) no-repeat center center;
+  background-size:cover;
+
   width:100%;
   position: fixed;
   top:0px;
   left:0px;
   right:0px;
   height:$header-height;
+  border-bottom: $big-border;
+
 }
 
 .main-row{
@@ -171,16 +176,11 @@ $font-family-base:       $font-family-sans-serif;
   font-weight: bold;
 }
 
-.active-child {
-  font-weight: bold;
-}
-
 .ldv-title {
   color:$tern-eucalypt;
 
   margin-top:0px;
   margin-bottom:0px;
-  // padding-left:15px;
   padding-right:10px;
   h1 {
     display:inline;
@@ -194,7 +194,7 @@ $font-family-base:       $font-family-sans-serif;
   }
 }
 
-.tern-gradient-bar, .sidebar .card-header{
+.tern-gradient-bar, .sidebar .card-header, .sidebar.logos::after{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#616a34+1,616a34+74,e5e5e5+100 */
   background: $tern-eucalypt-light; /* Old browsers */
   background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
@@ -252,17 +252,27 @@ $font-family-base:       $font-family-sans-serif;
 }
 
 .sidebar.logos {
-  border: $big-border;
   overflow: hidden;
+  border-right: $border-thickness solid transparent;
 }
 
-.main-map {
-  border-bottom: $big-border;
+.sidebar.logos::after{
+  content:"";
+  opacity: 0.5;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  position: absolute;
+  z-index: -1;
+  background: $tern-eucalypt-light; /* Old browsers */
+  background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
 }
 
 .app-title {
-  background: url(assets/images/bannerbg.jpg) no-repeat center center;
-  background-size:cover;
   color: $white;
   div{
     display:table;
