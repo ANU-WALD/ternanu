@@ -54,57 +54,70 @@
 -->
 
 <div class="container-fluid">
-  <div class="row main-row no-gutters">
-    <div class="col-3 sidebar">
+  <div class="row header-row no-gutters">
+    <div class="col-3 sidebar logos tern-gradient-bar">
       <div class="row">
         <div class="col-4 col-xs-12">
+            <div class="text-center">
+              <a href="https://www.education.gov.au/national-collaborative-research-infrastructure-strategy-ncris" target="_blank" class="ncris-logo">
+                <img class="img-fluid" src="assets/images/NCRIS-PROVIDER-MONO.png">
+              </a>
+            </div>
+          </div>
+          <div class="col-4 col-xs-12">
           <div class="text-center">
             <a href="http://www.tern.org.au" target="_blank" class="tern-logo">
-              <img class="img-fluid" src="assets/images/TERN_logo.png">
+              <img class="img-fluid" src="assets/images/logo.png">
             </a>
           </div>
         </div>
         <div class="col-4 col-xs-12">
           <div class="text-center">
             <a href="http://wald.anu.edu.au/" target="_blank" class="anu-logo">
-              <img class="img-fluid" src="assets/images/anu_wald_logo_round.png">
-            </a>
-          </div>
-        </div>
-        <div class="col-4 col-xs-12">
-          <div class="text-center">
-            <a href="https://www.education.gov.au/national-collaborative-research-infrastructure-strategy-ncris" class="ncris-logo">
-              <img class="img-fluid" src="assets/images/NCRIS_logo_small.png">
+              <img class="img-fluid" src="assets/images/anuwald_round_large_tr.png">
             </a>
           </div>
         </div>
       </div>
-      <ngb-accordion [activeIds]="openPanels"
+    </div>
+    <div class="col-9 app-title">
+      <div class="text-center">
+        <h1>Landscape Data Visualiser</h1>
+      </div>
+    </div>
+  </div>
+  <div class="row main-row no-gutters">
+    <div class="col-3 sidebar">
+      <ngb-accordion #accordion
+                     [activeIds]="openPanels"
                      (panelChange)="panelToggle($event)">
 
         <ngb-panel class="catalog" id="catalog">
           <ng-template ngbPanelTitle>
-            <span>
+            <div>
+              <span>Layer selector</span>
               <i class="fa" 
-                 [ngClass]="panels.catalog?'fa-chevron-down':'fa-chevron-up'"></i>
-            </span>&nbsp;
-            <span>Catalogue</span>
+                  [ngClass]="panels.catalog?'fa-chevron-down':'fa-chevron-up'"></i>
+            </div>
           </ng-template>
           <ng-template ngbPanelContent>
             <catalog #catalogView
                      [catalog]="catalog" 
                      (layerSelected)="layerSelected($event)"
-                     [showPlaceholders]="false"></catalog>
+                     [showPlaceholders]="false"
+                     [leafIcon]="''"
+                     [collapsedIcon]="'fa fa-folder'"
+                     [expandedIcon]="'fa fa-folder-open'"></catalog>
           </ng-template>
         </ngb-panel>
 
         <ngb-panel *ngIf="layers&&layers.length" id="layers">
           <ng-template ngbPanelTitle>
-            <span>
-              <i class="fa" 
-                [ngClass]="panels.layers?'fa-chevron-down':'fa-chevron-up'"></i>
-            </span>&nbsp;
-            <span>Layers shown</span>
+            <div>
+              <span>Visible data</span>
+               <i class="fa" 
+                   [ngClass]="panels.layers?'fa-chevron-down':'fa-chevron-up'"></i>
+            </div>
           </ng-template>
           <ng-template ngbPanelContent>
             <div>
@@ -143,10 +156,6 @@
           <share-view></share-view>
 -->
         </button-bar>
-
-        <div class="map-control top-center ldv-title">
-          <img class="img-fluid" src="assets/images/stripes.png"> <h1>Landscape Data Visualiser</h1>
-        </div>
 
         <div class="map-control left-bottom">
           <collapsible-map-control *ngIf="layers.length"
@@ -240,6 +249,7 @@
           </collapsible-map-control>
         </div>
 
+        <!--
         <div class="map-control right-top">
           <a href="mailto:http://mailto:albert.vandijk@anu.edu.au?subject=[Feedback from Landscape Visualiser]"
              class="btn btn-primary">
@@ -248,6 +258,7 @@
                  src="assets/images/feedback_new.png">
           </a>
         </div>
+        -->
       </layered-map>
     </div>
   </div>

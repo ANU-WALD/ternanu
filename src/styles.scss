@@ -1,12 +1,16 @@
 $fa-font-path: "../node_modules/font-awesome/fonts";
 /* You can add global styles to this file, and also import other style files */
 
+
 $tern-eucalypt:rgb(97,106,52);
 $tern-orange:rgb(171,108,0);
 $tern-green:rgb(85,111,0);
 $tern-eucalypt-light:rgb(211,217,203);//lighten($tern-eucalypt,25%);
 $tern-orange-light:lighten($tern-orange,25%);
 
+$header-height:130px;
+$border-thickness:15px;
+$big-border: $border-thickness solid $tern-eucalypt;
 
 $white:  #fff !default;
 $gray-100: #f8f9fa !default;
@@ -70,15 +74,31 @@ $theme-colors: (
   dark: $gray-800
 );
 
+$font-family-sans-serif: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-base:       $font-family-sans-serif;
+
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../node_modules/map-wald/map-wald.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.gm-style{
+  font-family: $font-family-sans-serif !important;
+}
+
+.header-row {
+  width:100%;
+  position: fixed;
+  top:0px;
+  left:0px;
+  right:0px;
+  height:$header-height;
+}
 
 .main-row{
   width:100%;
   position: fixed;
-  top:0px;
-//  top:69px;
+  top:$header-height;
   left:0px;
   right:0px;
   bottom:0px;
@@ -176,13 +196,6 @@ $theme-colors: (
   color:$tern-eucalypt;
   //border: 1px solid $tern-eucalypt;
 
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#616a34+1,616a34+74,e5e5e5+100 */
-  background: $tern-eucalypt-light; /* Old browsers */
-  background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
-
   //border-radius:3px;
 
   margin-top:0px;
@@ -198,6 +211,30 @@ $theme-colors: (
   img{
     vertical-align: top;
     height:48px;
+  }
+}
+
+.tern-gradient-bar, .sidebar .card-header{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#616a34+1,616a34+74,e5e5e5+100 */
+  background: $tern-eucalypt-light; /* Old browsers */
+  background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+}
+
+.sidebar .card-header{
+  padding-left:10px;
+
+  .btn-link{
+    color: $tern-eucalypt;
+    font-size: 1.8rem;
+    line-height:1.2rem;
+
+    i.fa{
+      position: absolute;
+      right:5%;
+    }
   }
 }
 
@@ -219,6 +256,17 @@ $theme-colors: (
 //   }
 // }
 
+.main-row .sidebar {
+  background: $tern-eucalypt;
+}
+
+.sidebar .card {
+  margin-left: $border-thickness;
+  margin-right: $border-thickness;
+  margin-bottom: $border-thickness;
+  border-radius: 0px;
+}
+
 
 .tern-logo{
   img{
@@ -228,13 +276,39 @@ $theme-colors: (
 .anu-logo{
   img{
     padding:10px;
-    max-height:90px;
+    max-height:100px;
   }
 }
 
 .ncris-logo{
   img{
     padding-right:5px;
+    padding-top:5px;
+    max-height:90px;
   }
 }
 
+.sidebar.logos {
+  border: $big-border;
+  overflow: hidden;
+}
+
+.main-map {
+  border-bottom: $big-border;
+}
+
+.app-title {
+  background: url(assets/images/bannerbg.jpg) no-repeat center center;
+  background-size:cover;
+  color: $white;
+  div{
+    display:table;
+    height:100%;
+    width:100%;
+    h1 {
+      font-size:4rem;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
