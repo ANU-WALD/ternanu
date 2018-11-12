@@ -317,4 +317,10 @@ export class AppComponent {
   closeAbout(){
     this.splash.close();
   }
+
+  showAbout(event:any){
+    event.stopPropagation();
+    event.preventDefault();
+    this.splash.show();
+  }
 }

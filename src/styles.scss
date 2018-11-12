@@ -194,6 +194,14 @@ $font-family-base:       $font-family-sans-serif;
   }
 }
 
+.about-link{
+  color:$gray-100;
+  position:absolute;
+  font-weight: bold;
+  top:10px;
+  right:10px;
+}
+
 .tern-gradient-bar, .sidebar .card-header, .sidebar.logos::after{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#616a34+1,616a34+74,e5e5e5+100 */
   background: $tern-eucalypt-light; /* Old browsers */

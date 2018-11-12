@@ -27,8 +27,10 @@
     </div>
     <div class="col-9 app-title">
       <div class="text-center">
-        <h1>Landscape Data Visualiser</h1>
+        <h1>Landscape Data Visualiser
+        </h1>
       </div>
+      <a class="about-link" href="#" (click)="showAbout($event)">About</a>
     </div>
   </div>
   <div class="row main-row no-gutters">
@@ -90,16 +92,6 @@
           <zoom-out [map]="map" [minZoom]="3"></zoom-out>
           <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
           <zoom-layer [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
-          <button class="btn btn-secondary btn-sm" 
-                  ngbTooltip="About"
-                  placement="right"
-                  (click)="splash.show()">
-            <i class="fa fa-question"></i>
-          </button>
-<!--
-          <location-search></location-search>
-          <share-view></share-view>
--->
         </button-bar>
 
         <div class="map-control left-bottom">
