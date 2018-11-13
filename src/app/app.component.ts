@@ -24,6 +24,7 @@ declare var ga: Function;
 })
 export class AppComponent {
   layers: Array<MappedLayer> = [];
+  markers: Array<SimpleMarker> = [];
   topLayer: MappedLayer;
 
   title = 'app works!';
@@ -134,7 +135,7 @@ export class AppComponent {
     this.showSelection = true;
     this.selectedFeature = f;
     this.currentPoint = null;
-    this.map.markers = [];
+    this.markers = [];
   }
 
   pointSelected(p: LatLng) {
@@ -256,7 +257,7 @@ export class AppComponent {
         iconUrl: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|616a34'
       }
     ];
-    this.map.markers = markers;
+    this.markers = markers;
     var tsLayer = this.findTimeSeriesLayer();
     if (!tsLayer) {
       this.detailsMode = 'feature';
@@ -289,6 +290,7 @@ export class AppComponent {
       const valueText = (isNaN(val) || (val === null) || (val === undefined)) ? '-' : val.toString();
       markers[0].value = `${coordText}: ${valueText}`;
       markers[0].open = true;
+      this.markers = this.markers.slice();
     });
   }
 

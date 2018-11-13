@@ -83,6 +83,7 @@
     <div class="col-9 main-map">
       <layered-map #map
                    [layers]="layers"
+                   [markers]="markers"
                    (layersChange)="layersChanged($event)"
                    (featureSelected)="featureSelected($event)"
                    (pointSelected)="pointSelected($event)"
