@@ -11,8 +11,8 @@ import {
 } from 'map-wald';
 import { LatLng } from '@agm/core';
 import { map, switchAll } from 'rxjs/operators';
-import { forkJoin } from 'rxjs';
-import { DapDAS, DapDDX } from 'dap-query-js/dist/dap-query';
+import { forkJoin, of } from 'rxjs';
+import { DapDAS, DapDDX, DapData } from 'dap-query-js/dist/dap-query';
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 
 declare var ga: Function;
@@ -227,9 +227,14 @@ export class AppComponent {
             null)
         };
       }),
-      map(dasAndQuery => this.dap.getData(`${url}.ascii?${sel.variable}${dasAndQuery.query}`, dasAndQuery.das)),
+      map(dasAndQuery => forkJoin([
+        this.dap.getData(`${url}.ascii?${sel.variable}${dasAndQuery.query}`, dasAndQuery.das),
+        of(dasAndQuery.das)
+      ])),
       switchAll()
-    ).subscribe(data => {
+    ).subscribe(dataAndDas => {
+      const data:DapData = dataAndDas[0];
+      const das:DapDAS = dataAndDas[1];
       const ts: TimeSeries = {
         dates: <Date[]>data.time,
         values: (<number[]>data[sel.variable]).map(v => (v === fillValue) ? NaN : v),
@@ -241,16 +246,9 @@ export class AppComponent {
       (sel.catalog.labels || []).forEach(lbl => {
         ts.tags[lbl] = sel.feature.properties[lbl];
       });
+      ts.units = das.variables[sel.variable].units;
       this.addOrReplaceTimeSeries(ts);
-    })
-    // get... (along with das?, ddx?)
-    // this.timeSeriesService.
-
-    // getTimeseriesForLayer(tsLayer,this.currentPoint).subscribe(res=>{
-    //   this.timeSeries = [res];
-    //   this.detailsMode = 'chart';
-    //   this.showSelection=true;
-    // });
+    });
   }
 
   buildChart() {
@@ -276,6 +274,7 @@ export class AppComponent {
         layer: tsLayer.title,
         loc: this.currentPoint
       }
+      res.units = tsLayer.flattenedSettings.units;
       if (res.dates) {
         this.addOrReplaceTimeSeries(res);
         this.showSelection = true;
