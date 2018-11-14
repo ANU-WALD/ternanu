@@ -274,6 +274,17 @@ export class AppComponent {
     });
   }
 
+  coordinateText(loc:any,precision?:number){
+    const lat = Math.abs(loc.lat);
+    const lng = Math.abs(loc.lng);
+    const dir = (loc.lat<0)?'S':'N';
+
+    if(precision===undefined){
+      return `${lat}°${dir}, ${lng}°E`
+    }
+    return `${lat.toFixed(precision)}°${dir}, ${lng.toFixed(precision)}°E`
+  }
+
   buildChart() {
     var markers: Array<SimpleMarker> = [
       {
@@ -295,7 +306,7 @@ export class AppComponent {
       res.label = 'ts 0';
       res.tags = {
         layer: tsLayer.title,
-        loc: this.currentPoint
+        loc: this.coordinateText(this.currentPoint,3)
       }
       res.units = tsLayer.flattenedSettings.units;
       if (res.dates) {
@@ -313,7 +324,7 @@ export class AppComponent {
       }
       const coordPrecision = +Math.sqrt(this.map.zoom).toFixed();
       const loc: any = markers[0].loc;
-      const coordText = `${loc.lat.toFixed(coordPrecision)}, ${loc.lng.toFixed(coordPrecision)}`;
+      const coordText = this.coordinateText(loc,coordPrecision);
       const valueText = (isNaN(val) || (val === null) || (val === undefined)) ? '-' : val.toString();
       markers[0].value = `${coordText}: ${valueText}`;
       markers[0].open = true;
