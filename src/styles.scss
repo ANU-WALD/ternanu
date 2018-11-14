@@ -2,7 +2,8 @@ $fa-font-path: "../node_modules/font-awesome/fonts";
 /* You can add global styles to this file, and also import other style files */
 
 
-$tern-eucalypt:rgb(97,106,52);
+$tern-eucalypt:#506428; 
+$old-tern-eucalypt:rgb(97, 106, 52);
 $tern-orange:rgb(171,108,0);
 $tern-green:rgb(85,111,0);
 $tern-eucalypt-light:rgb(211,217,203);//lighten($tern-eucalypt,25%);
@@ -78,6 +79,7 @@ $theme-colors: (
 
 $font-family-sans-serif: 'Montserrat', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 $font-family-base:       $font-family-sans-serif;
+$font-size-base: 0.875rem;
 
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 @import '../node_modules/bootstrap/scss/bootstrap';
