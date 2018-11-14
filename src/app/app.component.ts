@@ -50,6 +50,7 @@ export class AppComponent {
     west: 110
   };
   mapTypePosition: number = ControlPosition.BOTTOM_LEFT;
+  showWindows = true;
 
   @ViewChild('splash') splash: OneTimeSplashComponent;
   @ViewChild('catalogView') catalogView: CatalogComponent;
@@ -328,5 +329,9 @@ export class AppComponent {
     event.stopPropagation();
     event.preventDefault();
     this.splash.show();
+  }
+
+  toggleWindows(){
+    this.showWindows = !this.showWindows;
   }
 }

@@ -90,14 +90,19 @@
                    [mapTypePosition]="mapTypePosition">
         <div class="map-control left-top">
           <button-bar>
-            <zoom-in [map]="map" [maxZoom]="20"></zoom-in>
-            <zoom-out [map]="map" [minZoom]="3"></zoom-out>
-            <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
-            <zoom-layer [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
+            <div>
+              <button class="btn btn-secondary btn-sm" (click)="toggleWindows()">
+                <i class="fa" [ngClass]="showWindows?'fa-eye-slash':'fa-eye'"></i>
+              </button>
+            </div>
+            <zoom-in *ngIf="showWindows" [map]="map" [maxZoom]="20"></zoom-in>
+            <zoom-out *ngIf="showWindows"  [map]="map" [minZoom]="3"></zoom-out>
+            <zoom-full *ngIf="showWindows" [map]="map" [bounds]="fullExtent"></zoom-full>
+            <zoom-layer *ngIf="showWindows" [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
           </button-bar>
         </div>
 
-        <div class="map-control left-bottom">
+        <div *ngIf="showWindows" class="map-control left-bottom">
           <collapsible-map-control *ngIf="layers.length"
                                    [heading]="'Legend'">
             <div *ngFor="let l of layers">
@@ -118,7 +123,7 @@
         </div>
 
 
-        <div *ngIf="showSelection" class="map-control right-bottom">
+        <div *ngIf="showWindows&&showSelection" class="map-control right-bottom">
           <collapsible-map-control [heading]="'Site data'">
             <ng-container [ngSwitch]="detailsMode">
               <feature-table *ngSwitchCase="'feature'"
