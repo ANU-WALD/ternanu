@@ -167,11 +167,16 @@ export class AppComponent {
     let labelTags: string[] = [];
     let titleTags: string[] = [];
     let labels: string[] = this.timeSeries.map(() => '');
+    const TAG_BREAK='<TAG-BREAK>';
+    const TITLE_SPLIT_THRESHOLD=25;
+    const BREAK_TAG='<br>';
+    let breaks = 0;
     tags.forEach(t => {
       const values = this.timeSeries.map(ts => stringifyTag((ts.tags || {})[t]))
       if (uniq(values).length === 1) {
         titleTags.push(values[0]);
-        title += values[0] + ' ';
+        title += values[0] + TAG_BREAK;
+        breaks++;
       } else {
         values.forEach((v, i) => {
           labels[i] += v + ' ';
@@ -179,6 +184,24 @@ export class AppComponent {
         labelTags.push(t);
       }
     });
+
+    if(breaks && title.length>TITLE_SPLIT_THRESHOLD){
+      let titleParts = title.split(TAG_BREAK);
+      let current='';
+      title = '';
+      titleParts.forEach(p=>{
+        if((current.length + p.length) >= (TITLE_SPLIT_THRESHOLD*1.5)){
+          title += current + BREAK_TAG;
+          current = '';
+        }
+        current += p + ' ';
+        if(current.length > TITLE_SPLIT_THRESHOLD) {
+          title += current + BREAK_TAG;
+          current = '';
+        }
+      });
+      title += current;
+    }
 
     for (var i = 0; i < this.timeSeries.length; i++) {
       this.timeSeries[i].label = labels[i].trim() || `ts ${i + 1}`;
@@ -188,7 +211,7 @@ export class AppComponent {
 
   addOrReplaceTimeSeries(ts?: TimeSeries) {
     this.timeSeries = this.timeSeries || [];
-    this.timeSeries = this.timeSeries.filter(ts => ts.pinned);
+    this.timeSeries = this.timeSeries.filter(existing => existing.pinned);
 
     if (ts) {
       this.timeSeries.push(ts);
