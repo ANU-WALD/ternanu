@@ -12,6 +12,8 @@ $header-height:130px;
 $border-thickness:15px;
 $big-border: $border-thickness solid $tern-eucalypt;
 
+$map-control-offset:10px;
+
 $white:  #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -374,4 +376,21 @@ $about-text-width:60%;
       }
     }
   }
+}
+
+.map-control.left-bottom{
+  margin-left:$map-control-offset;
+}
+
+.map-control.left-top{
+  margin-left:$map-control-offset;
+  margin-top:$map-control-offset;
+}
+
+.map-control.right-bottom{
+  margin-right:$map-control-offset;
+}
+
+.layer-info-target{
+  color:$tern-orange;
 }

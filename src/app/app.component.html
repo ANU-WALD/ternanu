@@ -88,12 +88,14 @@
                    (featureSelected)="featureSelected($event)"
                    (pointSelected)="pointSelected($event)"
                    [mapTypePosition]="mapTypePosition">
-        <button-bar class="map-control left-top">
-          <zoom-in [map]="map" [maxZoom]="20"></zoom-in>
-          <zoom-out [map]="map" [minZoom]="3"></zoom-out>
-          <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
-          <zoom-layer [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
-        </button-bar>
+        <div class="map-control left-top">
+          <button-bar>
+            <zoom-in [map]="map" [maxZoom]="20"></zoom-in>
+            <zoom-out [map]="map" [minZoom]="3"></zoom-out>
+            <zoom-full [map]="map" [bounds]="fullExtent"></zoom-full>
+            <zoom-layer [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
+          </button-bar>
+        </div>
 
         <div class="map-control left-bottom">
           <collapsible-map-control *ngIf="layers.length"
