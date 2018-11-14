@@ -971,12 +971,18 @@
           "dataCreator": "TERN AusPlots",
           "options": {
             "host": "webhost",
-            "filepath": "assets/static/ausplots_summary.json",
+            "filepath":"http://portal.tern.org.au/geoserver/nr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=nr:ausplots&outputFormat=application/json",
             "downloadPath": "http://www.aekos.org.au",
             "vectors": "point",
             "styles": {
               "fillColor": "green",
               "fillOpacity": 0.7
+            },
+            "properties":{
+              "aekos_site_url":{
+                "hyperlink":true,
+                "placeholder":"More Details"
+              }
             }
           },
           "publications": [
