@@ -39,6 +39,8 @@ export class AppComponent {
   showSelection: boolean = false;
   detailsMode: ('feature' | 'chart');
   selectedFeature: Feature<GeometryObject>;
+  selectedFeatureLayer: MappedLayer;
+
   chartTitle = '';
   timeSeries: TimeSeries[];
   fullExtent: Bounds = {
@@ -130,10 +132,12 @@ export class AppComponent {
     this.gaEvent('layers', selection.action, selection.layer.name);
   }
 
-  featureSelected(f: Feature<GeometryObject>) {
+  featureSelected(evt: {feature: Feature<GeometryObject>, layer?:MappedLayer}) {
     this.detailsMode = 'feature';
     this.showSelection = true;
-    this.selectedFeature = f;
+    this.selectedFeature = evt.feature;
+    this.selectedFeatureLayer = evt.layer;
+
     this.currentPoint = null;
     this.markers = [];
   }

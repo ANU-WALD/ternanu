@@ -120,7 +120,8 @@
           <collapsible-map-control [heading]="'Site data'">
             <ng-container [ngSwitch]="detailsMode">
               <feature-table *ngSwitchCase="'feature'"
-                             [feature]="selectedFeature">
+                             [feature]="selectedFeature"
+                             [styles]="selectedFeatureLayer?.flattenedSettings?.properties">
 
               </feature-table>
               <div *ngSwitchCase="'chart'">
