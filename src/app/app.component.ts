@@ -168,7 +168,7 @@ export class AppComponent {
     let titleTags: string[] = [];
     let labels: string[] = this.timeSeries.map(() => '');
     const TAG_BREAK='<TAG-BREAK>';
-    const TITLE_SPLIT_THRESHOLD=25;
+    const TITLE_SPLIT_THRESHOLD=22;
     const BREAK_TAG='<br>';
     let breaks = 0;
     tags.forEach(t => {
