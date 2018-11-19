@@ -26,6 +26,7 @@ export class AppComponent {
   layers: Array<MappedLayer> = [];
   markers: Array<SimpleMarker> = [];
   topLayer: MappedLayer;
+  layerOpacity=1.0;
 
   title = 'app works!';
   catalog: Catalog;
@@ -74,6 +75,7 @@ export class AppComponent {
   @ViewChild(LayeredMapComponent) map: LayeredMapComponent;
 
   layersChanged(layers: MappedLayer[]) {
+    layers.forEach(l=>l.opacity=this.layerOpacity);
     setTimeout(() => {
       this.layers = layers;
       if (this.currentPoint) {
@@ -366,5 +368,13 @@ export class AppComponent {
 
   toggleWindows(){
     this.showWindows = !this.showWindows;
+  }
+
+  toggleTransparency(){
+    this.layerOpacity -= 0.4;
+    if(this.layerOpacity<0){
+      this.layerOpacity = 1.0;
+    }
+    this.layers.forEach(l=>l.opacity=this.layerOpacity);
   }
 }

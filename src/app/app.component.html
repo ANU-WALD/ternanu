@@ -93,7 +93,10 @@
         <div class="map-control left-top">
           <button-bar>
             <div>
-              <button class="btn btn-secondary btn-sm" (click)="toggleWindows()">
+              <button class="btn btn-secondary btn-sm" 
+                      (click)="toggleWindows()"
+                      [ngbTooltip]="showWindows?'Hide windows':'Show windows'"
+                      placement="right">
                 <i class="fa" [ngClass]="showWindows?'fa-eye-slash':'fa-eye'"></i>
               </button>
             </div>
@@ -101,6 +104,14 @@
             <zoom-out *ngIf="showWindows"  [map]="map" [minZoom]="3"></zoom-out>
             <zoom-full *ngIf="showWindows" [map]="map" [bounds]="fullExtent"></zoom-full>
             <zoom-layer *ngIf="showWindows" [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
+            <div>
+              <button class="btn btn-secondary btn-sm"
+                      (click)="toggleTransparency()"
+                      ngbTooltip="Adjust transparency of grid layer"
+                      placement="right">
+                <i class="fa" [ngClass]="(layerOpacity<0.5)?'fa-circle-o':((layerOpacity<0.9)?'fa-adjust':'fa-circle')"></i>
+              </button>
+            </div>
           </button-bar>
         </div>
 
