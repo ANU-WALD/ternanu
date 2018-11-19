@@ -42,9 +42,9 @@
         <ngb-panel class="catalog" id="catalog">
           <ng-template ngbPanelTitle>
             <div>
-              <span>Layer selector</span>
+              <span>Data Catalogue</span>
               <i class="fa" 
-                  [ngClass]="panels.catalog?'fa-chevron-down':'fa-chevron-up'"></i>
+                  [ngClass]="panels.catalog?'fa-caret-down':'fa-caret-up'"></i>
             </div>
           </ng-template>
           <ng-template ngbPanelContent>
@@ -63,7 +63,7 @@
             <div>
               <span>Visible data</span>
                <i class="fa" 
-                   [ngClass]="panels.layers?'fa-chevron-down':'fa-chevron-up'"></i>
+                   [ngClass]="panels.layers?'fa-caret-down':'fa-caret-up'"></i>
             </div>
           </ng-template>
           <ng-template ngbPanelContent>
@@ -136,14 +136,14 @@
                                   [timeSeries]="timeSeries"></timeseries-chart>
                 <div>
                   <div class="btn-group btn-group-sm mr-3">
-                    <button type="button" class="btn btn-secondary"
+                    <button type="button" class="btn btn-light"
                             (click)="timeSeries[timeSeries.length-1].pinned = !timeSeries[timeSeries.length-1].pinned">
                       <i class="fa fa-thumb-tack"
                          [class.greyed]="!timeSeries[timeSeries.length-1].pinned"></i>
                       {{timeSeries[timeSeries.length-1].label}}
                     </button>
                     <div class="btn-group" ngbDropdown placement="top-right" role="group" aria-label="Button group with nested dropdown">
-                      <button class="btn btn-secondary dropdown-toggle-split" ngbDropdownToggle></button>
+                      <button class="btn btn-light dropdown-toggle-split" ngbDropdownToggle></button>
                       <div class="dropdown-menu" ngbDropdownMenu>
                         <button *ngFor="let ts of timeSeries; let i=index" class="dropdown-item"
                                 (click)="ts.pinned = !ts.pinned">

@@ -11,9 +11,12 @@ $tern-orange-light:lighten($tern-orange,25%);
 
 $header-height:130px;
 $border-thickness:15px;
-$big-border: $border-thickness solid $tern-eucalypt;
+$big-border: $border-thickness solid $tern-eucalypt-light;
 
 $map-control-offset:10px;
+
+$about-margin:48px;
+$about-text-width:60%;
 
 $white:  #fff !default;
 $gray-100: #f8f9fa !default;
@@ -81,6 +84,8 @@ $font-family-sans-serif: 'Montserrat', -apple-system, system-ui, BlinkMacSystemF
 $font-family-base:       $font-family-sans-serif;
 $font-size-base: 0.875rem;
 
+$header-text:$tern-eucalypt;
+
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../node_modules/map-wald/map-wald.scss';
@@ -126,6 +131,8 @@ $font-size-base: 0.875rem;
   .card-body{
     padding-left:0;
     padding-right:0;
+    padding-top:0;
+    padding-bottom:0;
 
     .layers-control{
       width:100%;
@@ -185,7 +192,7 @@ $font-size-base: 0.875rem;
 }
 
 .ldv-title {
-  color:$tern-eucalypt;
+  color:$header-text;
 
   margin-top:0px;
   margin-bottom:0px;
@@ -202,31 +209,39 @@ $font-size-base: 0.875rem;
   }
 }
 
+
 .about-link{
-  color:$gray-100;
+  color:$header-text;
   position:absolute;
   font-weight: bold;
+  font-size:1.2rem;
   top:10px;
   right:10px;
 }
 
-.tern-gradient-bar, .sidebar .card-header, .sidebar.logos::after{
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#616a34+1,616a34+74,e5e5e5+100 */
-  background: $tern-eucalypt-light; /* Old browsers */
-  background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
-}
+// .tern-gradient-bar, .sidebar .card-header, .sidebar.logos::after{
+//   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#616a34+1,616a34+74,e5e5e5+100 */
+//   background: $tern-eucalypt-light; /* Old browsers */
+//   background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
+//   background: -webkit-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
+//   background: linear-gradient(to right, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+// }
+
+// .card-header{
+// }
 
 .sidebar .card-header{
   padding-left:10px;
+  background:$tern-eucalypt;
+  padding-top:6px;
+  padding-bottom:6px;
 
   .btn-link{
-    color: $tern-eucalypt;
+    color: $tern-eucalypt-light;
     font-weight: bold;
-    font-size: 1.5rem;
-    line-height:1.2rem;
+    font-size: 1.25rem;
+    line-height:1.1rem;
 
     i.fa{
       position: absolute;
@@ -237,6 +252,16 @@ $font-size-base: 0.875rem;
 
 .main-row .sidebar {
   background: $tern-eucalypt;
+  background: $tern-eucalypt-light; /* Old browsers */
+  background: -moz-linear-gradient(top, $tern-eucalypt-light 1%, $tern-eucalypt-light 80%, $tern-eucalypt 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $tern-eucalypt-light 1%, $tern-eucalypt-light 80%, $tern-eucalypt 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $tern-eucalypt-light 1%, $tern-eucalypt-light 80%, $tern-eucalypt 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+
+  // background: -moz-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
+  // background: linear-gradient(to bottom, $tern-eucalypt 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
 }
 
 .sidebar .card {
@@ -272,7 +297,8 @@ $font-size-base: 0.875rem;
   border-right: $border-thickness solid transparent;
 }
 
-.sidebar.logos::after{
+//.sidebar.logos::after{
+.header-row::after{
   content:"";
   opacity: 0.5;
   top:0;
@@ -289,7 +315,7 @@ $font-size-base: 0.875rem;
 }
 
 .app-title {
-  color: $white;
+  color: $header-text;
   div{
     display:table;
     height:100%;
@@ -301,9 +327,6 @@ $font-size-base: 0.875rem;
     }
   }
 }
-
-$about-margin:48px;
-$about-text-width:60%;
 
 .about{
   .modal-content{
