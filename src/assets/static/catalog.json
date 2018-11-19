@@ -81,7 +81,7 @@
           "dataCreator": "TERN OzFlux",
           "options": {
             "host": "webhost",
-            "filepath": "assets/static/ozflux_towers.json",
+            "filepath":"http://portal.tern.org.au/geoserver/nr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=nr:ozflux&maxFeatures=50&outputFormat=application/json",
             "downloadPath": "http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "styles": {
@@ -99,7 +99,6 @@
               "label": "annual",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Annual.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -117,7 +116,6 @@
               "label": "monthly",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Monthly.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -135,7 +133,6 @@
               "label": "daily",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Daily.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -152,7 +149,6 @@
               "label": "cumulative",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Cumulative.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -169,7 +165,6 @@
               "label": "summary",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Summary.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -186,7 +181,6 @@
               "label": "details",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -379,7 +373,7 @@
           "dataCreator": "TERN OzFlux",
           "options": {
             "host": "webhost",
-            "filepath": "assets/static/ozflux_towers.json",
+            "filepath":"http://portal.tern.org.au/geoserver/nr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=nr:ozflux&maxFeatures=50&outputFormat=application/json",
             "downloadPath": "http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "styles": {
@@ -401,7 +395,6 @@
               "label": "annual",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Annual.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -419,7 +412,6 @@
               "label": "monthly",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Monthly.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -437,7 +429,6 @@
               "label": "daily",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Daily.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -454,7 +445,6 @@
               "label": "cumulative",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Cumulative.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -471,7 +461,6 @@
               "label": "summary",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/L6/default/{{site}}_L6_Summary.nc",
                 "coordinates": {
                   "latitude": 0,
@@ -488,7 +477,6 @@
               "label": "details",
               "pointdata": {
                 "protocol": "dap",
-                "urlOrig": "http://dap.ozflux.org.au/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "url": "https://proxies.hydrograph.io/ozflux/thredds/dodsC/ozflux/sites/{{site}}/{{level}}/default/{{site}}_{{level}}.nc",
                 "coordinates": {
                   "latitude": 0,
