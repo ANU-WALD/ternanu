@@ -770,7 +770,7 @@
         {
           "label": " ",
           "options": {
-            "layers": "{{var}}_{{depth}}_{{percentile}}_N_P_AU_NAT_C"
+            "layers": "{{var}}_{{depth}}_{{value}}_N_P_AU_NAT_C"
           }
         }
       ],
@@ -807,10 +807,10 @@
               "label": "100 - 200 cm"
             }
           ],
-          "percentile": [
+          "value": [
             {
               "value": "EV",
-              "label": "Value"
+              "label": "Best Estimate"
             },
             {
               "value": "05",
@@ -889,10 +889,10 @@
           "options": {
             "var": "DER",
             "tags": {
-              "percentile": [
+              "value": [
                 {
                   "value": "EV",
-                  "label": "Value"
+                  "label": "Best Estimate"
                 },
                 {
                   "value": "05",
@@ -909,7 +909,7 @@
             {
               "label": " ",
               "options": {
-                "layers": "DER_000_999_{{percentile}}_N_P_AU_NAT_C"
+                "layers": "DER_000_999_{{value}}_N_P_AU_NAT_C"
               }
             }
           ]
@@ -919,10 +919,10 @@
           "options": {
             "var": "DES",
             "tags": {
-              "percentile": [
+              "value": [
                 {
                   "value": "EV",
-                  "label": "Value"
+                  "label": "Best Estimate"
                 },
                 {
                   "value": "05",
@@ -939,7 +939,7 @@
             {
               "label": " ",
               "options": {
-                "layers": "DES_000_200_{{percentile}}_N_P_AU_NAT_C"
+                "layers": "DES_000_200_{{value}}_N_P_AU_NAT_C"
               }
             }
           ]
