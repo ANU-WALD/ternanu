@@ -87,7 +87,9 @@
                    (layersChange)="layersChanged($event)"
                    (featureSelected)="featureSelected($event)"
                    (pointSelected)="pointSelected($event)"
-                   [mapTypePosition]="mapTypePosition">
+                   [mapTypePosition]="mapTypePosition"
+                   [showMapType]="showWindows"
+                   [streetViewControl]="showWindows">
         <div class="map-control left-top">
           <button-bar>
             <div>
