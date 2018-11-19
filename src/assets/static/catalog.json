@@ -197,7 +197,10 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "NEE_LL"
+                "defaultVariable": "NEE_LL",
+                "exclude":[
+                  ".*_QCFlag$"
+                ]
               }
             }
           ]
@@ -493,7 +496,10 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "NEE_LL"
+                "defaultVariable": "NEE_LL",
+                "exclude":[
+                  ".*_QCFlag$"
+                ]
               }
             }
           ]
