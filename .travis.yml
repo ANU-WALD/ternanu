@@ -29,6 +29,16 @@ deploy:
     script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org{} \;"
     on:
       branch: production
+  - skip_cleanup:true
+    provider: s3
+    access_key_id: "$AWS_ACCESS_KEY_ID"
+    secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+    region: "$AWS_DEFAULT_REGION"
+    bucket: "S3 Bucket"
+    local_dir: dist
+    on:
+      branch: master
+
 notifications:
   email: false
   slack:
