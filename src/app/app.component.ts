@@ -53,6 +53,10 @@ export class AppComponent {
   mapTypePosition: number = ControlPosition.BOTTOM_LEFT;
   showWindows = true;
 
+  chartTitleFont = {
+    size:12
+  };
+
   @ViewChild('splash') splash: OneTimeSplashComponent;
   @ViewChild('catalogView') catalogView: CatalogComponent;
   @ViewChild('accordion') accordion: NgbAccordion;
