@@ -109,7 +109,9 @@
                   "site"
                 ],
                 "chart": "bar",
-                "defaultVariable": "Fc"
+                "defaultVariable": "Fc",
+                "displayFormat":"{{long_name}} ({{variable}})"
+
               }
             },
             {
@@ -126,7 +128,9 @@
                   "site"
                 ],
                 "chart": "bar",
-                "defaultVariable": "Fc"
+                "defaultVariable": "Fc",
+                "displayFormat":"{{long_name}} ({{variable}})"
+
               }
             },
             {
@@ -142,7 +146,9 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "Fc"
+                "defaultVariable": "Fc",
+                "displayFormat":"{{long_name}} ({{variable}})"
+
               }
             },
             {
@@ -158,7 +164,8 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "Fc"
+                "defaultVariable": "Fc",
+                "displayFormat":"{{long_name}} ({{variable}})"
               }
             },
             {
@@ -174,7 +181,8 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "/Annual/Fc"
+                "defaultVariable": "/Annual/Fc",
+                "displayFormat":"{{long_name}} ({{variable}})"
               }
             },
             {
@@ -198,6 +206,7 @@
                   "site"
                 ],
                 "defaultVariable": "NEE_LL",
+                "displayFormat":"{{long_name}} ({{variable}})",
                 "exclude":[
                   ".*_QCFlag$"
                 ]
@@ -408,7 +417,9 @@
                   "site"
                 ],
                 "chart": "bar",
-                "defaultVariable": "Fe"
+                "defaultVariable": "Fe",
+                "displayFormat":"{{long_name}} ({{variable}})"
+
               }
             },
             {
@@ -441,7 +452,9 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "Fe"
+                "defaultVariable": "Fe",
+                "displayFormat":"{{long_name}} ({{variable}})"
+
               }
             },
             {
@@ -457,7 +470,9 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "Fe"
+                "defaultVariable": "Fe",
+                "displayFormat":"{{long_name}} ({{variable}})"
+
               }
             },
             {
@@ -473,7 +488,9 @@
                 "labels": [
                   "site"
                 ],
-                "defaultVariable": "/Annual/Fe"
+                "defaultVariable": "/Annual/Fe",
+                "displayFormat":"{{long_name}} ({{variable}})"
+
               }
             },
             {
@@ -497,6 +514,7 @@
                   "site"
                 ],
                 "defaultVariable": "NEE_LL",
+                "displayFormat":"{{long_name}} ({{variable}})",
                 "exclude":[
                   ".*_QCFlag$"
                 ]
