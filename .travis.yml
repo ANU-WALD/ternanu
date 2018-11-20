@@ -18,11 +18,11 @@ script:
   - env BRANCH=$TRAVIS_BRANCH npm run build
 deploy:
   # deploy to "wenfo.org/ternanu/staging" on branch master
-  - skip_cleanup: true
-    provider: script
-    script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org/staging/{} \;"
-    on:
-      branch: master
+  # - skip_cleanup: true
+  #   provider: script
+  #   script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org/staging/{} \;"
+  #   on:
+  #     branch: master
   # deploy to "wenfo.org/ternanu" on branch production
   - skip_cleanup: true
     provider: script
