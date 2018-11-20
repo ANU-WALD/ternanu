@@ -16,6 +16,7 @@ script:
   - sed "s/WENFO_GOOGLE_MAPS_API_KEY/$GOOGLE_MAPS_API_KEY/g" < $SCRIPTS_FN > tmp
   - mv tmp $SCRIPTS_FN
   - env BRANCH=$TRAVIS_BRANCH npm run build
+  - cat dist/index.html
 deploy:
   # deploy to "wenfo.org/ternanu/staging" on branch master
   # - skip_cleanup: true
