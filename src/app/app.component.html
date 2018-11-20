@@ -115,7 +115,7 @@
           </button-bar>
         </div>
 
-        <div *ngIf="showWindows" class="map-control left-bottom">
+        <div *ngIf="showWindows" class="tern-map-legend map-control left-bottom">
           <collapsible-map-control *ngIf="layers.length"
                                    [heading]="'Legend'">
             <div *ngFor="let l of layers">
@@ -164,7 +164,7 @@
                           <i class="fa fa-thumb-tack"
                              [class.greyed]="!ts.pinned"></i>
                           {{ts.label}}
-                          <i class="fa fa-minus float-right"
+                          <i class="fa fa-trash float-right"
                              (click)="removeTimeSeries(i)"></i>
                         </button>
                       </div>
