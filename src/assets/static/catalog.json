@@ -295,6 +295,7 @@
         },
         {
           "name": "Composite Burn Data",
+          "skip":true,
           "dataCreator": "Maitec",
           "options": {
             "host": "tern-dap"
@@ -303,10 +304,21 @@
             {
               "timestep": "monthly",
               "options": {
-                "filepath": "/landscape/remote_sensing/modis-burnt-area/composite/composite_burn_data_20020801_20170228.nc",
+                "filepath": "landscape/remote_sensing/modis-burnt-area/composite/composite_burn_data_chunked_20020801_20170228.nc",
                 "variable": "julian_date_of_burn",
-                "timeFormat": "{{year}}-{{month}}-01"
+                "timeFormat": "{{year}}-{{month}}-01",
+                "colorscalerange": [
+                  -50,
+                  50
+                ],
+                "abovemaxcolor": "extend",
+                "belowmincolor": "extend",
+                "palette": "rainbow"
               }
+            },
+            {
+              "timestep": "annual",
+              "skip": true
             }
           ]
         }
