@@ -423,3 +423,13 @@ $header-text:$tern-eucalypt;
 .tern-map-legend{
   max-width:300px;
 }
+
+.bb-vertical{
+  background:$tern-eucalypt-light;
+  border:1px solid $gray-100;
+  max-width:36px;
+  border-radius: 2px;
+  .btn.btn-sm{
+    margin:1px;
+  }
+}
