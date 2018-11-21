@@ -9,6 +9,7 @@
   "namedHosts": {
     "nci": {
       "url": "https://proxies.hydrograph.io/nci/thredds",
+      "downloadLink":"http://dapds00.nci.org.au/thredds",
       "software": "tds"
     },
     "csiro-thredds": {
