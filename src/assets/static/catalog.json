@@ -8,7 +8,7 @@
   },
   "namedHosts": {
     "nci": {
-      "url": "http://dapds00.nci.org.au/thredds",
+      "url": "https://proxies.hydrograph.io/nci/thredds",
       "software": "tds"
     },
     "csiro-thredds": {
@@ -17,7 +17,8 @@
     },
     "tern-dap": {
       "software": "tds",
-      "url": "https://dap-test.tern.org.au/thredds"
+      "urlProxy": "https://proxies.hydrograph.io/tern-dap/thredds",
+      "url":"https://dap.tern.org.au/thredds"
     },
     "qld-geoserver": {
       "software": "geoserver",
@@ -29,7 +30,7 @@
     },
     "asris-mapserver": {
       "software": "esri",
-      "url": "http://www.asris.csiro.au/ArcGIS/services/TERN",
+      "url": "https://proxies.hydrograph.io/asris/ArcGIS/services/TERN",
       "downloadLink": "http://www.clw.csiro.au/aclep/soilandlandscapegrid/"
     }
   },
