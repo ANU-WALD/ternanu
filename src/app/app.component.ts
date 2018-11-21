@@ -332,7 +332,8 @@ export class AppComponent {
       const loc: any = markers[0].loc;
       const coordText = this.coordinateText(loc,coordPrecision);
       const valueText = (isNaN(val) || (val === null) || (val === undefined)) ? '-' : val.toString();
-      markers[0].value = `${coordText}: ${valueText}`;
+      const units = tsLayer.flattenedSettings.units||'';
+      markers[0].value = `${coordText}: ${valueText}${units}`;
       markers[0].open = true;
       this.markers = this.markers.slice();
     });
