@@ -128,6 +128,15 @@ export class AppComponent {
         return this.gridLayer(ml.layer);
       };
     }
+
+    const isPolygon = (l:Layer)=>l.options&&l.options.vectors==='polygon';
+    if(isPolygon(selection.layer)){
+      selection.action = 'replace';
+      selection.filter = (ml: MappedLayer) => {
+        return isPolygon(ml.layer);
+      };
+    }
+
     this.map.layerAdded(selection);
 
     if (selection.layer.options.smallExtent) {
