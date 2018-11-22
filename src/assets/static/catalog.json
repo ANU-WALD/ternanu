@@ -218,7 +218,7 @@
         },
         {
           "name": "Vegetation Carbon Uptake",
-          "description": "",
+          "descriptionField": "description",
           "dataCreator": "Australian National University",
           "publications": [
             {
@@ -537,8 +537,8 @@
           ]
         },
         {
-          "name": "Rainfall (OzWALD)",
-          "description": "",
+          "name": "Rainfall",
+          "descriptionField":"description",
           "dataCreator": "Bureau of Meteorology, Australian National University, CSIRO Land and Water",
           "variable": "Pg",
           "options": {
@@ -616,8 +616,8 @@
           ]
         },
         {
-          "name": "Soil moisture (OzWALD)",
-          "description": "",
+          "name": "Soil moisture",
+          "descriptionField":"description",
           "dataCreator": "Australian National University",
           "variable": "Ssoil",
           "options": {
@@ -634,8 +634,8 @@
           "placeholder": true
         },
         {
-          "name": "Runoff (OzWALD)",
-          "description": "",
+          "name": "Runoff",
+          "descriptionField":"description",
           "dataCreator": "Australian National University",
           "variable": "Qtot",
           "options": {
@@ -667,8 +667,8 @@
           ]
         },
         {
-          "name": "River Flows (OzWALD)",
-          "description": "",
+          "name": "River Flows",
+          "descriptionField":"description",
           "dataCreator": "Australian National University",
           "variable": "Qriv",
           "options": {
@@ -736,7 +736,6 @@
         },
         {
           "name": "Inundation Extent",
-          "description": "",
           "dataCreator": "CSIRO Land and Water, Australian National University",
           "options": {
             "palette": "anu_wald_bluescale20",
