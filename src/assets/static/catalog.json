@@ -717,7 +717,7 @@
               "timestepMultiplier": 4,
               "timestepReference": "{{year}}-01-01",
               "options": {
-                "filepath": "ub8/au/FMC/australia_LVMC_{{year}}.nc",
+                "filepath": "ub8/au/FMC/c6/mosaics/fmc_c6_{{year}}.nc",
                 "colorscalerange": [
                   0,
                   140
@@ -726,7 +726,7 @@
                 "numcolorbands": 9,
                 "belowmincolor": "extend",
                 "abovemaxcolor": "extend",
-                "variable": "lvmc_mean",
+                "variable": "fmc_mean",
                 "start": "2001-01-01",
                 "end": "2017-11-21",
                 "styles": "boxfill/anu_fmc_rdylbu_9"
@@ -1019,7 +1019,7 @@
               "timestepMultiplier": 4,
               "timestepReference": "{{year}}-01-01",
               "options": {
-                "filepath": "ub8/au/FMC/australia_LVMC_{{year}}.nc",
+                "filepath": "ub8/au/FMC/c6/mosaics/fmc_c6_{{year}}.nc",
                 "colorscalerange": [
                   0,
                   140
@@ -1028,7 +1028,7 @@
                 "numcolorbands": 9,
                 "belowmincolor": "extend",
                 "abovemaxcolor": "extend",
-                "variable": "lvmc_mean",
+                "variable": "fmc_mean",
                 "start": "2001-01-01",
                 "end": "2017-11-21",
                 "styles": "boxfill/anu_fmc_rdylbu_9"
