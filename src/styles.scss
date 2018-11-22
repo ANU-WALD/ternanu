@@ -9,7 +9,7 @@ $tern-green:rgb(85,111,0);
 $tern-eucalypt-light:rgb(211,217,203);//lighten($tern-eucalypt,25%);
 $tern-orange-light:lighten($tern-orange,25%);
 
-$header-height:130px;
+$header-height:8vw;
 $border-thickness:15px;
 $big-border: $border-thickness solid $tern-eucalypt-light;
 
@@ -273,11 +273,17 @@ $header-text:$tern-eucalypt;
 
 
 .tern-logo{
+  display:flex;
+  align-items:center;
+  height:100%;
   img{
     padding-top:15px;
   }
 }
 .anu-logo{
+  display:flex;
+  align-items:center;
+  height:100%;
   img{
     padding:10px;
     max-height:100px;
@@ -285,6 +291,9 @@ $header-text:$tern-eucalypt;
 }
 
 .ncris-logo{
+  display:flex;
+  align-items:center;
+  height:100%;
   img{
     padding-right:5px;
     padding-top:5px;
@@ -295,6 +304,12 @@ $header-text:$tern-eucalypt;
 .sidebar.logos {
   overflow: hidden;
   border-right: $border-thickness solid transparent;
+  .row {
+    height:100%;
+    .text-center {
+      height: 100%;
+    }
+  }
 }
 
 //.sidebar.logos::after{
@@ -321,13 +336,20 @@ $header-text:$tern-eucalypt;
     height:100%;
     width:100%;
     h1 {
-      font-size:4rem;
+      font-size:4vw;//4rem;
       display: table-cell;
       vertical-align: middle;
     }
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .app-title{
+    h1 {
+      font-size: 36px;
+    } 
+  }
+}
 .about{
   .modal-content{
     border-radius: 25px;
