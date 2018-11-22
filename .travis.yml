@@ -20,17 +20,17 @@ script:
   - cat dist/index.html
 deploy:
   # deploy to "wenfo.org/ternanu/staging" on branch master
-  # - skip_cleanup: true
-  #   provider: script
-  #   script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org/staging/{} \;"
-  #   on:
-  #     branch: master
-  # deploy to "wenfo.org/ternanu" on branch production
   - skip_cleanup: true
     provider: script
-    script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org{} \;"
+    script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org/staging/{} \;"
     on:
-      branch: production
+      branch: master
+  deploy to "wenfo.org/ternanu" on branch production
+  # - skip_cleanup: true
+  #   provider: script
+  #   script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org{} \;"
+  #   on:
+  #     branch: production
   - skip_cleanup: true
     provider: s3
     access_key_id: "$AWS_ACCESS_KEY_ID"
@@ -39,9 +39,9 @@ deploy:
     bucket: "$AWS_S3_BUCKET"
     local_dir: dist
     on:
-      branch: master
+      branch: production
 after_deploy:
-  - '[ "$TRAVIS_BRANCH" == master ] && travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY -c $CLOUDFRONT_DISTRIBUTION_ID -i "/*" -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST'
+  - '[ "$TRAVIS_BRANCH" == production ] && travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY -c $CLOUDFRONT_DISTRIBUTION_ID -i "/*" -b $TRAVIS_BRANCH -p $TRAVIS_PULL_REQUEST'
 
 notifications:
   email: false
