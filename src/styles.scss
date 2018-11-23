@@ -107,6 +107,9 @@ $header-text:$tern-eucalypt;
   height:$header-height;
   border-bottom: $big-border;
 
+  .sidebar, .app-title{
+    z-index:2;
+  }
 }
 
 .main-row{
@@ -335,7 +338,7 @@ $header-text:$tern-eucalypt;
   left:0;
   right:0;
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   background: $tern-eucalypt-light; /* Old browsers */
   background: -moz-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, $tern-eucalypt-light 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
