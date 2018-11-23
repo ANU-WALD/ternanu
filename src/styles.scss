@@ -286,7 +286,7 @@ $header-text:$tern-eucalypt;
   height:100%;
   img{
     padding:10px;
-    max-height:100px;
+    max-height:6.5vw;
   }
 }
 
@@ -295,6 +295,7 @@ $header-text:$tern-eucalypt;
   align-items:center;
   height:100%;
   img{
+    padding-left:5px;
     padding-right:5px;
     padding-top:5px;
     max-height:90px;
@@ -336,7 +337,7 @@ $header-text:$tern-eucalypt;
     height:100%;
     width:100%;
     h1 {
-      font-size:4vw;//4rem;
+      font-size:3.75vw;//4rem;
       display: table-cell;
       vertical-align: middle;
     }
