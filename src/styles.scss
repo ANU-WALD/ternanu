@@ -283,10 +283,10 @@ $header-text:$tern-eucalypt;
 .anu-logo{
   display:flex;
   align-items:center;
+  align-self: center;
   height:100%;
   img{
     padding:10px;
-    max-height:6.5vw;
   }
 }
 
