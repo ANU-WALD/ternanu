@@ -24,13 +24,13 @@ deploy:
     provider: script
     script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org/staging/{} \;"
     on:
-      branch: masterX
-  # deploy to "wenfo.org/ternanu" on branch production
-  - skip_cleanup: true
-    provider: script
-    script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org{} \;"
-    on:
       branch: master
+  # deploy to "wenfo.org/ternanu" on branch production
+  # - skip_cleanup: true
+  #   provider: script
+  #   script: bash -c "cd dist && find . -type f -exec curl -u $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp.wenfo.org{} \;"
+  #   on:
+  #     branch: production
   - skip_cleanup: true
     provider: s3
     access_key_id: "$AWS_ACCESS_KEY_ID"
