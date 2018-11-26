@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve --port 9002 --aot false --proxy-config proxy.conf.json",
     "remote": "ng serve --port 9002 --host 0.0.0.0 --aot false --proxy-config proxy.conf.json",
-    "build": "if [ $BRANCH = 'production' ]; then export PREFIX='/'; else export PREFIX='/ternanu/staging/'; fi; npm run build-with-prefix",
+    "build": "if [ $BRANCH = 'production' ]; then export PREFIX='/'; else export PREFIX='/ternanu/'; fi; npm run build-with-prefix",
     "build-old": "if [ $BRANCH = 'production' ]; then export PREFIX='/ternanu/'; else export PREFIX='/'; fi; npm run build-with-prefix",
     "build-with-prefix": "echo prefix=$PREFIX && ng build --prod --no-aot --base-href $PREFIX",
     "deprecated-build": "npm run transpile-plotly && npm run fix-plotly",
