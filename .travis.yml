@@ -5,7 +5,7 @@ install:
   - npm install '@angular/cli' -g
   - npm install -g travis-ci-cloudfront-invalidation
   - npm install
-  - npm list
+  - npm list || true
   - gem install compass
   - cd node_modules/map-wald && npm install && npm list && cd -
 script:
