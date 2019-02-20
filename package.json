@@ -39,7 +39,7 @@
     "font-awesome": "^4.7.0",
     "map-wald": "github:ANU-WALD/map-wald",
     "ngx-pipes": "^2.3.10",
-    "plotly.js": "git+https://github.com/arlowhite/plotly.js#no-polyfill",
+    "plotly.js": "git+https://github.com/arlowhite/plotly.js.git#no-polyfill",
     "popper.js": "^1.12.9",
     "proj4": "^2.3.17",
     "rxjs": "^6.4.0",
