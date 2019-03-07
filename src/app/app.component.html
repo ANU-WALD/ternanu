@@ -43,13 +43,13 @@
           <ng-template ngbPanelTitle>
             <div>
               <span>Data Catalogue</span>
-              <i class="fa" 
+              <i class="fa"
                   [ngClass]="panels.catalog?'fa-caret-down':'fa-caret-up'"></i>
             </div>
           </ng-template>
           <ng-template ngbPanelContent>
             <catalog #catalogView
-                     [catalog]="catalog" 
+                     [catalog]="catalog"
                      (layerSelected)="layerSelected($event)"
                      [showPlaceholders]="false"
                      [leafIcon]="''"
@@ -62,13 +62,13 @@
           <ng-template ngbPanelTitle>
             <div>
               <span>Visible data</span>
-               <i class="fa" 
+               <i class="fa"
                    [ngClass]="panels.layers?'fa-caret-down':'fa-caret-up'"></i>
             </div>
           </ng-template>
           <ng-template ngbPanelContent>
             <div>
-              <layer-control #layerControl 
+              <layer-control #layerControl
                              [layers]="layers"
                              (layersChange)="layersChanged($event)"
                              [map]="map"
@@ -93,7 +93,7 @@
         <div class="map-control left-top">
           <button-bar>
             <div>
-              <button class="btn btn-secondary btn-sm" 
+              <button class="btn btn-secondary btn-sm"
                       (click)="toggleWindows()"
                       [ngbTooltip]="showWindows?'Hide windows':'Show windows'"
                       placement="right">
@@ -104,14 +104,7 @@
             <zoom-out *ngIf="showWindows"  [map]="map" [minZoom]="3"></zoom-out>
             <zoom-full *ngIf="showWindows" [map]="map" [bounds]="fullExtent"></zoom-full>
             <zoom-layer *ngIf="showWindows" [map]="map" [layer]="topLayer" [fullBounds]="fullExtent"></zoom-layer>
-            <div *ngIf="showWindows">
-              <button class="btn btn-secondary btn-sm"
-                      (click)="toggleTransparency()"
-                      ngbTooltip="Adjust transparency of grid layer"
-                      placement="right">
-                <i class="fa" [ngClass]="(layerOpacity<0.5)?'fa-circle-o':((layerOpacity<0.9)?'fa-adjust':'fa-circle')"></i>
-              </button>
-            </div>
+            <cycle-opacity *ngIf="showWindows" [map]="map"></cycle-opacity>
           </button-bar>
         </div>
 
