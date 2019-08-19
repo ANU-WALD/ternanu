@@ -56,9 +56,9 @@ export class AppComponent {
     size:12
   };
 
-  @ViewChild('splash') splash: OneTimeSplashComponent;
-  @ViewChild('catalogView') catalogView: CatalogComponent;
-  @ViewChild('accordion') accordion: NgbAccordion;
+  @ViewChild('splash', { static: true }) splash: OneTimeSplashComponent;
+  @ViewChild('catalogView', { static: false }) catalogView: CatalogComponent;
+  @ViewChild('accordion', { static: true }) accordion: NgbAccordion;
   constructor(
     private catalogService: CatalogService,
     paletteService: PaletteService,
@@ -75,7 +75,7 @@ export class AppComponent {
     })
   }
 
-  @ViewChild(LayeredMapComponent) map: LayeredMapComponent;
+  @ViewChild(LayeredMapComponent, { static: true }) map: LayeredMapComponent;
 
   layersChanged(layers: MappedLayer[]) {
     setTimeout(() => {
