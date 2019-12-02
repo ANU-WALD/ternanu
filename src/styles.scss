@@ -2,7 +2,7 @@ $fa-font-path: "../node_modules/font-awesome/fonts";
 /* You can add global styles to this file, and also import other style files */
 
 
-$tern-eucalypt:#506428; 
+$tern-eucalypt:#506428;
 $old-tern-eucalypt:rgb(97, 106, 52);
 $tern-orange:rgb(171,108,0);
 $tern-green:rgb(85,111,0);
@@ -88,7 +88,7 @@ $header-text:$tern-eucalypt;
 
 @import "../node_modules/font-awesome/scss/font-awesome.scss";
 @import '../node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/map-wald/map-wald.scss';
+@import '../node_modules/map-wald-visual/map-wald.scss';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 .gm-style{
@@ -369,7 +369,7 @@ $header-text:$tern-eucalypt;
   .app-title{
     h1 {
       font-size: 36px;
-    } 
+    }
   }
 }
 .about{

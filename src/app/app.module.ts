@@ -5,7 +5,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MapWaldModule } from 'map-wald';
+import { MapWaldCoreModule} from 'map-wald';
+import { MapWaldBootstrapModule } from 'map-wald-visual';
 import { AgmCoreModule } from '@agm/core';
 
 import { routeParameters, AppRoutingModule } from './app-routing.module';
@@ -25,7 +26,8 @@ import { MainMapComponent } from './main-map/main-map.component';
     AgmCoreModule.forRoot({
       apiKey: environment.google_maps_api_key
     }),
-    MapWaldModule.forRoot({ paths: routeParameters }),
+    MapWaldCoreModule.forRoot({paths:routeParameters}),
+    MapWaldBootstrapModule,
     AppRoutingModule
   ],
   providers: [],

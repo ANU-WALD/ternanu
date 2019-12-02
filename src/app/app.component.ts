@@ -1,14 +1,17 @@
+/// <reference types="@types/googlemaps" />
 import { Component, ViewChild } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Feature, GeometryObject } from 'geojson';
-import { ControlPosition } from '@agm/core/services/google-maps-types';
+import { } from 'googlemaps';
 
 import {
-  LayerSelection, LayeredMapComponent,
+  LayerSelection, OpendapService, Layer,
   PaletteService, MappedLayer, CatalogService, Catalog,
-  SimpleMarker, TimeseriesService, TimeSeries, Bounds,
-  PointSelectionService, PointSelection, MetadataService, OpendapService, Layer, OneTimeSplashComponent, CatalogComponent
+  TimeseriesService, TimeSeries, Bounds,
+  PointSelectionService, PointSelection, MetadataService
 } from 'map-wald';
+import { LayeredMapComponent, SimpleMarker,
+  OneTimeSplashComponent, CatalogComponent } from 'map-wald-visual';
 import { LatLng } from '@agm/core';
 import { map, switchAll } from 'rxjs/operators';
 import { forkJoin, of } from 'rxjs';
@@ -49,7 +52,7 @@ export class AppComponent {
     south: -45,
     west: 110
   };
-  mapTypePosition: number = ControlPosition.BOTTOM_LEFT;
+  mapTypePosition: number = google.maps.ControlPosition.BOTTOM_LEFT;
   showWindows = true;
 
   chartTitleFont = {
