@@ -12,7 +12,7 @@ import {
 } from 'map-wald';
 import { LayeredMapComponent, SimpleMarker,
   OneTimeSplashComponent, CatalogComponent } from 'map-wald-visual';
-import { LatLng } from '@agm/core';
+import { LatLng, MapsAPILoader } from '@agm/core';
 import { map, switchAll } from 'rxjs/operators';
 import { forkJoin, of } from 'rxjs';
 import { DapDAS, DapDDX, DapData } from 'dap-query-js/dist/dap-query';
@@ -52,7 +52,7 @@ export class AppComponent {
     south: -45,
     west: 110
   };
-  mapTypePosition: number = google.maps.ControlPosition.BOTTOM_LEFT;
+  mapTypePosition: number;
   showWindows = true;
 
   chartTitleFont = {
@@ -62,23 +62,28 @@ export class AppComponent {
   @ViewChild('splash', { static: true }) splash: OneTimeSplashComponent;
   @ViewChild('catalogView', { static: false }) catalogView: CatalogComponent;
   @ViewChild('accordion', { static: true }) accordion: NgbAccordion;
+  @ViewChild(LayeredMapComponent, { static: true }) map: LayeredMapComponent;
+
   constructor(
     private catalogService: CatalogService,
     paletteService: PaletteService,
     private timeSeriesService: TimeseriesService,
     private pointSelections: PointSelectionService,
     private meta: MetadataService,
-    private dap: OpendapService) {
+    private dap: OpendapService,
+    mapsApi: MapsAPILoader) {
     catalogService.loadFrom(environment.catalog).subscribe(c => this.catalog = c);
     paletteService.source = environment.palettes
     ga('send', 'pageview');
 
     this.pointSelections.latestPointSelection.subscribe(sel => {
       this.plotPointTimeseries(sel);
-    })
-  }
+    });
 
-  @ViewChild(LayeredMapComponent, { static: true }) map: LayeredMapComponent;
+    mapsApi.load().then(()=>{
+      this.mapTypePosition= google.maps.ControlPosition.BOTTOM_LEFT;
+    });
+  }
 
   layersChanged(layers: MappedLayer[]) {
     setTimeout(() => {
