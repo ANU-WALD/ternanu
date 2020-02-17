@@ -17,6 +17,7 @@ import { map, switchAll } from 'rxjs/operators';
 import { forkJoin, of } from 'rxjs';
 import { DapDAS, DapDDX, DapData } from 'dap-query-js/dist/dap-query';
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
+import { FeatureInfoService } from '../services/featureinfo.service';
 
 declare var ga: Function;
 
@@ -40,9 +41,10 @@ export class AppComponent {
 
   currentPoint: LatLng;
   showSelection: boolean = false;
-  detailsMode: ('feature' | 'chart');
+  detailsMode: ('feature' | 'chart' | 'html');
   selectedFeature: Feature<GeometryObject>;
   selectedFeatureLayer: MappedLayer;
+  htmlDetailText = '';
 
   chartTitle = '';
   timeSeries: TimeSeries[];
@@ -72,6 +74,7 @@ export class AppComponent {
     private meta: MetadataService,
     private dap: OpendapService,
     mapsApi: MapsAPILoader) {
+    private featureInfo: FeatureInfoService) {
     catalogService.loadFrom(environment.catalog).subscribe(c => this.catalog = c);
     paletteService.source = environment.palettes
     ga('send', 'pageview');
@@ -89,7 +92,7 @@ export class AppComponent {
     setTimeout(() => {
       this.layers = layers;
       if (this.currentPoint) {
-        this.buildChart();
+        this.buildSiteDataPanel();
       }
       this.topLayer = this.layers[0];
       this.catalogView.activeLayers(layers.map(l => l.layer));
@@ -167,7 +170,7 @@ export class AppComponent {
   pointSelected(p: LatLng) {
     this.currentPoint = p;
     this.gaEvent('selection', 'point', `${p.lat},${p.lng}`);
-    this.buildChart();
+    this.buildSiteDataPanel();
   }
 
   evaluateChartLabels() {
@@ -306,7 +309,7 @@ export class AppComponent {
     return `${lat.toFixed(precision)}°${dir}, ${lng.toFixed(precision)}°E`
   }
 
-  buildChart() {
+  buildSiteDataPanel() {
     var markers: Array<SimpleMarker> = [
       {
         loc: this.currentPoint,
@@ -317,8 +320,13 @@ export class AppComponent {
     ];
     this.markers = markers;
     var tsLayer = this.findTimeSeriesLayer();
+
     if (!tsLayer) {
-      this.detailsMode = 'feature';
+      this.detailsMode = 'html';
+      this.featureInfo.getFeatureInfo().subscribe(res => {
+        this.htmlDetailText = res;
+        this.showSelection = true;
+      });
       return;
     }
 

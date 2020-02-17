@@ -12,6 +12,7 @@ import { AgmCoreModule } from '@agm/core';
 import { routeParameters, AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainMapComponent } from './main-map/main-map.component';
+import { FeatureInfoService } from '../services/featureinfo.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { MainMapComponent } from './main-map/main-map.component';
     MapWaldBootstrapModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [FeatureInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

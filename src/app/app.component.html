@@ -166,6 +166,9 @@
                   </div>
                 </div>
               </div>
+              <div *ngSwitchCase="'html'" class="html-detail">
+                  <div [innerHTML]=htmlDetailText></div>
+              </div>
             </ng-container>
           </collapsible-map-control>
         </div>

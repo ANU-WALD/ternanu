@@ -460,6 +460,11 @@ $header-text:$tern-eucalypt;
   margin-right:$map-control-offset;
 }
 
+.html-detail {
+  max-height: 300px;
+  overflow: scroll;
+}
+
 .layer-info-target{
   color:$tern-orange;
 }
