@@ -2,12 +2,12 @@ $fa-font-path: "../node_modules/font-awesome/fonts";
 /* You can add global styles to this file, and also import other style files */
 
 
-$tern-eucalypt:#506428;
-$old-tern-eucalypt:rgb(97, 106, 52);
-$tern-orange:rgb(171,108,0);
-$tern-green:rgb(85,111,0);
-$tern-eucalypt-light:rgb(211,217,203);//lighten($tern-eucalypt,25%);
-$tern-orange-light:lighten($tern-orange,25%);
+$tern-eucalypt:#043e4f;
+$old-tern-eucalypt:#043e4f;
+$tern-orange:#6eb3a6;
+$tern-green:#6eb3a6;
+$tern-eucalypt-light:#f4f4f4;
+$tern-orange-light:#6eb3a6;
 
 $header-height:8vw;
 $border-thickness:15px;
@@ -95,6 +95,11 @@ $header-text:$tern-eucalypt;
   font-family: $font-family-sans-serif !important;
 }
 
+@font-face {
+  font-family: 'UnineueHeavy';
+  src: url('assets/fonts/fontfabric_-_unineueheavy-webfont.woff') format('woff');
+}
+
 .header-row {
   background: url(assets/images/bannerbg.jpg) no-repeat center center;
   background-size:cover;
@@ -109,6 +114,15 @@ $header-text:$tern-eucalypt;
 
   .sidebar, .app-title{
     z-index:2;
+  }
+
+  .app-title h1 {
+    font-family: 'UnineueHeavy';
+    font-size: 2vw;
+  }
+
+  .app-title {
+    height: 100%;
   }
 }
 
@@ -219,7 +233,11 @@ $header-text:$tern-eucalypt;
   font-weight: bold;
   font-size:1.2rem;
   top:10px;
-  right:10px;
+  right:20px;
+}
+
+.about-heading {
+    font-family: 'UnineueHeavy';
 }
 
 // .tern-gradient-bar, .sidebar .card-header, .sidebar.logos::after{
@@ -254,17 +272,7 @@ $header-text:$tern-eucalypt;
 }
 
 .main-row .sidebar {
-  background: $tern-eucalypt;
-  background: $tern-eucalypt-light; /* Old browsers */
-  background: -moz-linear-gradient(top, $tern-eucalypt-light 1%, $tern-eucalypt-light 80%, $tern-eucalypt 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, $tern-eucalypt-light 1%, $tern-eucalypt-light 80%, $tern-eucalypt 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, $tern-eucalypt-light 1%, $tern-eucalypt-light 80%, $tern-eucalypt 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d3d9cb', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
-
-  // background: -moz-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* FF3.6-15 */
-  // background: -webkit-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* Chrome10-25,Safari5.1-6 */
-  // background: linear-gradient(to bottom, $tern-eucalypt 1%, $tern-eucalypt-light 64%, $gray-100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+  background: $tern-eucalypt-light;
 }
 
 .sidebar .card {
@@ -283,12 +291,8 @@ $header-text:$tern-eucalypt;
   }
   .tern-logo{
     img{
-      max-width:8vw;
-    }
-  }
-  .anu-logo{
-    img{
-      max-width:6vw;
+      max-width:4.5vw;
+      margin-left: 30px;
     }
   }
 }
@@ -296,9 +300,6 @@ $header-text:$tern-eucalypt;
   display:flex;
   align-items:center;
   height:100%;
-  img{
-    padding-top:15px;
-  }
 }
 
 .anu-logo{
@@ -306,9 +307,6 @@ $header-text:$tern-eucalypt;
   align-items:center;
   align-self: center;
   height:100%;
-  img{
-    padding:10px;
-  }
 }
 
 .ncris-logo{
@@ -357,6 +355,7 @@ $header-text:$tern-eucalypt;
     display:table;
     height:100%;
     width:100%;
+    margin-left: 25px;
     h1 {
       font-size:3.75vw;//4rem;
       display: table-cell;
@@ -375,11 +374,10 @@ $header-text:$tern-eucalypt;
 .about{
   .modal-content{
     border-radius: 25px;
-    background: $tern-eucalypt-light; /* Old browsers */
-    background: -moz-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt 50%, $tern-eucalypt-light 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, $tern-eucalypt 1%, $tern-eucalypt 50%, $tern-eucalypt-light 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, $tern-eucalypt 1%, $tern-eucalypt 50%, $tern-eucalypt-light 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#616a34', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+    background: #f4f4f4;
+    .modal-title {
+      font-weight: bold;
+    }
     .modal-header{
       border-bottom:none;
       color:$tern-orange-light;
@@ -391,13 +389,17 @@ $header-text:$tern-eucalypt;
         padding-left:$about-margin;
         padding-right:$about-margin;
       }
+
+      .close {
+        margin: -1rem 1rem -1rem auto;
+      }
     }
     .modal-body{
       padding-left:0px;
       padding-right:0px;
       padding-top:8px;
       border:none;
-      color:$gray-100;
+      color:$tern-eucalypt;
 
       h2{
         padding-left:$about-margin;
@@ -417,10 +419,22 @@ $header-text:$tern-eucalypt;
         width:$about-text-width;
       }
 
+      .about-email {
+        font-weight: bold;
+      }
+
       .row.about-links{
         padding:$about-margin;
         // padding-left:$about-margin;
         // padding-right:$about-margin;
+      }
+
+      .about-links .btn {
+        color: #fff;
+      }
+
+      .about-links .btn:hover {
+        color: $tern-eucalypt;
       }
 
       .about-logos{
@@ -434,6 +448,16 @@ $header-text:$tern-eucalypt;
           margin-left:$about-margin;
           margin-right:$about-margin;
         }
+        .tern-logo {
+          display: block;
+        }
+        .anu-logo {
+          max-width: 8vw;
+        }
+      }
+
+      .btn-lg {
+        font-weight: bold;
       }
     }
 
