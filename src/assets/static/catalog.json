@@ -82,7 +82,9 @@
           "dataCreator": "TERN ACEAS",
           "options": {
             "host": "tern-geoserver",
-            "filepath": "?service=WMS&request=GetMap&layers=aceas%3AFire_regime_niches&bbox=112.91634305363603%2C-43.61354086159207%2C153.61197903996418%2C-10.0499141967151&format=image%2Fpng",
+            "legend":"wms",
+            "filepath": "",
+            "layer":"aceas%3AFire_regime_niches",
             "properties": {
             }
           },
@@ -95,7 +97,9 @@
           "dataCreator": "TERN ACEAS",
           "options": {
             "host": "tern-geoserver",
-            "filepath": "?service=WMS&request=GetMap&layers=aceas%3AMcAlpine_Koala_Population&bbox=132.08839411549616%2C-39.13870999906703%2C153.63726999991073%2C-15.513724159342313&format=image/png",
+            "legend": "wms",
+            "filepath": "",
+            "layer":"aceas%3AMcAlpine_Koala_Population",
             "properties": {
             }
           },
@@ -108,7 +112,9 @@
           "dataCreator": "TERN ACEAS",
           "options": {
             "host": "tern-geoserver",
-            "filepath": "?service=WMS&request=GetMap&layers=aceas%3ATransformational_change&bbox=112.921493530273%2C-43.8604011535645%2C153.63835144043%2C-9.14128971099854&format=image/png",
+            "legend": "wms",
+            "filepath": "",
+            "layer":"aceas%3ATransformational_change",
             "properties": {
             }
           },
@@ -157,7 +163,9 @@
           "dataCreator": "TERN ACEAS",
           "options": {
             "host": "tern-geoserver",
-            "filepath": "?service=WMS&request=GetMap&layers=aceas%3Anoisy_miner_presence_all&bbox=137.85253714969485%2C-43.52960463219665%2C153.63833999995907%2C-15.236696755548586&format=image/png",
+            "legend": "wms",
+            "filepath": "",
+            "layer":"aceas%3Anoisy_miner_presence_all",
             "properties": {
             }
           },
@@ -170,7 +178,9 @@
           "dataCreator": "TERN ACEAS",
           "options": {
             "host": "tern-geoserver",
-            "filepath": "?service=WMS&request=GetMap&layers=aceas%3Anoisy_miner_presence_evidence&bbox=137.85253714969485%2C-43.52960463219665%2C153.63833999995907%2C-15.236696755548586&format=image/png",
+            "legend":"wms",
+            "filepath": "",
+            "layer":"aceas%3Anoisy_miner_presence_evidence",
             "properties": {
             }
           },
