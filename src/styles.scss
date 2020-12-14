@@ -374,13 +374,13 @@ $header-text:$tern-eucalypt;
 .about{
   .modal-content{
     border-radius: 25px;
-    background: #f4f4f4;
+    background: rgb(4,62,79,0.7);
     .modal-title {
       font-weight: bold;
     }
     .modal-header{
       border-bottom:none;
-      color:$tern-orange-light;
+      color: $white;
       padding-top:64px;
       padding-bottom:8px;
       padding-left:0px;
@@ -399,7 +399,7 @@ $header-text:$tern-eucalypt;
       padding-right:0px;
       padding-top:8px;
       border:none;
-      color:$tern-eucalypt;
+      color:$white;
 
       h2{
         padding-left:$about-margin;
@@ -411,7 +411,7 @@ $header-text:$tern-eucalypt;
         padding-right:$about-margin;
         margin-top:32px;
         a{
-          color:$tern-orange-light;
+          color:$white;
         }
       }
 
@@ -421,12 +421,18 @@ $header-text:$tern-eucalypt;
 
       .about-email {
         font-weight: bold;
+        color: $white;
       }
 
       .row.about-links{
         padding:$about-margin;
         // padding-left:$about-margin;
         // padding-right:$about-margin;
+      }
+
+      .about-links .more-information {
+        background-color: #669FBA;
+        border: 1px solid #669FBA;
       }
 
       .about-links .btn {
@@ -439,7 +445,10 @@ $header-text:$tern-eucalypt;
 
       .about-logos{
         margin-top:32px;
-        border-top:2px solid $tern-orange;
+        padding-top: 15px;
+        background-color: #f4f4f4;
+        padding-bottom: 30px;
+
         .row:first{
           margin-top:12px;
         }
@@ -454,6 +463,9 @@ $header-text:$tern-eucalypt;
         .anu-logo {
           max-width: 8vw;
         }
+        .acknowledgements {
+          color: #babcc4;
+        }
       }
 
       .btn-lg {
@@ -463,6 +475,7 @@ $header-text:$tern-eucalypt;
 
     .modal-footer{
       border-top:none;
+      color: $white;
 
       .btn {
         display:none;
