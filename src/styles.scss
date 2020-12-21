@@ -282,31 +282,11 @@ $header-text:$tern-eucalypt;
   border-radius: 0px;
 }
 
-
-.sidebar{
-  .ncris-logo{
-    img{
-      max-width:8vw;
-    }
-  }
-  .tern-logo{
-    img{
-      max-width:4.5vw;
-      margin-left: 30px;
-    }
-  }
-}
-.tern-logo{
+.logo{
   display:flex;
   align-items:center;
   height:100%;
-}
-
-.anu-logo{
-  display:flex;
-  align-items:center;
-  align-self: center;
-  height:100%;
+  padding-left: 25px;
 }
 
 .tern-anu-logo {
