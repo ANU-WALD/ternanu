@@ -102,6 +102,7 @@
                                    [heading]="'Legend'">
             <div *ngFor="let l of layers">
               <map-legend *ngIf="l.flattenedSettings?.palette || l.legendURL"
+                          [labels]="null"
                           [title]="l.title"
                           [imageURL]="l.legendURL"
                           [helpText]="l.description()"
