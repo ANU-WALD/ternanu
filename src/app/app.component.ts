@@ -72,7 +72,8 @@ export class AppComponent {
     private meta: MetadataService,
     private dap: OpendapService,
     mapsApi: MapsAPILoader) {
-    catalogService.loadFrom(environment.catalog).subscribe(c => this.catalog = c);
+    const url = `${environment.catalog}?_=${new Date().getTime()}`;
+    catalogService.loadFrom(url).subscribe(c => this.catalog = c);
     paletteService.source = environment.palettes
     ga('send', 'pageview');
 
