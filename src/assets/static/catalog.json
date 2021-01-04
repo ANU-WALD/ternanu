@@ -224,7 +224,7 @@
             {
               "timestep": "annual",
               "options": {
-                "filepath": "/ub8/au/OzWALD/annual/OzWALD.annual.GPP.AnnualSums.nc",
+                "filepath": "/ub8/au/OzWALD/annual/OzWALD.GPP.AnnualSums.nc",
                 "colorscalerange": [
                   0,
                   4000
@@ -237,8 +237,11 @@
             },
             {
               "timestep": "daily",
+              "timestepMultiplier": 8,
+              "timestepReference": "{{year}}-01-01",
+              "interval": "modis",
               "options": {
-                "filepath": "/ub8/au/OzWALD/daily/OzWALD.daily.GPP.{{year}}.nc",
+                "filepath": "/ub8/au/OzWALD/8day/GPP/OzWALD.GPP.{{year}}.nc",
                 "colorscalerange": [
                   0,
                   10
@@ -379,7 +382,7 @@
         {
           "timestep": "annual",
           "options": {
-            "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualMeans.nc",
+            "filepath": "ub8/au/OzWALD/annual/OzWALD.{{variable}}.AnnualMeans.nc",
             "layer": "AnnualMeans",
             "chart": "bar",
             "timeFormat": "{{year}}-12-31"
@@ -388,7 +391,10 @@
         {
           "timestep": "daily",
           "options": {
-            "filepath": "ub8/au/OzWALD/daily/OzWALD.daily.{{variable}}.{{year}}.nc",
+            "timestepMultiplier": 8,
+            "timestepReference": "{{year}}-01-01",
+            "interval": "modis",
+            "filepath": "ub8/au/OzWALD/8day/{{variable}}/OzWALD.{{variable}}.{{year}}.nc",
             "timeFormat": "{{year}}-{{month}}-{{day}}"
           }
         }
@@ -561,6 +567,10 @@
             {
               "timestep": "daily",
               "options": {
+                "timestepMultiplier": 1,
+                "timestepReference": "{{year}}-01-01",
+                "interval": null,
+                "filepath": "ub8/au/OzWALD/daily/meteo/{{variable}}/OzWALD.daily.{{variable}}.{{year}}.nc",
                 "colorscalerange": [
                   0,
                   50
@@ -627,7 +637,21 @@
               0,
               1800
             ]
-          }
+          },
+          "publications": [
+            {
+              "timestep": "annual"
+            },
+            {
+              "timestep": "daily",
+              "timestepMultiplier": 8,
+              "timestepReference": "{{year}}-01-01",
+              "interval": "modis",
+              "options": {
+                "filepath": "ub8/au/OzWALD/8day/{{variable}}/OzWALD.{{variable}}.{{year}}.nc"
+              }
+            }
+          ]
         },
         {
           "name": "Soil moisture (CosmOz)",
@@ -645,6 +669,9 @@
           "publications": [
             {
               "timestep": "daily",
+              "timestepMultiplier": 8,
+              "timestepReference": "{{year}}-01-01",
+              "interval": "modis",
               "options": {
                 "colorscalerange": [
                   0,
@@ -655,43 +682,12 @@
             {
               "timestep": "annual",
               "options": {
-                "filepath": "ub8/au/OzWALD/annual/OzWALD.annual.{{variable}}.AnnualSums.nc",
+                "filepath": "ub8/au/OzWALD/annual/OzWALD.{{variable}}.AnnualSums.nc",
                 "colorscalerange": [
                   0,
                   1800
                 ],
                 "layer": "AnnualSums",
-                "chart": "bar"
-              }
-            }
-          ]
-        },
-        {
-          "name": "River Flows",
-          "descriptionField":"description",
-          "dataCreator": "Australian National University",
-          "variable": "Qriv",
-          "options": {
-            "palette": "anu_wald_blues09",
-            "units": "mm"
-          },
-          "publications": [
-            {
-              "timestep": "daily",
-              "options": {
-                "colorscalerange": [
-                  5,
-                  250000
-                ]
-              }
-            },
-            {
-              "timestep": "annual",
-              "options": {
-                "colorscalerange": [
-                  10000,
-                  100000000
-                ],
                 "chart": "bar"
               }
             }
@@ -716,6 +712,7 @@
               "timestep": "daily",
               "timestepMultiplier": 4,
               "timestepReference": "{{year}}-01-01",
+              "interval": "modis",
               "options": {
                 "filepath": "ub8/au/FMC/c6/mosaics/fmc_c6_{{year}}.nc",
                 "colorscalerange": [
@@ -753,15 +750,14 @@
               "timestepReference": "{{year}}-01-01",
               "interval": "modis",
               "options": {
-                "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{year}}.nc",
-                "variable": "OWL",
-                "layer": "OWL"
+                "variable": "OW",
+                "layer": "OW"
               }
             },
             {
               "timestep": "annual",
               "options": {
-                "filepath": "ub8/au/owl/MOD09A1.OWLau.0_005deg.{{variable}}.nc",
+                "filepath": "ub8/au/OzWALD/annual/OzWALD.OW.{{variable}}.nc",
                 "variable": "AnnualMaxima",
                 "chart": "bar",
                 "layer": "AnnualMaxima"
@@ -979,7 +975,7 @@
             {
               "timestep": "annual",
               "options": {
-                "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.AnnualMeans.nc",
+                "filepath": "ub8/au/OzWALD/annual/OzWALD.LAI.{{variable}}.nc",
                 "variable": "AnnualMeans",
                 "chart": "bar",
                 "timeFormat": "{{year}}-12-31"
@@ -989,11 +985,13 @@
             },
             {
               "timestep": "daily",
+              "timestepMultiplier": 8,
+              "timestepReference": "{{year}}-01-01",
+              "interval": "modis",
               "options": {
-                "filepath": "ub8/au/LAI/MOD15A2.1000m_lai.{{year}}.nc",
+                "filepath": "ub8/au/OzWALD/8day/LAI/OzWALD.LAI.{{year}}.nc",
                 "variable": "LAI"
               },
-              "interval": "modis",
               "start": "2000-01-01",
               "end": "2016-12-31"
             }
