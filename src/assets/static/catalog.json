@@ -69,8 +69,8 @@
           "description": "Percent of area classified as forest at 25 metre resolution mapping using Landsat imagery following the NCAS classification.",
           "dataCreator": "Department of the Environment and Energy, Australian National University",
           "options": {
-            "filepath": "ub8/au/treecover/250m/ANUWALD.TreeCover.AllYears.250m.nc",
-            "variable": "AllYears",
+            "filepath": "ub8/au/OzWALD/annual/OzWALD.WCF.Annual.nc",
+            "variable": "WCF",
             "palette": "anu_wald_darkgreen",
             "colorscalerange": [
               0,
@@ -232,7 +232,7 @@
                 "variable": "AnnualSums",
                 "chart": "bar",
                 "start": "2000-01-01",
-                "end": "2016-12-31"
+                "end": "2019-12-31"
               }
             },
             {
@@ -249,7 +249,7 @@
                 "timeFormat": "{{year}}-{{month}}-{{day}}",
                 "variable": "GPP",
                 "start": "2000-01-01",
-                "end": "2016-12-31"
+                "end": "2019-12-31"
               }
             }
           ],
@@ -279,7 +279,7 @@
                 "chart": "bar",
                 "variable": "AnnualSums",
                 "start": "2000-01-01",
-                "end": "2015-12-31"
+                "end": "2019-12-31"
               }
             },
             {
@@ -293,7 +293,7 @@
                 "timeFormat": "{{year}}-{{month}}-{{day}}",
                 "variable": "BurntCarbon",
                 "start": "2003-01-01",
-                "end": "2015-12-31"
+                "end": "2019-12-31"
               }
             }
           ]
@@ -714,7 +714,8 @@
               "timestepReference": "{{year}}-01-01",
               "interval": "modis",
               "options": {
-                "filepath": "ub8/au/FMC/c6/mosaics/fmc_c6_{{year}}.nc",
+                "filepath": "ub8/au/OzWALD/8day/FMC/OzWALD.FMC.{{year}}.nc",
+                "x":"FMC/c6/mosaics/fmc_c6_{{year}}.nc",
                 "colorscalerange": [
                   0,
                   140
@@ -723,9 +724,9 @@
                 "numcolorbands": 9,
                 "belowmincolor": "extend",
                 "abovemaxcolor": "extend",
-                "variable": "fmc_mean",
+                "variable": "FMC",
                 "start": "2001-01-01",
-                "end": "2017-11-21",
+                "end": "2019-12-31",
                 "styles": "boxfill/anu_fmc_rdylbu_9"
               }
             }
@@ -741,7 +742,7 @@
               100
             ],
             "start": "2000-01-01",
-            "end": "2016-12-31"
+            "end": "2019-12-31"
           },
           "publications": [
             {
@@ -981,7 +982,7 @@
                 "timeFormat": "{{year}}-12-31"
               },
               "start": "2000-01-01",
-              "end": "2016-12-31"
+              "end": "2019-12-31"
             },
             {
               "timestep": "daily",
@@ -993,7 +994,7 @@
                 "variable": "LAI"
               },
               "start": "2000-01-01",
-              "end": "2016-12-31"
+              "end": "2019-12-31"
             }
           ]
         },
@@ -1017,7 +1018,8 @@
               "timestepMultiplier": 4,
               "timestepReference": "{{year}}-01-01",
               "options": {
-                "filepath": "ub8/au/FMC/c6/mosaics/fmc_c6_{{year}}.nc",
+                "filepath": "ub8/au/OzWALD/8day/FMC/OzWALD.FMC.{{year}}.nc",
+                "x": "ub8/au/FMC/c6/mosaics/fmc_c6_{{year}}.nc",
                 "colorscalerange": [
                   0,
                   140
@@ -1026,9 +1028,9 @@
                 "numcolorbands": 9,
                 "belowmincolor": "extend",
                 "abovemaxcolor": "extend",
-                "variable": "fmc_mean",
+                "variable": "FMC",
                 "start": "2001-01-01",
-                "end": "2017-11-21",
+                "end": "2019-12-31",
                 "styles": "boxfill/anu_fmc_rdylbu_9"
               }
             }
@@ -1086,7 +1088,7 @@
                 "layer": "AnnualMeans",
                 "chart": "bar",
                 "start": "2000-01-01",
-                "end": "2016-12-31",
+                "end": "2019-12-31",
                 "timeFormat": "{{year}}-12-31"
               }
             }
@@ -1115,7 +1117,7 @@
           "options": {
             "filepath": "ub8/au/FractCov/{{variable}}/FractCover.V3_0_1.{{year}}.aust.005.{{variable}}.nc",
             "start": "2000-01-01",
-            "end": "2016-12-31",
+            "end": "2019-12-31",
             "timeFormat": "{{year}}-{{month}}-{{day}}"
           }
         }
