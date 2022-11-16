@@ -273,6 +273,8 @@ $header-text:$tern-eucalypt;
 
 .main-row .sidebar {
   background: $tern-eucalypt-light;
+  height: 100%;
+  overflow-y: auto;
 }
 
 .sidebar .card {
