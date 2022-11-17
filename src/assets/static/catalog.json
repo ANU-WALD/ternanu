@@ -83,7 +83,7 @@
           "dataCreator": "TERN OzFlux",
           "options": {
             "host": "webhost",
-            "filepath":"https://portal.tern.org.au/geoserver/nr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=nr:ozflux&maxFeatures=50&outputFormat=application/json",
+            "filepath":"https://geoserver.tern.org.au/geoserver/nr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=nr:ozflux&maxFeatures=50&outputFormat=application/json",
             "downloadPath": "http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "styles": {
@@ -405,7 +405,7 @@
           "dataCreator": "TERN OzFlux",
           "options": {
             "host": "webhost",
-            "filepath":"https://portal.tern.org.au/geoserver/nr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=nr:ozflux&maxFeatures=50&outputFormat=application/json",
+            "filepath":"https://geoserver.tern.org.au/geoserver/nr/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=nr:ozflux&maxFeatures=50&outputFormat=application/json",
             "downloadPath": "http://dap.ozflux.org.au/thredds",
             "vectors": "point",
             "styles": {
