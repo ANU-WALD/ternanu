@@ -504,8 +504,8 @@ $header-text:$tern-eucalypt;
 table.feature-table {
   display: block;
   width: min(60vw,300px);
-  max-width: 60vw;// !important;
-  max-height: 60vh;// !important;
+  max-width: 60vw;
+  max-height: 60vh;
   overflow-y: auto;
 
   td {
