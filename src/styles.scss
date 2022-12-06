@@ -500,3 +500,17 @@ $header-text:$tern-eucalypt;
     margin:1px;
   }
 }
+
+table.feature-table {
+  display: block;
+  width: min(60vw,300px);
+  max-width: 60vw;// !important;
+  max-height: 60vh;// !important;
+  overflow-y: auto;
+
+  td {
+    max-width:30vw;
+  }
+}
+
+
