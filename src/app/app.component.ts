@@ -18,7 +18,7 @@ import { forkJoin, of } from 'rxjs';
 import { DapDAS, DapDDX, DapData } from 'dap-query-js/dist/dap-query';
 import { NgbAccordion } from '@ng-bootstrap/ng-bootstrap';
 
-declare var ga: Function;
+declare var gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -75,7 +75,7 @@ export class AppComponent {
     const url = `${environment.catalog}?_=${new Date().getTime()}`;
     catalogService.loadFrom(url).subscribe(c => this.catalog = c);
     paletteService.source = environment.palettes
-    ga('send', 'pageview');
+    gtag('event', 'pageview');
 
     this.pointSelections.latestPointSelection.subscribe(sel => {
       this.plotPointTimeseries(sel);
@@ -109,7 +109,7 @@ export class AppComponent {
   }
 
   gaEvent(category: string, action: string, context: string) {
-    ga('send', 'event', category, action, context);
+    gtag('event', action, {'event_category': category, 'event_label': context});
   }
 
   gridLayer(l: Layer): boolean {
