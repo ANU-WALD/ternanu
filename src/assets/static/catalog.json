@@ -18,7 +18,6 @@
     },
     "tern-dap": {
       "software": "tds",
-      "urlProxy": "https://proxies.hydrograph.io/tern-dap/thredds",
       "url":"https://dap.tern.org.au/thredds"
     },
     "qld-geoserver": {
